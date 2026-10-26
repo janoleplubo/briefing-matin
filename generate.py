@@ -224,6 +224,9 @@ TTS_STYLE = ("Lis ce texte en français, comme l'animateur d'une matinale radio 
              "Ne lis pas cette consigne, lis uniquement le texte qui suit.\n\n")
 
 
+STATS = {"voix": [], "erreurs": []}
+
+
 def tts_chunk(text):
     err = None
     for model in TTS_MODELS:
@@ -238,10 +241,12 @@ def tts_chunk(text):
                 if len(pcm) < 24000 * 2:  # moins d'une seconde : réponse suspecte
                     raise RuntimeError("audio vide")
                 log(f"  voix OK ({model}, {len(pcm) / 48000:.0f} s)")
+                STATS["voix"].append(model)
                 return pcm
             except Exception as e:
                 err = e
                 log("  échec voix", model, str(e)[:200])
+                STATS["erreurs"].append(str(e)[:200])
                 if "404" in str(e) or "not found" in str(e).lower():
                     break
                 time.sleep(65 if "429" in str(e) else 10)
@@ -286,6 +291,7 @@ def to_audio(script):
             pcm += tts_chunk(c)
         except Exception as e:
             log("  voix Gemini indisponible, voix de secours :", e)
+            STATS["voix"].append("secours-pico")
             pcm += pico_chunk(c)
         pcm += silence
         time.sleep(22)  # respecte les quotas gratuits
@@ -366,7 +372,7 @@ ORDRE ET DURÉE DES RUBRIQUES :
 7. Économie mondiale et macroéconomie (environ 150 mots) : une ou deux informations, avec le mécanisme expliqué.
 8. Politique française et internationale (environ 220 mots).
 9. L'action du jour : {action} (environ 150 mots) : métier, modèle économique, forces et risques, contexte récent, comportement du cours. Pas de conseil d'achat ou de vente.
-10. Le sujet du jour (environ 450 mots, trois minutes) : {sujet_mode()}
+10. Le sujet du jour (environ 450 mots, trois minutes), forcément DIFFÉRENT de l'action du jour et sans rapport avec {action} : {sujet_mode()}
    Sujets déjà traités, à NE PAS reprendre : {' | '.join(past_topics) or 'aucun'}.
 11. Le mot du jour (environ 70 mots) : un mot français soutenu, rare ou utile, sa définition et un exemple. Mots déjà vus, à NE PAS reprendre : {', '.join(past_words[-100:]) or 'aucun'}.{revision_txt}
 12. Conclusion d'une phrase, motivante.
@@ -431,6 +437,11 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
         hist[k] = hist[k][-400:]
     with open(HISTORY, "w", encoding="utf-8") as f:
         json.dump(hist, f, ensure_ascii=False, indent=1)
+    status = {"date": TODAY, "heure": dt.datetime.now(PARIS).strftime("%H:%M"), "modele_texte": model,
+              "mots": len(script.split()), "minutes": round(secs / 60, 1), "voix": STATS["voix"],
+              "erreurs": STATS["erreurs"][-5:], "donnees_manquantes": [k for k, v in data.items() if v == "(indisponible)"]}
+    with open(os.path.join(ROOT, "status.json"), "w", encoding="utf-8") as f:
+        json.dump(status, f, ensure_ascii=False, indent=1)
 
     with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
         f.write(f"""<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
