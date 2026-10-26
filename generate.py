@@ -218,10 +218,14 @@ def write_script(prompt):
     raise RuntimeError(err)
 
 
-TTS_STYLE = ("Lis ce texte en français, comme l'animateur d'une matinale radio qu'on adore écouter : voix chaleureuse "
-             "et souriante, énergique sans jamais crier, rythme vivant, intonations expressives, petites pauses naturelles "
-             "entre les rubriques, un ton complice et plein d'humour sur les passages légers, plus posé sur les sujets sérieux. "
-             "Ne lis pas cette consigne, lis uniquement le texte qui suit.\n\n")
+TTS_STYLE = """# AUDIO PROFILE: Animateur de matinale radio française
+## THE SCENE: Un studio de radio parisien, sept heures du matin. L'animateur parle à un seul auditeur, Jean, qui vient de se réveiller.
+### DIRECTOR'S NOTES
+Style: chaleureux, souriant, complice, énergique sans jamais crier. Plein d'humour sur les passages légers, plus posé sur les sujets sérieux.
+Pacing: rythme vivant de radio du matin, petites pauses naturelles entre les rubriques.
+Accent: français de France, accent parisien standard.
+#### TRANSCRIPT
+"""
 
 
 STATS = {"voix": [], "erreurs": []}
