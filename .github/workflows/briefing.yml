@@ -38,13 +38,19 @@ jobs:
 
       - name: Outils audio
         if: steps.check.outputs.done == 'false'
+        timeout-minutes: 8
+        env:
+          DEBIAN_FRONTEND: noninteractive
         run: |
+          echo 'set man-db/auto-update false' | sudo debconf-communicate >/dev/null 2>&1 || true
+          sudo rm -f /var/lib/man-db/auto-update
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
           sudo apt-get install -y -qq libttspico-utils || echo "voix de secours indisponible"
 
       - name: Génération du briefing
         if: steps.check.outputs.done == 'false'
+        timeout-minutes: 25
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           VOICE: ${{ vars.VOICE }}
