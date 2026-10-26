@@ -31,8 +31,8 @@ KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 VOICE = os.environ.get("VOICE", "").strip() or "Puck"
 UA = "Mozilla/5.0 (compatible; BriefingDuMatin/1.0)"
 
-TEXT_MODELS = ["gemini-flash-latest", "gemini-2.5-flash", "gemini-flash-lite-latest"]
-TTS_MODELS = ["gemini-3.1-flash-tts-preview", "gemini-3.8-flash-lite-tts", "gemini-3.8-flash-tts", "gemini-2.5-flash-preview-tts"]
+TEXT_MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash", "gemini-flash-latest", "gemini-flash-lite-latest"]
+TTS_MODELS = ["gemini-3.8-flash-tts", "gemini-3.1-flash-tts-preview", "gemini-3.8-flash-lite-tts"]
 
 JOURS = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"]
 MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août",
@@ -183,7 +183,10 @@ def sujet_mode():
 
 
 # ---------------------------------------------------------------- Gemini
-def gemini_call(model, body, timeout=300):
+STATS = {"voix": [], "erreurs": []}
+
+
+def gemini_call(model, body, timeout=400):
     req = urllib.request.Request(
         f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
         data=json.dumps(body).encode(), method="POST",
@@ -199,7 +202,7 @@ def write_script(prompt):
     schema = {"type": "OBJECT", "properties": {"script": {"type": "STRING"}, "mot": {"type": "STRING"},
               "definition": {"type": "STRING"}, "sujet_titre": {"type": "STRING"}},
               "required": ["script", "mot", "definition", "sujet_titre"]}
-    err = None
+    err, best = None, None
     for model in TEXT_MODELS:
         for attempt in range(2):
             try:
@@ -207,28 +210,31 @@ def write_script(prompt):
                                            "generationConfig": {"temperature": 0.9, "maxOutputTokens": 20000,
                                                                 "responseMimeType": "application/json",
                                                                 "responseSchema": schema}})
-                txt = "".join(p.get("text", "") for p in body["candidates"][0]["content"]["parts"])
-                out = json.loads(txt)
-                log("texte rédigé par", model)
-                return out, model
+                cand = body["candidates"][0]
+                if "content" not in cand:
+                    raise RuntimeError(f"réponse vide ({cand.get('finishReason')})")
+                out = json.loads("".join(p.get("text", "") for p in cand["content"]["parts"]))
+                n = len(str(out.get("script", "")).split())
+                log("texte rédigé par", model, n, "mots")
+                if best is None or n > best[2]:
+                    best = (out, model, n)
+                if n >= 1400:
+                    return out, model
+                STATS["erreurs"].append(f"{model}: texte trop court ({n} mots)")
+                break
             except Exception as e:
                 err = e
+                STATS["erreurs"].append(f"{model}: {str(e)[:150]}")
                 log("échec texte", model, e)
+                if "404" in str(e):
+                    break
                 time.sleep(20 if "429" in str(e) else 3)
+    if best:
+        return best[0], best[1]
     raise RuntimeError(err)
 
 
-TTS_STYLE = """# AUDIO PROFILE: Animateur de matinale radio française
-## THE SCENE: Un studio de radio parisien, sept heures du matin. L'animateur parle à un seul auditeur, Jean, qui vient de se réveiller.
-### DIRECTOR'S NOTES
-Style: chaleureux, souriant, complice, énergique sans jamais crier. Plein d'humour sur les passages légers, plus posé sur les sujets sérieux.
-Pacing: rythme vivant de radio du matin, petites pauses naturelles entre les rubriques.
-Accent: français de France, accent parisien standard.
-#### TRANSCRIPT
-"""
-
-
-STATS = {"voix": [], "erreurs": []}
+TTS_STYLE = "Dis avec enthousiasme et le sourire, comme un animateur de matinale radio française : "
 
 
 def tts_chunk(text):
@@ -240,7 +246,10 @@ def tts_chunk(text):
                     "contents": [{"role": "user", "parts": [{"text": TTS_STYLE + text}]}],
                     "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {
                         "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": VOICE}}}}}, timeout=600)
-                part = body["candidates"][0]["content"]["parts"][0]["inlineData"]
+                cand = body["candidates"][0]
+                if "content" not in cand:
+                    raise RuntimeError(f"pas d'audio ({cand.get('finishReason')})")
+                part = cand["content"]["parts"][0]["inlineData"]
                 pcm = base64.b64decode(part["data"])
                 if len(pcm) < 24000 * 2:  # moins d'une seconde : réponse suspecte
                     raise RuntimeError("audio vide")
