@@ -1,0 +1,23 @@
+name: Récupération musiques libres
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p music
+          for t in "Smooth Lovin" "Dirt Rhodes" "Funkorama" "Groove Grove" "Local Forecast" "Backbay Lounge" "Hard Boiled" "Lobby Time" "Cool Vibes" "Funk Game Loop" "Hustle" "Laid Back Guitars" "Hep Cats" "Bass Walker" "Easy Lemon"; do
+            f="music/$(echo "$t" | tr ' ' '_').mp3"
+            u="https://incompetech.com/music/royalty-free/mp3-royaltyfree/$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$t").mp3"
+            code=$(curl -sL -A "Mozilla/5.0" -o "$f" -w "%{http_code}" "$u")
+            size=$(stat -c %s "$f" 2>/dev/null || echo 0)
+            if [ "$code" = "200" ] && [ "$size" -gt 500000 ] && file "$f" | grep -qiE "audio|MPEG|ID3"; then echo "OK $t $size"; else echo "KO $t $code $size"; rm -f "$f"; fi
+          done
+          ls -la music
+      - run: |
+          git config user.name "briefing-bot"; git config user.email "briefing-bot@users.noreply.github.com"
+          git add music; git commit -m "Musiques libres (Kevin MacLeod, CC BY 4.0)" || exit 0; git pull --rebase -q; git push
