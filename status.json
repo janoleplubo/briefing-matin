@@ -1,0 +1,16 @@
+{
+ "date": "2026-10-26",
+ "heure": "20:40",
+ "modele_texte": "gemini-flash-lite-latest",
+ "mots": 1252,
+ "minutes": 6.5,
+ "voix": [
+  "gemini-3.8-flash-lite-tts"
+ ],
+ "erreurs": [
+  "'content'",
+  "'content'",
+  "'content'"
+ ],
+ "donnees_manquantes": []
+}
