@@ -1,16 +1,20 @@
 {
  "date": "2026-10-26",
- "heure": "20:40",
- "modele_texte": "gemini-flash-lite-latest",
- "mots": 1252,
- "minutes": 6.5,
+ "heure": "23:57",
+ "modele_texte": "gemini-3.6-flash",
+ "mots": 1762,
+ "minutes": 9.7,
  "voix": [
-  "gemini-3.8-flash-lite-tts"
+  "gemini-3.8-flash-tts",
+  "gemini-3.8-flash-tts",
+  "gemini-3.8-flash-tts",
+  "gemini-3.8-flash-tts",
+  "gemini-3.8-flash-tts"
  ],
  "erreurs": [
-  "'content'",
-  "'content'",
-  "'content'"
+  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are",
+  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are"
  ],
- "donnees_manquantes": []
+ "donnees_manquantes": [],
+ "musique": "Smooth_Lovin.mp3"
 }
