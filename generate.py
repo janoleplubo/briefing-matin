@@ -314,8 +314,24 @@ def to_audio(script):
         w.setsampwidth(2)
         w.setframerate(24000)
         w.writeframes(pcm)
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", "loudnorm=I=-16:TP=-1.5",
-                    "-c:a", "aac", "-b:a", "64k", os.path.join(OUT, "briefing.m4a")], check=True)
+    dest = os.path.join(OUT, "briefing.m4a")
+    music_dir = os.path.join(ROOT, "music")
+    tracks = sorted(f for f in os.listdir(music_dir) if f.endswith(".mp3")) if os.path.isdir(music_dir) else []
+    if tracks:
+        track = random.choice(tracks)
+        STATS["musique"] = track
+        log("musique d'intro :", track)
+        # 2 minutes de musique : fondu d'entrée de 30 s (part de presque rien), fondu de sortie de 8 s, puis la voix
+        flt = ("[0:a]atrim=0:120,asetpts=N/SR/TB,aformat=sample_rates=44100:channel_layouts=mono,"
+               "loudnorm=I=-16:TP=-1.5,afade=t=in:st=0:d=30:curve=qua,areverse,afade=t=in:st=0:d=8,areverse,"
+               "apad=pad_dur=1[m];"
+               "[1:a]aformat=sample_rates=44100:channel_layouts=mono,loudnorm=I=-16:TP=-1.5[v];"
+               "[m][v]concat=n=2:v=0:a=1[out]")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", os.path.join(music_dir, track), "-i", wav,
+                        "-filter_complex", flt, "-map", "[out]", "-c:a", "aac", "-b:a", "80k", dest], check=True)
+    else:
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", "loudnorm=I=-16:TP=-1.5",
+                        "-c:a", "aac", "-b:a", "64k", dest], check=True)
     os.remove(wav)
     return len(pcm) / 48000
 
@@ -452,7 +468,8 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
         json.dump(hist, f, ensure_ascii=False, indent=1)
     status = {"date": TODAY, "heure": dt.datetime.now(PARIS).strftime("%H:%M"), "modele_texte": model,
               "mots": len(script.split()), "minutes": round(secs / 60, 1), "voix": STATS["voix"],
-              "erreurs": STATS["erreurs"][-5:], "donnees_manquantes": [k for k, v in data.items() if v == "(indisponible)"]}
+              "erreurs": STATS["erreurs"][-5:], "donnees_manquantes": [k for k, v in data.items() if v == "(indisponible)"],
+              "musique": STATS.get("musique")}
     with open(os.path.join(ROOT, "status.json"), "w", encoding="utf-8") as f:
         json.dump(status, f, ensure_ascii=False, indent=1)
 
@@ -461,6 +478,7 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
 <title>Briefing du matin</title><style>body{{font-family:system-ui,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;line-height:1.6;background:#fbfaf7;color:#1d1d1b}}
 audio{{width:100%}}@media(prefers-color-scheme:dark){{body{{background:#161615;color:#ecebe6}}}}</style></head><body>
 <h1>Briefing du {html.escape(DATE_LONGUE)}</h1><audio controls src="briefing.m4a"></audio>
+<p><small>Musique d'intro : « {html.escape(str(STATS.get('musique', '')).replace('_', ' ').replace('.mp3', ''))} », Kevin MacLeod (incompetech.com), licence CC BY 4.0.</small></p>
 <p>Mot du jour : <b>{html.escape(out['mot'])}</b> — {html.escape(out['definition'])}</p>
 {''.join(f'<p>{html.escape(p)}</p>' for p in script.split(chr(10) + chr(10)))}</body></html>""")
     log("terminé, modèle texte :", model)

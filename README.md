@@ -9,3 +9,7 @@ Chaque nuit, GitHub Actions :
 - Lancer à la main : onglet **Actions** → *Briefing du matin* → **Run workflow**.
 - Changer de voix : *Settings → Secrets and variables → Actions → Variables* → `VOICE` (ex. `Puck`, `Charon`, `Fenrir`, `Orus`, `Kore`).
 - `history.json` garde les mots de vocabulaire, les sujets et les actions déjà traités.
+
+## Musique d'intro
+Chaque matin, un morceau tiré au hasard dans `music/` ouvre le briefing (2 minutes, fondu d'entrée de 30 secondes).
+Morceaux de **Kevin MacLeod (incompetech.com)**, sous licence Creative Commons Attribution 4.0 : http://creativecommons.org/licenses/by/4.0/
