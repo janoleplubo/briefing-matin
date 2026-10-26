@@ -1,0 +1,250 @@
+{
+ "gemini-flash-latest": {
+  "ok": false,
+  "err": "The read operation timed out"
+ },
+ "gemini-2.5-flash": {
+  "ok": false,
+  "http": 404,
+  "err": "{\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs"
+ },
+ "gemini-3.5-flash": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 0.0,
+  "text": "Bonjour, j'espère que vous allez bien et que vous passez une excellente journée !",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 6,
+   "candidatesTokenCount": 18,
+   "totalTokenCount": 328,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 6
+    }
+   ],
+   "thoughtsTokenCount": 304,
+   "serviceTier": "standard"
+  }
+ },
+ "gemini-3.6-flash": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 0.0,
+  "text": "Bonjour, je vous souhaite une très belle journée !",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 6,
+   "candidatesTokenCount": 10,
+   "totalTokenCount": 357,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 6
+    }
+   ],
+   "thoughtsTokenCount": 341,
+   "serviceTier": "standard"
+  }
+ },
+ "gemini-flash-lite-latest": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 0.0,
+  "text": "Bonjour, j'espère que tu vas bien !",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 6,
+   "candidatesTokenCount": 10,
+   "totalTokenCount": 16,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 6
+    }
+   ],
+   "serviceTier": "standard"
+  }
+ },
+ "gemini-3.1-flash-tts-preview [brut]": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 5.4,
+  "text": "",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 21,
+   "candidatesTokenCount": 136,
+   "totalTokenCount": 157,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 21
+    }
+   ],
+   "candidatesTokensDetails": [
+    {
+     "modality": "AUDIO",
+     "tokenCount": 136
+    }
+   ],
+   "serviceTier": "standard"
+  }
+ },
+ "gemini-3.1-flash-tts-preview [court]": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 6.6,
+  "text": "",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 33,
+   "candidatesTokenCount": 166,
+   "totalTokenCount": 199,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 33
+    }
+   ],
+   "candidatesTokensDetails": [
+    {
+     "modality": "AUDIO",
+     "tokenCount": 166
+    }
+   ],
+   "serviceTier": "standard"
+  }
+ },
+ "gemini-3.8-flash-tts [brut]": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 4.8,
+  "text": "",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 21,
+   "candidatesTokenCount": 116,
+   "totalTokenCount": 137,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 21
+    }
+   ],
+   "candidatesTokensDetails": [
+    {
+     "modality": "AUDIO",
+     "tokenCount": 116
+    }
+   ],
+   "serviceTier": "standard"
+  }
+ },
+ "gemini-3.8-flash-tts [court]": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 8.2,
+  "text": "",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 33,
+   "candidatesTokenCount": 202,
+   "totalTokenCount": 235,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 33
+    }
+   ],
+   "candidatesTokensDetails": [
+    {
+     "modality": "AUDIO",
+     "tokenCount": 202
+    }
+   ],
+   "serviceTier": "standard"
+  }
+ },
+ "gemini-3.8-flash-lite-tts [brut]": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 5.6,
+  "text": "",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 21,
+   "candidatesTokenCount": 138,
+   "totalTokenCount": 159,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 21
+    }
+   ],
+   "candidatesTokensDetails": [
+    {
+     "modality": "AUDIO",
+     "tokenCount": 138
+    }
+   ],
+   "serviceTier": "standard"
+  }
+ },
+ "gemini-3.8-flash-lite-tts [court]": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 8.2,
+  "text": "",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 33,
+   "candidatesTokenCount": 202,
+   "totalTokenCount": 235,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 33
+    }
+   ],
+   "candidatesTokensDetails": [
+    {
+     "modality": "AUDIO",
+     "tokenCount": 202
+    }
+   ],
+   "serviceTier": "standard"
+  }
+ },
+ "gemini-2.5-flash-preview-tts [brut]": {
+  "ok": false,
+  "http": 400,
+  "err": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Model tried to generate text, but it should only be used for TTS. Make sure your instructions are clear to only generate audio from a given text transcript.\",\n    \"status\": \"INVALID_ARGUMENT\"\n  }\n}\n"
+ },
+ "gemini-2.5-flash-preview-tts [court]": {
+  "ok": true,
+  "finish": "STOP",
+  "audio_s": 5.4,
+  "text": "",
+  "feedback": null,
+  "usage": {
+   "promptTokenCount": 33,
+   "candidatesTokenCount": 134,
+   "totalTokenCount": 167,
+   "promptTokensDetails": [
+    {
+     "modality": "TEXT",
+     "tokenCount": 33
+    }
+   ],
+   "candidatesTokensDetails": [
+    {
+     "modality": "AUDIO",
+     "tokenCount": 134
+    }
+   ],
+   "serviceTier": "standard"
+  }
+ }
+}
