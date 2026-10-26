@@ -481,7 +481,51 @@ audio{{width:100%}}@media(prefers-color-scheme:dark){{body{{background:#161615;c
 <p><small>Musique d'intro : « {html.escape(str(STATS.get('musique', '')).replace('_', ' ').replace('.mp3', ''))} », Kevin MacLeod (incompetech.com), licence CC BY 4.0.</small></p>
 <p>Mot du jour : <b>{html.escape(out['mot'])}</b> — {html.escape(out['definition'])}</p>
 {''.join(f'<p>{html.escape(p)}</p>' for p in script.split(chr(10) + chr(10)))}</body></html>""")
+    write_feed(secs, out)
     log("terminé, modèle texte :", model)
+
+
+BASE_URL = "https://janoleplubo.github.io/briefing-matin/"
+
+
+def write_feed(secs, out):
+    """Flux podcast privé : un seul épisode, celui du jour (pour Apple Podcasts)."""
+    import email.utils
+    ep = f"briefing-{TODAY}.m4a"
+    shutil.copy(os.path.join(OUT, "briefing.m4a"), os.path.join(OUT, ep))
+    size = os.path.getsize(os.path.join(OUT, ep))
+    dur = f"{int(secs // 60) + 2}:00"
+    pub = email.utils.format_datetime(NOW)
+    titre = f"Briefing du {DATE_LONGUE}"
+    desc = f"Mot du jour : {out['mot']}. Sujet : {out['sujet_titre']}. Musique d'intro : Kevin MacLeod (incompetech.com), CC BY 4.0."
+    rss_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<channel>
+<title>Le Réveil de Jean</title>
+<link>{BASE_URL}</link>
+<language>fr-fr</language>
+<description>Briefing audio quotidien personnel.</description>
+<itunes:author>Briefing du matin</itunes:author>
+<itunes:image href="{BASE_URL}cover.png"/>
+<itunes:explicit>false</itunes:explicit>
+<itunes:block>Yes</itunes:block>
+<itunes:type>episodic</itunes:type>
+<item>
+<title>{html.escape(titre)}</title>
+<description>{html.escape(desc)}</description>
+<enclosure url="{BASE_URL}{ep}" length="{size}" type="audio/x-m4a"/>
+<guid isPermaLink="false">briefing-{TODAY}-{int(time.time())}</guid>
+<pubDate>{pub}</pubDate>
+<itunes:duration>{dur}</itunes:duration>
+</item>
+</channel>
+</rss>
+"""
+    with open(os.path.join(OUT, "feed.xml"), "w", encoding="utf-8") as f:
+        f.write(rss_xml)
+    cover = os.path.join(ROOT, "cover.png")
+    if os.path.exists(cover):
+        shutil.copy(cover, os.path.join(OUT, "cover.png"))
 
 
 if __name__ == "__main__":
