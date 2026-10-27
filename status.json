@@ -1,20 +1,19 @@
 {
- "date": "2026-10-26",
- "heure": "23:57",
+ "date": "2026-10-27",
+ "heure": "09:16",
  "modele_texte": "gemini-3.6-flash",
- "mots": 1762,
- "minutes": 9.7,
+ "mots": 1614,
+ "minutes": 9.0,
  "voix": [
-  "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts"
  ],
  "erreurs": [
-  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are",
+  "gemini-3.8-flash: [Errno 104] Connection reset by peer",
   "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are"
  ],
  "donnees_manquantes": [],
- "musique": "Smooth_Lovin.mp3"
+ "musique": null
 }
