@@ -529,7 +529,7 @@ def write_feed(secs, out):
 def _feed(secs, out, src, feed_name, show, extra_min):
     """Flux podcast privé : un seul épisode, celui du jour (pour Apple Podcasts)."""
     import email.utils
-    ep = src.replace(".m4a", f"-{TODAY}.m4a")
+    ep = src.replace(".m4a", f"-{TODAY}-{int(time.time())}.m4a")  # nom unique : Apple Podcasts ne garde pas l'ancien en cache
     shutil.copy(os.path.join(OUT, src), os.path.join(OUT, ep))
     size = os.path.getsize(os.path.join(OUT, ep))
     dur = f"{int(secs // 60) + extra_min}:00"
