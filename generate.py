@@ -234,7 +234,7 @@ def write_script(prompt):
     raise RuntimeError(err)
 
 
-TTS_STYLE = "Dis avec enthousiasme et le sourire, comme un animateur de matinale radio française : "
+TTS_STYLE = ""  # aucune consigne : le modèle de voix la lisait à voix haute
 
 
 def tts_chunk(text):
