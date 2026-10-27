@@ -1,0 +1,30 @@
+HTTP/2 200 
+content-type: application/xml
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<atom:link href="https://janoleplubo.github.io/briefing-matin/feed.xml" rel="self" type="application/rss+xml"/>
+<title>Le Réveil de Jean</title>
+<link>https://janoleplubo.github.io/briefing-matin/</link>
+<language>fr-fr</language>
+<description>Briefing audio quotidien personnel.</description>
+<itunes:author>Briefing du matin</itunes:author>
+<image><url>https://janoleplubo.github.io/briefing-matin/cover.png</url><title>Le Réveil de Jean</title><link>https://janoleplubo.github.io/briefing-matin/</link></image>
+<itunes:image href="https://janoleplubo.github.io/briefing-matin/cover.png"/>
+<itunes:explicit>false</itunes:explicit>
+<itunes:category text="News"/>
+<itunes:owner><itunes:name>Jean</itunes:name><itunes:email>briefing-bot@users.noreply.github.com</itunes:email></itunes:owner>
+<itunes:type>episodic</itunes:type>
+<item>
+<title>Briefing du mardi 27 octobre 2026</title>
+<description>Mot du jour : sempiternel. Sujet : Poésie : Chanson d&#x27;automne de Paul Verlaine.</description>
+<enclosure url="https://janoleplubo.github.io/briefing-matin/briefing-2026-10-27.m4a" length="4532924" type="audio/x-m4a"/>
+<guid isPermaLink="false">feed.xml-2026-10-27-1793090173</guid>
+<pubDate>Tue, 27 Oct 2026 09:36:11 +0100</pubDate>
+<itunes:duration>9:00</itunes:duration>
+</item>
+</channel>
+</rss>
+
+HTTP/2 200  content-type: audio/mp4 content-length: 4532924  https://janoleplubo.github.io/briefing-matin/briefing-2026-10-27.m4a
+HTTP/2 200  content-type: image/png content-length: 33330  https://janoleplubo.github.io/briefing-matin/cover.png
