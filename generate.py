@@ -317,6 +317,8 @@ def to_audio(script):
     dest = os.path.join(OUT, "briefing.m4a")
     music_dir = os.path.join(ROOT, "music")
     tracks = sorted(f for f in os.listdir(music_dir) if f.endswith(".mp3")) if os.path.isdir(music_dir) else []
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", "loudnorm=I=-16:TP=-1.5",
+                    "-c:a", "aac", "-b:a", "64k", os.path.join(OUT, "briefing-voix.m4a")], check=True)
     if tracks:
         track = random.choice(tracks)
         STATS["musique"] = track
@@ -489,19 +491,24 @@ BASE_URL = "https://janoleplubo.github.io/briefing-matin/"
 
 
 def write_feed(secs, out):
+    _feed(secs, out, "briefing.m4a", "feed.xml", "Le Réveil de Jean", 2)
+    _feed(secs, out, "briefing-voix.m4a", "feed-voix.xml", "Le Réveil de Jean (voix seule)", 0)
+
+
+def _feed(secs, out, src, feed_name, show, extra_min):
     """Flux podcast privé : un seul épisode, celui du jour (pour Apple Podcasts)."""
     import email.utils
-    ep = f"briefing-{TODAY}.m4a"
-    shutil.copy(os.path.join(OUT, "briefing.m4a"), os.path.join(OUT, ep))
+    ep = src.replace(".m4a", f"-{TODAY}.m4a")
+    shutil.copy(os.path.join(OUT, src), os.path.join(OUT, ep))
     size = os.path.getsize(os.path.join(OUT, ep))
-    dur = f"{int(secs // 60) + 2}:00"
+    dur = f"{int(secs // 60) + extra_min}:00"
     pub = email.utils.format_datetime(NOW)
     titre = f"Briefing du {DATE_LONGUE}"
     desc = f"Mot du jour : {out['mot']}. Sujet : {out['sujet_titre']}. Musique d'intro : Kevin MacLeod (incompetech.com), CC BY 4.0."
     rss_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
 <channel>
-<title>Le Réveil de Jean</title>
+<title>{show}</title>
 <link>{BASE_URL}</link>
 <language>fr-fr</language>
 <description>Briefing audio quotidien personnel.</description>
@@ -514,14 +521,14 @@ def write_feed(secs, out):
 <title>{html.escape(titre)}</title>
 <description>{html.escape(desc)}</description>
 <enclosure url="{BASE_URL}{ep}" length="{size}" type="audio/x-m4a"/>
-<guid isPermaLink="false">briefing-{TODAY}-{int(time.time())}</guid>
+<guid isPermaLink="false">{feed_name}-{TODAY}-{int(time.time())}</guid>
 <pubDate>{pub}</pubDate>
 <itunes:duration>{dur}</itunes:duration>
 </item>
 </channel>
 </rss>
 """
-    with open(os.path.join(OUT, "feed.xml"), "w", encoding="utf-8") as f:
+    with open(os.path.join(OUT, feed_name), "w", encoding="utf-8") as f:
         f.write(rss_xml)
     cover = os.path.join(ROOT, "cover.png")
     if os.path.exists(cover):

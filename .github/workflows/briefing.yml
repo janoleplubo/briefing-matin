@@ -2,9 +2,14 @@ name: Briefing du matin
 
 on:
   schedule:
-    # 3h30 et 4h30 UTC (4h30 / 5h30 à Paris en hiver). Le 2e passage ne sert que si le 1er a échoué ou a été retardé.
-    - cron: "30 3 * * *"
-    - cron: "30 4 * * *"
+    # Plusieurs créneaux entre 4h et 6h (heure de Paris, hiver) : GitHub saute parfois des déclenchements ; seul le premier qui passe génère.
+    - cron: "7 3 * * *"
+    - cron: "23 3 * * *"
+    - cron: "41 3 * * *"
+    - cron: "3 4 * * *"
+    - cron: "19 4 * * *"
+    - cron: "37 4 * * *"
+    - cron: "53 4 * * *"
   workflow_dispatch:
 
 permissions:
