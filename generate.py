@@ -319,7 +319,7 @@ def to_audio(script):
     # Musique d'intro désactivée pour l'instant (mettre MUSIC=1 pour la réactiver)
     tracks = sorted(f for f in os.listdir(music_dir) if f.endswith(".mp3")) if os.path.isdir(music_dir) and os.environ.get("MUSIC") == "1" else []
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", "loudnorm=I=-16:TP=-1.5",
-                    "-c:a", "aac", "-b:a", "64k", os.path.join(OUT, "briefing-voix.m4a")], check=True)
+                    "-ar", "44100", "-ac", "1", "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart", os.path.join(OUT, "briefing-voix.m4a")], check=True)
     if tracks:
         track = random.choice(tracks)
         STATS["musique"] = track
@@ -331,10 +331,10 @@ def to_audio(script):
                "[1:a]aformat=sample_rates=44100:channel_layouts=mono,loudnorm=I=-16:TP=-1.5[v];"
                "[m][v]concat=n=2:v=0:a=1[out]")
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", os.path.join(music_dir, track), "-i", wav,
-                        "-filter_complex", flt, "-map", "[out]", "-c:a", "aac", "-b:a", "80k", dest], check=True)
+                        "-filter_complex", flt, "-map", "[out]", "-ar", "44100", "-ac", "1", "-c:a", "aac", "-b:a", "80k", "-movflags", "+faststart", dest], check=True)
     else:
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", "loudnorm=I=-16:TP=-1.5",
-                        "-c:a", "aac", "-b:a", "64k", dest], check=True)
+                        "-ar", "44100", "-ac", "1", "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart", dest], check=True)
     os.remove(wav)
     return len(pcm) / 48000
 
@@ -350,6 +350,13 @@ def republish():
                 o.write(r.read())
         except Exception as e:
             log("republication : fichier absent", f, e)
+    for f in ("briefing.m4a", "briefing-voix.m4a"):  # ré-encodage au format lu par Apple Podcasts
+        src = os.path.join(OUT, f)
+        if os.path.exists(src):
+            tmp = src + ".tmp.m4a"
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-ar", "44100", "-ac", "1",
+                            "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart", tmp], check=True)
+            os.replace(tmp, src)
     if not os.path.exists(os.path.join(OUT, "briefing-voix.m4a")):
         shutil.copy(os.path.join(OUT, "briefing.m4a"), os.path.join(OUT, "briefing-voix.m4a"))
     secs = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
