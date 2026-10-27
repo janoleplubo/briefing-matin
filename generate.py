@@ -88,17 +88,20 @@ WMO = {0: "ciel dégagé", 1: "plutôt dégagé", 2: "partiellement nuageux", 3:
 
 
 def weather():
+    # Après 18h (aperçu la veille), on prend la météo du lendemain
+    k = 1 if NOW.hour >= 18 else 0
     j = get_json("https://api.open-meteo.com/v1/forecast?latitude=48.8566&longitude=2.3522"
-                 "&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weather_code,"
-                 "wind_speed_10m_max,sunrise,sunset&hourly=temperature_2m,precipitation_probability"
-                 "&timezone=Europe%2FParis&forecast_days=1")
+                 "&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,weather_code"
+                 "&hourly=temperature_2m,precipitation_probability,precipitation"
+                 "&timezone=Europe%2FParis&forecast_days=2")
     d, h = j["daily"], j["hourly"]
-    det = " ; ".join(f"{x}h : {round(h['temperature_2m'][x])} degrés, pluie {h['precipitation_probability'][x]} pour cent"
-                     for x in (8, 12, 18))
-    return (f"Paris : {WMO.get(d['weather_code'][0], 'temps variable')}, minimum {round(d['temperature_2m_min'][0])} degrés, "
-            f"maximum {round(d['temperature_2m_max'][0])} degrés, risque de pluie maximum {d['precipitation_probability_max'][0]} pour cent, "
-            f"vent jusqu'à {round(d['wind_speed_10m_max'][0])} kilomètres heure. Lever du soleil {d['sunrise'][0][-5:]}, "
-            f"coucher {d['sunset'][0][-5:]}. Détail : {det}.")
+    H = lambda x: 24 * k + x
+    trajet = lambda hs: ", ".join(f"{x}h : {h['precipitation_probability'][H(x)]} pour cent de risque, "
+                                  f"{round(h['precipitation'][H(x)], 1)} mm" for x in hs)
+    return (f"Paris : {WMO.get(d['weather_code'][k], 'temps variable')}. Température à 8h : {round(h['temperature_2m'][H(8)])} degrés. "
+            f"Température à 17h : {round(h['temperature_2m'][H(17)])} degrés. Pluie sur la journée : risque maximum "
+            f"{d['precipitation_probability_max'][k]} pour cent, cumul {round(d['precipitation_sum'][k], 1)} mm. "
+            f"Trajet du matin : {trajet((7, 8, 9))}. Trajet du soir : {trajet((17, 18, 19))}.")
 
 
 def quote(symbol, rng="5d"):
@@ -119,20 +122,30 @@ def quote(symbol, rng="5d"):
 
 
 def pct(x):
-    return "inconnu" if x is None else f"{'+' if x >= 0 else ''}{x:.1f} pour cent"
+    """Variation arrondie à l'unité, sans décimale."""
+    if x is None:
+        return "inconnu"
+    r = round(x)
+    if r == 0:
+        return "stable (moins de 0,5 pour cent)" if abs(x) < 0.5 else "stable"
+    return f"{'+' if r > 0 else 'moins '}{abs(r)} pour cent"
 
 
 def markets():
     lines = []
-    for name, sym in (("CAC 40", "^FCHI"), ("S&P 500", "^GSPC")):
+    indices = (("CAC 40", "^FCHI", True), ("MSCI World (via l'ETF iShares MSCI World)", "URTH", True),
+               ("Euro Stoxx 50", "^STOXX50E", False), ("S&P 500", "^GSPC", False), ("Nasdaq", "^IXIC", False),
+               ("Nikkei", "^N225", False))
+    for name, sym, toujours in indices:
         try:
             q = quote(sym)
-            lines.append(f"{name} : {round(q['last'])} points, {pct(q['day'])} sur la dernière séance, {pct(q['range'])} sur 5 séances.")
+            lines.append(f"{'[À CITER]' if toujours else '[SEULEMENT SI ÇA BOUGE FORT]'} {name} : {round(q['last'])} points, "
+                         f"{pct(q['day'])} sur la dernière séance, {pct(q['range'])} sur 5 séances.")
         except Exception as e:
             log("bourse", name, e)
     try:
-        b = get_json("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=eur,usd&include_24hr_change=true")["bitcoin"]
-        lines.append(f"Bitcoin : {round(b['eur'])} euros ({round(b['usd'])} dollars), {pct(b['eur_24h_change'])} sur 24 heures.")
+        b = get_json("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=eur&include_24hr_change=true")["bitcoin"]
+        lines.append(f"[À CITER] Bitcoin : {round(b['eur'] / 1000)} mille euros, {pct(b['eur_24h_change'])} sur 24 heures.")
     except Exception as e:
         log("btc", e)
     return "\n".join(lines) or "(indisponible)"
@@ -200,8 +213,9 @@ def gemini_call(model, body, timeout=400):
 
 def write_script(prompt):
     schema = {"type": "OBJECT", "properties": {"script": {"type": "STRING"}, "mot": {"type": "STRING"},
-              "definition": {"type": "STRING"}, "sujet_titre": {"type": "STRING"}},
-              "required": ["script", "mot", "definition", "sujet_titre"]}
+              "definition": {"type": "STRING"}, "sujet_titre": {"type": "STRING"},
+              "ia_titre": {"type": "STRING"}},
+              "required": ["script", "mot", "definition", "sujet_titre", "ia_titre"]}
     err, best = None, None
     for model in TEXT_MODELS:
         for attempt in range(2):
@@ -373,13 +387,14 @@ def main():
         return republish()
     if not KEY:
         sys.exit("GEMINI_API_KEY manquante")
-    hist = {"vocab": [], "topics": [], "actions": []}
+    hist = {"vocab": [], "topics": [], "actions": [], "ia": []}
     if os.path.exists(HISTORY):
         with open(HISTORY, encoding="utf-8") as f:
             hist.update(json.load(f))
 
     recent = {a["name"] for a in hist["actions"][-30:]}
-    ticker, action = random.choice([c for c in CAC40 if c[1] not in recent] or CAC40)
+    pool = [c for c in CAC40 if c[1] != "Saint-Gobain"]
+    ticker, action = random.choice([c for c in pool if c[1] not in recent] or pool)
 
     jobs = {
         "meteo": weather, "fi": lambda: rss("https://www.francetvinfo.fr/titres.rss", 18),
@@ -392,6 +407,8 @@ def main():
         "inter": lambda: rss("https://www.lemonde.fr/international/rss_full.xml", 10),
         "action": lambda: quote(ticker, "1y"),
         "action_news": lambda: gnews(f"{action} bourse when:14d", 8),
+        "sgo": lambda: quote("SGO.PA", "1mo"),
+        "sgo_news": lambda: gnews("Saint-Gobain when:3d", 12),
     }
     data = {}
     with ThreadPoolExecutor(8) as ex:
@@ -409,6 +426,10 @@ def main():
     past_words = [v["word"] for v in hist["vocab"]]
     revise = random.sample(past_words, min(3, len(past_words))) if NOW.weekday() in (2, 6) and past_words else []
     past_topics = [t["title"] for t in hist["topics"][-60:]]
+    past_ia = [t["title"] for t in hist.get("ia", [])[-80:]]
+    g = data["sgo"]
+    sgo_data = (f"Cours {round(g['last'])} euros, {pct(g['day'])} sur la dernière séance, {pct(g['range'])} sur un mois."
+                if isinstance(g, dict) else "(cours indisponible)")
 
     revision_txt = (f"\n   Puis une petite RÉVISION : demande à Jean s'il se souvient du sens de ces mots déjà vus : "
                     f"{', '.join(revise)}. Laisse un court suspense, puis redonne la définition de chacun.") if revise else ""
@@ -419,25 +440,28 @@ Nous sommes le {DATE_LONGUE}. Le texte sera LU À VOIX HAUTE par une voix de syn
 RÈGLES D'ÉCRITURE (très important) :
 - Français parlé, chaleureux, vivant, phrases courtes. Tutoie Jean.
 - AUCUN markdown, aucune puce, aucun emoji, aucun astérisque, aucun titre, aucune indication de mise en scène entre crochets. Uniquement du texte à dire, en paragraphes séparés par une ligne vide.
-- Pour la voix : écris "pour cent" au lieu de %, "euros" et "dollars" en toutes lettres, arrondis les chiffres (une décimale maximum), pas d'abréviations obscures, pas d'URL.
+- Pour la voix : écris "pour cent" au lieu de %, "euros" et "dollars" en toutes lettres, pas d'abréviations obscures, pas d'URL.
+- BOURSE : AUCUN chiffre après la virgule, jamais. Arrondis tout à l'unité (cours et variations). Une variation qui s'arrondit à zéro se dit "stable".
 - Transitions naturelles et courtes entre les rubriques.
 - N'invente RIEN de factuel : actus, bourse, saint et anniversaires viennent uniquement des DONNÉES fournies. Pour la culture, n'affirme que ce dont tu es sûr.
-- Longueur totale visée : environ 1650 mots (environ 11 minutes).
+- Longueur totale visée : environ 1750 mots (environ 11 à 12 minutes).
 
 ORDRE ET DURÉE DES RUBRIQUES :
-1. Bonjour rapide + météo du jour à Paris (environ 60 mots), avec un conseil pratique.
+1. Bonjour rapide + météo à Paris (environ 70 mots). Jean va au travail À VÉLO : donne la température à 8h et à 17h, puis dis clairement s'il va pleuvoir sur le trajet du matin (vers 8h) et du soir (vers 17h-18h), avec un conseil vélo (cape de pluie, gants, garde-boue...). Ne parle PAS du vent, ni du lever ou du coucher du soleil.
 2. Les actus de la veille (environ 300 mots) : les 4 à 6 faits les plus importants.
 3. Saint du jour et anniversaires (environ 60 mots, TRÈS rapide) : le saint, puis 2 ou 3 personnalités vraiment connues du grand public nées ce jour.
-4. La bourse (environ 80 mots) : CAC 40, S&P 500, Bitcoin.
-5. L'info rigolote (environ 80 mots) : une ou deux anecdotes vraies, surprenantes et drôles.
-6. L'intelligence artificielle (environ 230 mots) : les trois informations les plus importantes de ces derniers jours, et pourquoi c'est important.
-7. Économie mondiale et macroéconomie (environ 150 mots) : une ou deux informations, avec le mécanisme expliqué.
-8. Politique française et internationale (environ 220 mots).
-9. L'action du jour : {action} (environ 150 mots) : métier, modèle économique, forces et risques, contexte récent, comportement du cours. Pas de conseil d'achat ou de vente.
-10. Le sujet du jour (environ 450 mots, trois minutes), forcément DIFFÉRENT de l'action du jour et sans rapport avec {action} : {sujet_mode()}
+4. La bourse (environ 80 mots) : toujours le CAC 40, le MSCI World (dis simplement "le MSCI World", l'indice des actions mondiales) et le Bitcoin. Les autres indices marqués "SEULEMENT SI ÇA BOUGE FORT" ne sont cités que si leur variation sur la séance atteint 2 pour cent ou plus ; sinon, résume la tendance mondiale en une phrase. Ne cite JAMAIS le S&P 500 par son nom sauf mouvement d'au moins 2 pour cent.
+5. Saint-Gobain (environ 120 mots), CHAQUE JOUR : le cours et sa variation (arrondis à l'unité), puis les actualités récentes de l'entreprise tirées des titres fournis (contrats, résultats, acquisitions, avis d'analystes, marché de la construction). S'il n'y a vraiment rien de neuf, dis-le en une phrase et rappelle un enjeu de fond du groupe.
+6. L'info rigolote (environ 80 mots) : une ou deux anecdotes vraies, surprenantes et drôles.
+7. L'intelligence artificielle, l'actu (environ 200 mots) : les trois informations les plus importantes de ces derniers jours, et pourquoi c'est important.
+8. L'IA expliquée (environ 180 mots), CHAQUE JOUR : explique simplement UNE notion d'IA, en variant chaque jour entre une entreprise (son histoire, son modèle), une théorie ou un concept (réseau de neurones, transformeur, apprentissage par renforcement, hallucination, test de Turing...), une définition de vocabulaire (token, prompt, agent, fine-tuning, RAG...) ou un usage concret au travail. Avec une image ou une analogie du quotidien. Notions déjà expliquées, à NE PAS reprendre : {' | '.join(past_ia) or 'aucune'}.
+9. Économie mondiale et macroéconomie (environ 150 mots) : une ou deux informations, avec le mécanisme expliqué.
+10. Politique française et internationale (environ 200 mots).
+11. L'action du jour : {action} (environ 130 mots) : métier, modèle économique, forces et risques, contexte récent, comportement du cours. Pas de conseil d'achat ou de vente.
+12. Le sujet du jour (environ 400 mots), forcément DIFFÉRENT de l'action du jour, de Saint-Gobain et de la notion d'IA : {sujet_mode()}
    Sujets déjà traités, à NE PAS reprendre : {' | '.join(past_topics) or 'aucun'}.
-11. Le mot du jour (environ 70 mots) : un mot français soutenu, rare ou utile, sa définition et un exemple. Mots déjà vus, à NE PAS reprendre : {', '.join(past_words[-100:]) or 'aucun'}.{revision_txt}
-12. Conclusion d'une phrase, motivante.
+13. Le mot du jour (environ 70 mots) : un mot français soutenu, rare ou utile, sa définition et un exemple. Mots déjà vus, à NE PAS reprendre : {', '.join(past_words[-100:]) or 'aucun'}.{revision_txt}
+14. Conclusion d'une phrase, motivante.
 
 DONNÉES DU JOUR :
 [MÉTÉO]
@@ -478,7 +502,12 @@ DONNÉES DU JOUR :
 Titres récents :
 {data['action_news']}
 
-Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jour), "definition" (sa définition courte), "sujet_titre" (titre court du sujet du jour)."""
+[SAINT-GOBAIN]
+{sgo_data}
+Titres récents :
+{data['sgo_news']}
+
+Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jour), "definition" (sa définition courte), "sujet_titre" (titre court du sujet du jour), "ia_titre" (titre court de la notion d'IA expliquée)."""
 
     out, model = write_script(prompt)
     script = re.sub(r"[*#_`]|\[[^\]]{0,40}\]", "", str(out["script"]))
@@ -487,6 +516,11 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
     with open(os.path.join(OUT, "briefing.txt"), "w", encoding="utf-8") as f:
         f.write(script)
     log(f"script : {len(script.split())} mots")
+    if os.environ.get("PREVIEW") == "1":
+        with open(os.path.join(ROOT, "preview.txt"), "w", encoding="utf-8") as f:
+            f.write(f"Aperçu généré le {dt.datetime.now(PARIS).strftime('%d/%m %H:%M')} par {model}, {len(script.split())} mots\n\n{script}")
+        log("aperçu écrit")
+        return
 
     secs = to_audio(script)
     log(f"audio : {secs / 60:.1f} minutes")
@@ -494,8 +528,9 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
     hist["vocab"].append({"date": TODAY, "word": out["mot"], "definition": out["definition"]})
     hist["topics"].append({"date": TODAY, "title": out["sujet_titre"]})
     hist["actions"].append({"date": TODAY, "name": action})
+    hist.setdefault("ia", []).append({"date": TODAY, "title": out.get("ia_titre", "")})
     hist["last"] = TODAY
-    for k in ("vocab", "topics", "actions"):
+    for k in ("vocab", "topics", "actions", "ia"):
         hist[k] = hist[k][-400:]
     with open(HISTORY, "w", encoding="utf-8") as f:
         json.dump(hist, f, ensure_ascii=False, indent=1)
