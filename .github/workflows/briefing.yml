@@ -68,6 +68,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           VOICE: ${{ vars.VOICE }}
+          GITHUB_TOKEN: ${{ github.token }}
           REPUBLISH: ${{ github.event.inputs.republish }}
           PREVIEW: ${{ github.event.inputs.preview }}
         run: python3 generate.py

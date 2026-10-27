@@ -180,19 +180,41 @@ CAC40 = [("AI.PA", "Air Liquide"), ("AIR.PA", "Airbus"), ("MT.AS", "ArcelorMitta
 
 def sujet_mode():
     r = random.random()
-    if r < 0.6:
+    if r < 0.45:
         return ("SUJET LIBRE : choisis toi-même un sujet passionnant adapté au profil de Jean (une entreprise, un entrepreneur "
                 "et comment il a fait fortune, un mécanisme économique ou financier, une crypto ou une technologie, une success "
-                "story française, une notion d'investissement, une innovation dans le bâtiment ou la domotique...). Exemples du "
-                "style attendu : « comment Bernard Arnault a bâti sa fortune », « masterclass sur Ledger et Éric Larchevêque ».")
-    if r < 0.8:
+                "story française, une notion d'investissement, une innovation dans le bâtiment ou la domotique, un grand "
+                "chantier, une découverte scientifique, un fait historique méconnu...). Exemples du style attendu : « comment "
+                "Bernard Arnault a bâti sa fortune », « masterclass sur Ledger et Éric Larchevêque ».")
+    if r < 0.6:
+        return ("INNOVATION : raconte une innovation récente ou à venir, dans la tech et l'IA ou dans le bâtiment et les "
+                "matériaux (béton bas carbone, impression 3D de maisons, robots de chantier, BIM, jumeau numérique...) : "
+                "le principe, qui est derrière, où on en est, ce que ça change concrètement.")
+    if r < 0.78:
         return ("LIVRE OU THÉORIE : explique un livre célèbre (essai, économie, business, classique) ou une théorie connue "
                 "(économie, psychologie, sciences, stratégie) : idée centrale, origine, ce qu'il faut en retenir concrètement.")
-    if r < 0.92:
+    if r < 0.9:
         return ("POÉSIE : présente un poème célèbre du domaine public (auteur mort avant 1950 : Hugo, Baudelaire, Verlaine, "
                 "Rimbaud, Apollinaire, La Fontaine...), récite-le ou ses strophes les plus connues s'il est long, puis explique-le simplement.")
     return ("ARCHITECTURE : raconte un bâtiment, un architecte ou un courant architectural marquant, avec des détails concrets "
             "de construction (Jean est conducteur de travaux, il apprécie les détails techniques).")
+
+
+def github_week():
+    since = (NOW - dt.timedelta(days=7)).strftime("%Y-%m-%d")
+    hdr = {"User-Agent": UA, "Accept": "application/vnd.github+json"}
+    if os.environ.get("GITHUB_TOKEN"):
+        hdr["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+    out = []
+    for label, q in (("Connecteurs MCP (pour brancher une IA sur des outils)", f"topic:mcp created:>{since}"),
+                     ("Projets IA", f"topic:ai created:>{since}"),
+                     ("Projets IA les plus suivis cette semaine (toutes dates)", f"topic:llm pushed:>{since} stars:>5000")):
+        req = urllib.request.Request("https://api.github.com/search/repositories?" +
+                                     urllib.parse.urlencode({"q": q, "sort": "stars", "order": "desc", "per_page": 5}), headers=hdr)
+        with urllib.request.urlopen(req, timeout=20) as r:
+            items = json.loads(r.read()).get("items", [])
+        out.append(f"{label} :\n" + "\n".join(f"- {i['full_name']} ({i['stargazers_count']} étoiles) : {(i.get('description') or '')[:160]}" for i in items))
+    return "\n".join(out)
 
 
 # ---------------------------------------------------------------- Gemini
@@ -331,15 +353,15 @@ def to_audio(script):
     dest = os.path.join(OUT, "briefing.m4a")
     music_dir = os.path.join(ROOT, "music")
     # Musique d'intro désactivée pour l'instant (mettre MUSIC=1 pour la réactiver)
-    tracks = sorted(f for f in os.listdir(music_dir) if f.endswith(".mp3")) if os.path.isdir(music_dir) and os.environ.get("MUSIC") == "1" else []
+    tracks = sorted(f for f in os.listdir(music_dir) if f.endswith(".mp3")) if os.path.isdir(music_dir) and os.environ.get("MUSIC", "1") == "1" else []
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", "loudnorm=I=-16:TP=-1.5",
                     "-ar", "44100", "-ac", "1", "-c:a", "aac", "-b:a", "64k", "-movflags", "+faststart", os.path.join(OUT, "briefing-voix.m4a")], check=True)
     if tracks:
         track = random.choice(tracks)
         STATS["musique"] = track
         log("musique d'intro :", track)
-        # 2 minutes de musique : fondu d'entrée de 30 s (part de presque rien), fondu de sortie de 8 s, puis la voix
-        flt = ("[0:a]atrim=0:120,asetpts=N/SR/TB,aformat=sample_rates=44100:channel_layouts=mono,"
+        # 1 minute de musique : fondu d'entrée de 30 s (part de presque rien), fondu de sortie de 8 s, puis la voix
+        flt = ("[0:a]atrim=0:60,asetpts=N/SR/TB,aformat=sample_rates=44100:channel_layouts=mono,"
                "loudnorm=I=-16:TP=-1.5,afade=t=in:st=0:d=30:curve=qua,areverse,afade=t=in:st=0:d=8,areverse,"
                "apad=pad_dur=1[m];"
                "[1:a]aformat=sample_rates=44100:channel_layouts=mono,loudnorm=I=-16:TP=-1.5[v];"
@@ -409,7 +431,11 @@ def main():
         "action_news": lambda: gnews(f"{action} bourse when:14d", 8),
         "sgo": lambda: quote("SGO.PA", "1mo"),
         "sgo_news": lambda: gnews("Saint-Gobain when:3d", 12),
+        "ia_innov": lambda: gnews("nouveau modèle IA lancement innovation when:3d", 12),
+        "batiment": lambda: gnews("innovation bâtiment construction BTP when:7d", 12),
     }
+    if NOW.weekday() == 0 or os.environ.get("PREVIEW") == "1":
+        jobs["github"] = github_week
     data = {}
     with ThreadPoolExecutor(8) as ex:
         futs = {k: ex.submit(f) for k, f in jobs.items()}
@@ -427,6 +453,16 @@ def main():
     revise = random.sample(past_words, min(3, len(past_words))) if NOW.weekday() in (2, 6) and past_words else []
     past_topics = [t["title"] for t in hist["topics"][-60:]]
     past_ia = [t["title"] for t in hist.get("ia", [])[-80:]]
+    extra = ""
+    if NOW.weekday() in (1, 4):  # mardi et vendredi
+        extra += ("8 bis. Innovation bâtiment (environ 120 mots) : une innovation récente du bâtiment ou de la construction tirée "
+                  "des titres [BÂTIMENT], expliquée concrètement pour un conducteur de travaux.\n")
+    if (NOW.weekday() == 0 or os.environ.get("PREVIEW") == "1") and isinstance(data.get("github"), str) and data["github"] != "(indisponible)":
+        extra += ("8 ter. Le GitHub de la semaine (environ 150 mots) : présente les 3 meilleurs connecteurs ou projets IA de la "
+                  "semaine tirés de [GITHUB], à quoi ils servent concrètement et pour qui. Dis les noms simplement, sans le "
+                  "nom du compte s'il est imprononçable.\n")
+    EXTRA = extra
+    GITHUB_DATA = f"[GITHUB - nouveautés de la semaine]\n{data['github']}\n\n" if "github" in data else ""
     g = data["sgo"]
     sgo_data = (f"Cours {round(g['last'])} euros, {pct(g['day'])} sur la dernière séance, {pct(g['range'])} sur un mois."
                 if isinstance(g, dict) else "(cours indisponible)")
@@ -447,15 +483,15 @@ RÈGLES D'ÉCRITURE (très important) :
 - Longueur totale visée : environ 1750 mots (environ 11 à 12 minutes).
 
 ORDRE ET DURÉE DES RUBRIQUES :
-1. Bonjour rapide + météo à Paris (environ 70 mots). Jean va au travail À VÉLO : donne la température à 8h et à 17h, puis dis clairement s'il va pleuvoir sur le trajet du matin (vers 8h) et du soir (vers 17h-18h), avec un conseil vélo (cape de pluie, gants, garde-boue...). Ne parle PAS du vent, ni du lever ou du coucher du soleil.
+1. Bonjour rapide + météo à Paris (environ 70 mots). Jean va au travail À VÉLO : donne la température à 8h et à 17h, puis dis clairement s'il va pleuvoir ou non sur le trajet du matin (vers 8h) et du soir (vers 17h-18h). Uniquement ces faits : AUCUN conseil vestimentaire ou d'équipement (pas de gants, veste, cape, etc.). Ne parle PAS du vent, ni du lever ou du coucher du soleil.
 2. Les actus de la veille (environ 300 mots) : les 4 à 6 faits les plus importants.
 3. Saint du jour et anniversaires (environ 60 mots, TRÈS rapide) : le saint, puis 2 ou 3 personnalités vraiment connues du grand public nées ce jour.
-4. La bourse (environ 80 mots) : toujours le CAC 40, le MSCI World (dis simplement "le MSCI World", l'indice des actions mondiales) et le Bitcoin. Les autres indices marqués "SEULEMENT SI ÇA BOUGE FORT" ne sont cités que si leur variation sur la séance atteint 2 pour cent ou plus ; sinon, résume la tendance mondiale en une phrase. Ne cite JAMAIS le S&P 500 par son nom sauf mouvement d'au moins 2 pour cent.
+4. La bourse (environ 45 mots, COURT et factuel) : toujours le CAC 40, le MSCI World (dis simplement "le MSCI World", l'indice des actions mondiales) et le Bitcoin. Les autres indices marqués "SEULEMENT SI ÇA BOUGE FORT" ne sont cités que si leur variation sur la séance atteint 2 pour cent ou plus ; sinon, résume la tendance mondiale en quelques mots. Ne cite JAMAIS le S&P 500 par son nom sauf mouvement d'au moins 2 pour cent.
 5. Saint-Gobain (environ 120 mots), CHAQUE JOUR : le cours et sa variation (arrondis à l'unité), puis les actualités récentes de l'entreprise tirées des titres fournis (contrats, résultats, acquisitions, avis d'analystes, marché de la construction). S'il n'y a vraiment rien de neuf, dis-le en une phrase et rappelle un enjeu de fond du groupe.
 6. L'info rigolote (environ 80 mots) : une ou deux anecdotes vraies, surprenantes et drôles.
-7. L'intelligence artificielle, l'actu (environ 200 mots) : les trois informations les plus importantes de ces derniers jours, et pourquoi c'est important.
+7. L'intelligence artificielle, l'actu (environ 220 mots) : les trois informations les plus importantes de ces derniers jours, avec TOUJOURS au moins une toute dernière innovation (nouveau modèle, nouvel outil, nouvelle fonctionnalité) expliquée concrètement, et pourquoi c'est important.
 8. L'IA expliquée (environ 180 mots), CHAQUE JOUR : explique simplement UNE notion d'IA, en variant chaque jour entre une entreprise (son histoire, son modèle), une théorie ou un concept (réseau de neurones, transformeur, apprentissage par renforcement, hallucination, test de Turing...), une définition de vocabulaire (token, prompt, agent, fine-tuning, RAG...) ou un usage concret au travail. Avec une image ou une analogie du quotidien. Notions déjà expliquées, à NE PAS reprendre : {' | '.join(past_ia) or 'aucune'}.
-9. Économie mondiale et macroéconomie (environ 150 mots) : une ou deux informations, avec le mécanisme expliqué.
+{EXTRA}9. Économie mondiale et macroéconomie (environ 150 mots) : une ou deux informations, avec le mécanisme expliqué.
 10. Politique française et internationale (environ 200 mots).
 11. L'action du jour : {action} (environ 130 mots) : métier, modèle économique, forces et risques, contexte récent, comportement du cours. Pas de conseil d'achat ou de vente.
 12. Le sujet du jour (environ 400 mots), forcément DIFFÉRENT de l'action du jour, de Saint-Gobain et de la notion d'IA : {sujet_mode()}
@@ -502,7 +538,13 @@ DONNÉES DU JOUR :
 Titres récents :
 {data['action_news']}
 
-[SAINT-GOBAIN]
+[IA - innovations récentes]
+{data['ia_innov']}
+
+[BÂTIMENT - innovations]
+{data['batiment']}
+
+{GITHUB_DATA}[SAINT-GOBAIN]
 {sgo_data}
 Titres récents :
 {data['sgo_news']}
@@ -557,7 +599,7 @@ BASE_URL = "https://janoleplubo.github.io/briefing-matin/"
 
 
 def write_feed(secs, out):
-    _feed(secs, out, "briefing.m4a", "feed.xml", "Le Réveil de Jean", 2 if STATS.get("musique") else 0)
+    _feed(secs, out, "briefing.m4a", "feed.xml", "Le Réveil de Jean", 1 if STATS.get("musique") else 0)
     _feed(secs, out, "briefing-voix.m4a", "feed-voix.xml", "Le Réveil de Jean (voix seule)", 0)
 
 
