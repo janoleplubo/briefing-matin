@@ -340,7 +340,30 @@ def to_audio(script):
 
 
 # ---------------------------------------------------------------- principal
+def republish():
+    """Republie le site (flux podcast compris) à partir de l'audio déjà en ligne, sans regénérer."""
+    os.makedirs(OUT, exist_ok=True)
+    for f in ("briefing.m4a", "briefing-voix.m4a", "briefing.txt", "index.html"):
+        try:
+            req = urllib.request.Request(BASE_URL + f, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=60) as r, open(os.path.join(OUT, f), "wb") as o:
+                o.write(r.read())
+        except Exception as e:
+            log("republication : fichier absent", f, e)
+    if not os.path.exists(os.path.join(OUT, "briefing-voix.m4a")):
+        shutil.copy(os.path.join(OUT, "briefing.m4a"), os.path.join(OUT, "briefing-voix.m4a"))
+    secs = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                                 os.path.join(OUT, "briefing.m4a")], capture_output=True, text=True).stdout.strip() or 0)
+    with open(HISTORY, encoding="utf-8") as f:
+        h = json.load(f)
+    out = {"mot": h["vocab"][-1]["word"], "sujet_titre": h["topics"][-1]["title"]}
+    write_feed(secs, out)
+    log("republication faite", round(secs / 60, 1), "minutes")
+
+
 def main():
+    if os.environ.get("REPUBLISH") == "1":
+        return republish()
     if not KEY:
         sys.exit("GEMINI_API_KEY manquante")
     hist = {"vocab": [], "topics": [], "actions": []}
@@ -492,7 +515,7 @@ BASE_URL = "https://janoleplubo.github.io/briefing-matin/"
 
 
 def write_feed(secs, out):
-    _feed(secs, out, "briefing.m4a", "feed.xml", "Le Réveil de Jean", 2)
+    _feed(secs, out, "briefing.m4a", "feed.xml", "Le Réveil de Jean", 2 if STATS.get("musique") else 0)
     _feed(secs, out, "briefing-voix.m4a", "feed-voix.xml", "Le Réveil de Jean (voix seule)", 0)
 
 
@@ -507,16 +530,19 @@ def _feed(secs, out, src, feed_name, show, extra_min):
     titre = f"Briefing du {DATE_LONGUE}"
     desc = f"Mot du jour : {out['mot']}. Sujet : {out['sujet_titre']}. Musique d'intro : Kevin MacLeod (incompetech.com), CC BY 4.0."
     rss_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
+<atom:link href="{BASE_URL}{feed_name}" rel="self" type="application/rss+xml"/>
 <title>{show}</title>
 <link>{BASE_URL}</link>
 <language>fr-fr</language>
 <description>Briefing audio quotidien personnel.</description>
 <itunes:author>Briefing du matin</itunes:author>
+<image><url>{BASE_URL}cover.png</url><title>{show}</title><link>{BASE_URL}</link></image>
 <itunes:image href="{BASE_URL}cover.png"/>
 <itunes:explicit>false</itunes:explicit>
-<itunes:block>Yes</itunes:block>
+<itunes:category text="News"/>
+<itunes:owner><itunes:name>Jean</itunes:name><itunes:email>briefing-bot@users.noreply.github.com</itunes:email></itunes:owner>
 <itunes:type>episodic</itunes:type>
 <item>
 <title>{html.escape(titre)}</title>
