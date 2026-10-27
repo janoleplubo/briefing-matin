@@ -316,7 +316,8 @@ def to_audio(script):
         w.writeframes(pcm)
     dest = os.path.join(OUT, "briefing.m4a")
     music_dir = os.path.join(ROOT, "music")
-    tracks = sorted(f for f in os.listdir(music_dir) if f.endswith(".mp3")) if os.path.isdir(music_dir) else []
+    # Musique d'intro désactivée pour l'instant (mettre MUSIC=1 pour la réactiver)
+    tracks = sorted(f for f in os.listdir(music_dir) if f.endswith(".mp3")) if os.path.isdir(music_dir) and os.environ.get("MUSIC") == "1" else []
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", wav, "-af", "loudnorm=I=-16:TP=-1.5",
                     "-c:a", "aac", "-b:a", "64k", os.path.join(OUT, "briefing-voix.m4a")], check=True)
     if tracks:
@@ -480,7 +481,7 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
 <title>Briefing du matin</title><style>body{{font-family:system-ui,sans-serif;max-width:720px;margin:24px auto;padding:0 16px;line-height:1.6;background:#fbfaf7;color:#1d1d1b}}
 audio{{width:100%}}@media(prefers-color-scheme:dark){{body{{background:#161615;color:#ecebe6}}}}</style></head><body>
 <h1>Briefing du {html.escape(DATE_LONGUE)}</h1><audio controls src="briefing.m4a"></audio>
-<p><small>Musique d'intro : « {html.escape(str(STATS.get('musique', '')).replace('_', ' ').replace('.mp3', ''))} », Kevin MacLeod (incompetech.com), licence CC BY 4.0.</small></p>
+{'' if not STATS.get('musique') else ''}<p><small>Musique d'intro : « {html.escape(str(STATS.get('musique', '')).replace('_', ' ').replace('.mp3', ''))} », Kevin MacLeod (incompetech.com), licence CC BY 4.0.</small></p>
 <p>Mot du jour : <b>{html.escape(out['mot'])}</b> — {html.escape(out['definition'])}</p>
 {''.join(f'<p>{html.escape(p)}</p>' for p in script.split(chr(10) + chr(10)))}</body></html>""")
     write_feed(secs, out)
@@ -519,7 +520,7 @@ def _feed(secs, out, src, feed_name, show, extra_min):
 <itunes:type>episodic</itunes:type>
 <item>
 <title>{html.escape(titre)}</title>
-<description>{html.escape(desc)}</description>
+<description>{html.escape(desc if STATS.get('musique') else desc.split(" Musique")[0])}</description>
 <enclosure url="{BASE_URL}{ep}" length="{size}" type="audio/x-m4a"/>
 <guid isPermaLink="false">{feed_name}-{TODAY}-{int(time.time())}</guid>
 <pubDate>{pub}</pubDate>
