@@ -493,7 +493,7 @@ RÈGLES D'ÉCRITURE (très important) :
 - BOURSE : AUCUN chiffre après la virgule, jamais. Arrondis tout à l'unité (cours et variations). Une variation qui s'arrondit à zéro se dit "stable".
 - Transitions naturelles et courtes entre les rubriques.
 - N'invente RIEN de factuel : actus, bourse, saint et anniversaires viennent uniquement des DONNÉES fournies. Pour la culture, n'affirme que ce dont tu es sûr.
-- Longueur totale visée : environ 1900 mots (environ 13 minutes). Ne fais pas plus court.
+- Longueur totale visée : entre 1800 et 2000 mots (environ 13 minutes), pas plus de 2000.
 
 ORDRE ET DURÉE DES RUBRIQUES :
 1. Bonjour rapide + météo à Paris (environ 70 mots). Jean va au travail À VÉLO : donne la température à 8h et à 17h, puis dis clairement s'il va pleuvoir ou non sur le trajet du matin (vers 8h) et du soir (vers 17h-18h). Uniquement ces faits : AUCUN conseil vestimentaire ou d'équipement (pas de gants, veste, cape, etc.). Ne parle PAS du vent, ni du lever ou du coucher du soleil.
