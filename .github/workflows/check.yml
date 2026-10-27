@@ -1,0 +1,15 @@
+name: Vérification du flux
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          B=https://janoleplubo.github.io/briefing-matin
+          { curl -sI "$B/feed.xml" | grep -iE "^HTTP|content-type"; curl -s "$B/feed.xml" | head -c 2500;
+            echo; for u in $(curl -s "$B/feed.xml" | grep -o 'url="[^"]*"' | cut -d'"' -f2) $B/cover.png; do curl -sI "$u" | grep -iE "^HTTP|content-type|content-length" | tr '\n' ' '; echo " $u"; done; } > check.txt
+          git config user.name "briefing-bot"; git config user.email "briefing-bot@users.noreply.github.com"
+          git add check.txt; git commit -m "Vérification du flux" || exit 0; git pull --rebase -q; git push
