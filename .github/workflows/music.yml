@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           mkdir -p music
-          for t in "Smooth Lovin" "Dirt Rhodes" "Funkorama" "Groove Grove" "Local Forecast" "Backbay Lounge" "Hard Boiled" "Lobby Time" "Cool Vibes" "Funk Game Loop" "Hustle" "Laid Back Guitars" "Hep Cats" "Bass Walker" "Easy Lemon"; do
+          for t in "Disco Medusae" "Funky Chunk" "Disco con Tutti" "Electro Cabello" "Hyperfun" "Daily Beetle" "Funkeriffic" "Get Down" "Shades of Spring" "Bass Vibes" "Dance Zone" "Pamgaea" "Ouroboros" "Life of Riley" "Inspired"; do
             f="music/$(echo "$t" | tr ' ' '_').mp3"
             u="https://incompetech.com/music/royalty-free/mp3-royaltyfree/$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$t").mp3"
             code=$(curl -sL -A "Mozilla/5.0" -o "$f" -w "%{http_code}" "$u")
