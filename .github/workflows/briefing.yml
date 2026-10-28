@@ -84,6 +84,7 @@ jobs:
           git config user.email "briefing-bot@users.noreply.github.com"
           for f in history.json status.json preview.txt; do [ -f "$f" ] && git add "$f"; done; true
           git commit -m "Historique du $(TZ=Europe/Paris date +%F)" || exit 0
+          git pull --rebase -q || true
           git push
 
       - uses: actions/upload-pages-artifact@v3
