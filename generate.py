@@ -373,12 +373,15 @@ def to_audio(script):
         track = random.choice(tracks)
         STATS["musique"] = track
         log("musique d'intro :", track)
-        # 1 minute de musique : fondu d'entrée de 30 s (part de presque rien), fondu de sortie de 8 s, puis la voix
-        flt = ("[0:a]atrim=0:60,asetpts=N/SR/TB,aformat=sample_rates=44100:channel_layouts=mono,"
-               "loudnorm=I=-16:TP=-1.5,afade=t=in:st=0:d=30:curve=qua,areverse,afade=t=in:st=0:d=8,areverse,"
-               "apad=pad_dur=1[m];"
-               "[1:a]aformat=sample_rates=44100:channel_layouts=mono,loudnorm=I=-16:TP=-1.5[v];"
-               "[m][v]concat=n=2:v=0:a=1[out]")
+        # Façon radio : la musique monte très doucement (45 s), la voix entre par-dessus,
+        # la musique passe en fond puis s'efface progressivement sous la voix (jusqu'à 75 s).
+        env = "if(lt(t,45),1,if(lt(t,51),1-(t-45)/6*0.85,0.15*max(0,(75-t)/24)))"
+        flt = ("[0:a]atrim=0:75,asetpts=N/SR/TB,aformat=sample_rates=44100:channel_layouts=mono,"
+               "loudnorm=I=-18:TP=-2,aresample=44100,afade=t=in:st=0:d=45:curve=qua,"
+               f"volume='{env}':eval=frame[m];"
+               "[1:a]aformat=sample_rates=44100:channel_layouts=mono,loudnorm=I=-16:TP=-1.5,aresample=44100,"
+               "adelay=45000:all=1[v];"
+               "[m][v]amix=inputs=2:duration=longest:normalize=0[out]")
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", os.path.join(music_dir, track), "-i", wav,
                         "-filter_complex", flt, "-map", "[out]", "-ar", "44100", "-ac", "1", "-c:a", "aac", "-b:a", "80k", "-movflags", "+faststart", dest], check=True)
     else:
