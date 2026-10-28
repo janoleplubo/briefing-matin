@@ -20,6 +20,10 @@ on:
         description: "Aperçu texte seulement, sans audio ni publication (1 = oui)"
         required: false
         default: "0"
+      auto:
+        description: "Déclenchement automatique quotidien : ne fait rien si le briefing du jour existe déjà (1 = oui)"
+        required: false
+        default: "0"
 
 permissions:
   contents: write
@@ -44,7 +48,7 @@ jobs:
         run: |
           today=$(TZ=Europe/Paris date +%F)
           last=$(python3 -c "import json;print(json.load(open('history.json')).get('last',''))" 2>/dev/null || true)
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$last" = "$today" ]; then
+          if { [ "${{ github.event_name }}" = "schedule" ] || [ "${{ github.event.inputs.auto }}" = "1" ]; } && [ "$last" = "$today" ]; then
             echo "done=true" >> "$GITHUB_OUTPUT"
           else
             echo "done=false" >> "$GITHUB_OUTPUT"
