@@ -618,7 +618,16 @@ audio{{width:100%}}@media(prefers-color-scheme:dark){{body{{background:#161615;c
 BASE_URL = "https://janoleplubo.github.io/briefing-matin/"
 
 
+def copy_cours():
+    """Ajoute au site les épisodes du podcast « Les cours de Jean » (cours/site)."""
+    src = os.path.join(ROOT, "cours", "site")
+    if os.path.isdir(src):
+        for f in os.listdir(src):
+            shutil.copy(os.path.join(src, f), os.path.join(OUT, f))
+
+
 def write_feed(secs, out):
+    copy_cours()
     _feed(secs, out, "briefing.m4a", "feed.xml", "Le Réveil de Jean", 1 if STATS.get("musique") else 0)
     _feed(secs, out, "briefing-voix.m4a", "feed-voix.xml", "Le Réveil de Jean (voix seule)", 0)
 

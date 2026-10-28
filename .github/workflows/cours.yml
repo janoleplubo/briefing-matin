@@ -1,0 +1,40 @@
+name: Podcast Les cours de Jean
+on:
+  push:
+    branches: [main]
+    paths: ["cours/textes/**"]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: briefing
+  cancel-in-progress: false
+jobs:
+  cours:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Outils audio
+        timeout-minutes: 8
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo rm -f /var/lib/man-db/auto-update
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Épisodes audio
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VOICE: ${{ vars.VOICE }}
+        run: python3 tools/cours.py
+      - name: Sauvegarde et republication du site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "briefing-bot"; git config user.email "briefing-bot@users.noreply.github.com"
+          git add cours/site cours/episodes.json
+          git commit -m "Cours : nouvel épisode" || true
+          git pull --rebase -q || true
+          git push
+          gh api -X POST repos/${{ github.repository }}/actions/workflows/briefing.yml/dispatches -f ref=main -f 'inputs[republish]=1'
