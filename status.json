@@ -1,19 +1,18 @@
 {
- "date": "2026-10-27",
- "heure": "09:16",
- "modele_texte": "gemini-3.6-flash",
- "mots": 1614,
- "minutes": 9.0,
+ "date": "2026-10-28",
+ "heure": "07:30",
+ "modele_texte": "gemini-3.8-flash",
+ "mots": 2529,
+ "minutes": 13.2,
  "voix": [
+  "gemini-3.8-flash-tts",
+  "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts"
  ],
- "erreurs": [
-  "gemini-3.8-flash: [Errno 104] Connection reset by peer",
-  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are"
- ],
+ "erreurs": [],
  "donnees_manquantes": [],
- "musique": null
+ "musique": "Bass_Walker.mp3"
 }
