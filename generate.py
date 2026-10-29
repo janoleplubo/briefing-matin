@@ -230,6 +230,49 @@ def github_week():
     return "\n".join(out)
 
 
+def atom(url, n):
+    """Flux Atom (ou RSS) : titres + résumé court."""
+    xml = get(url)
+    items = re.findall(r"<entry[\s>].*?</entry>", xml, flags=re.S) or re.findall(r"<item[\s>].*?</item>", xml, flags=re.S)
+    out = []
+    for it in items[:n]:
+        t = clean((re.search(r"<title[^>]*>(.*?)</title>", it, re.S) or [None, ""])[1])
+        d = clean((re.search(r"<(?:summary|content|description)[^>]*>(.*?)</(?:summary|content|description)>", it, re.S) or [None, ""])[1])
+        out.append(f"- {t} — {d[:220]}" if d and d != t else f"- {t}")
+    return "\n".join(out)
+
+
+def hn_ai():
+    """Hacker News : histoires IA les plus votées des dernières 36 h (le radar des développeurs)."""
+    since = int(time.time()) - 36 * 3600
+    seen, out = set(), []
+    for q in ("LLM", "AI model", "OpenAI", "Anthropic Claude", "Gemini", "DeepSeek", "Qwen", "agent"):
+        j = get_json("https://hn.algolia.com/api/v1/search?" + urllib.parse.urlencode(
+            {"tags": "story", "query": q, "numericFilters": f"created_at_i>{since},points>60", "hitsPerPage": 8}))
+        for h in j.get("hits", []):
+            if h["objectID"] not in seen:
+                seen.add(h["objectID"])
+                out.append((h.get("points", 0), f"- {h['title']} ({h.get('points', 0)} points)"))
+    return "\n".join(x for _, x in sorted(out, reverse=True)[:15]) or "(rien de marquant)"
+
+
+def hf_trending():
+    """Hugging Face : modèles ouverts en tendance (on y voit arriver les modèles chinois et open source)."""
+    j = get_json("https://huggingface.co/api/models?sort=trendingScore&direction=-1&limit=20")
+    out = []
+    for m in j:
+        created = (m.get("createdAt") or "")[:10]
+        out.append(f"- {m['id']} (tâche : {m.get('pipeline_tag') or '?'}, créé le {created}, {m.get('likes', 0)} likes)")
+    return "\n".join(out)
+
+
+def hf_papers():
+    """Hugging Face Daily Papers : les publications de recherche du jour les plus votées."""
+    j = get_json("https://huggingface.co/api/daily_papers?limit=30")
+    j = sorted(j, key=lambda x: x.get("paper", {}).get("upvotes", 0), reverse=True)[:6]
+    return "\n".join(f"- {x['paper']['title']} — {clean(x['paper'].get('summary', ''))[:200]}" for x in j)
+
+
 # ---------------------------------------------------------------- Gemini
 STATS = {"voix": [], "erreurs": []}
 
@@ -249,8 +292,9 @@ def gemini_call(model, body, timeout=400):
 def write_script(prompt):
     schema = {"type": "OBJECT", "properties": {"script": {"type": "STRING"}, "mot": {"type": "STRING"},
               "definition": {"type": "STRING"}, "sujet_titre": {"type": "STRING"},
-              "ia_titre": {"type": "STRING"}},
-              "required": ["script", "mot", "definition", "sujet_titre", "ia_titre"]}
+              "ia_titre": {"type": "STRING"},
+              "ia_actus": {"type": "ARRAY", "items": {"type": "STRING"}}},
+              "required": ["script", "mot", "definition", "sujet_titre", "ia_titre", "ia_actus"]}
     err, best = None, None
     for model in TEXT_MODELS:
         for attempt in range(2):
@@ -425,7 +469,7 @@ def main():
         return republish()
     if not KEY:
         sys.exit("GEMINI_API_KEY manquante")
-    hist = {"vocab": [], "topics": [], "actions": [], "ia": []}
+    hist = {"vocab": [], "topics": [], "actions": [], "ia": [], "ia_news": []}
     if os.path.exists(HISTORY):
         with open(HISTORY, encoding="utf-8") as f:
             hist.update(json.load(f))
@@ -448,12 +492,21 @@ def main():
         "sgo": lambda: quote("SGO.PA", "1mo"),
         "sgo_news": lambda: gnews("Saint-Gobain when:3d", 12),
         "ia_innov": lambda: gnews("nouveau modèle IA lancement innovation when:3d", 12),
+        "ia_labos": lambda: gnews("(OpenAI OR Anthropic OR \"Google DeepMind\" OR Gemini OR Meta OR xAI OR Mistral) "
+                                  "(launches OR releases OR unveils OR announces) model when:2d", 15, "en"),
+        "ia_chine": lambda: gnews("(DeepSeek OR Qwen OR Alibaba OR Kimi OR Moonshot OR Zhipu OR GLM OR MiniMax OR "
+                                  "ByteDance Doubao OR Tencent Hunyuan OR Baidu Ernie) AI model when:4d", 12, "en"),
+        "ia_outils": lambda: gnews("(new feature OR now lets OR now can OR rolls out) (ChatGPT OR Claude OR Gemini OR "
+                                   "Copilot OR Perplexity OR Cursor OR agent) when:3d", 12, "en"),
+        "ia_hn": hn_ai, "ia_hf": hf_trending, "ia_papers": hf_papers,
+        "ia_decoder": lambda: atom("https://the-decoder.com/feed/", 12),
+        "ia_simon": lambda: atom("https://simonwillison.net/atom/everything/", 10),
         "batiment": lambda: gnews("innovation bâtiment construction BTP when:7d", 12),
     }
     if NOW.weekday() == 0 or os.environ.get("PREVIEW") == "1":
         jobs["github"] = github_week
     data = {}
-    with ThreadPoolExecutor(8) as ex:
+    with ThreadPoolExecutor(12) as ex:
         futs = {k: ex.submit(f) for k, f in jobs.items()}
         for k, fu in futs.items():
             try:
@@ -469,6 +522,7 @@ def main():
     revise = random.sample(past_words, min(3, len(past_words))) if NOW.weekday() in (2, 6) and past_words else []
     past_topics = [t["title"] for t in hist["topics"][-60:]]
     past_ia = [t["title"] for t in hist.get("ia", [])[-80:]]
+    past_ia_news = [t["title"] for t in hist.get("ia_news", [])[-60:]]
     extra = ""
     if NOW.weekday() in (1, 4):  # mardi et vendredi
         extra += ("8 bis. Innovation bâtiment (environ 120 mots) : une innovation récente du bâtiment ou de la construction tirée "
@@ -497,17 +551,22 @@ RÈGLES D'ÉCRITURE (très important) :
 - BOURSE : AUCUN chiffre après la virgule, jamais. Arrondis tout à l'unité (cours et variations). Une variation qui s'arrondit à zéro se dit "stable".
 - Transitions naturelles et courtes entre les rubriques.
 - N'invente RIEN de factuel : actus, bourse, saint et anniversaires viennent uniquement des DONNÉES fournies. Pour la culture, n'affirme que ce dont tu es sûr.
-- Longueur totale visée : entre 1800 et 2000 mots (environ 13 minutes), pas plus de 2000.
+- Longueur totale visée : entre 1900 et 2150 mots (environ 14 minutes), pas plus de 2150.
 
 ORDRE ET DURÉE DES RUBRIQUES :
 1. Bonjour rapide + météo à Paris (environ 70 mots). Jean va au travail À VÉLO : donne la température à 8h et à 17h, puis dis clairement s'il va pleuvoir ou non sur le trajet du matin (vers 8h) et du soir (vers 17h-18h). Uniquement ces faits : AUCUN conseil vestimentaire ou d'équipement (pas de gants, veste, cape, etc.). Ne parle PAS du vent, ni du lever ou du coucher du soleil.
 1 bis. Vélib (une ou deux phrases) : juste après la météo, le nombre de Vélib verts (mécaniques) et bleus (électriques) disponibles à la station Fédération-Suffren, et le nombre de places libres, en précisant l'heure du relevé (c'est la situation au moment où le briefing a été préparé). Si la donnée est indisponible, n'en parle pas.
-2. Les actus de la veille (environ 300 mots) : les 4 à 6 faits les plus importants.
+2. Les actus de la veille (environ 260 mots) : les 4 à 6 faits les plus importants.
 3. Saint du jour et anniversaires (environ 60 mots, TRÈS rapide) : le saint, puis 2 ou 3 personnalités vraiment connues du grand public nées ce jour.
 4. La bourse (environ 45 mots, COURT et factuel) : toujours le CAC 40, le MSCI World (dis simplement "le MSCI World", l'indice des actions mondiales) et le Bitcoin. Les autres indices marqués "SEULEMENT SI ÇA BOUGE FORT" ne sont cités que si leur variation sur la séance atteint 2 pour cent ou plus ; sinon, résume la tendance mondiale en quelques mots. Ne cite JAMAIS le S&P 500 par son nom sauf mouvement d'au moins 2 pour cent.
 5. Saint-Gobain (environ 120 mots), CHAQUE JOUR : le cours et sa variation (arrondis à l'unité), puis les actualités récentes de l'entreprise tirées des titres fournis (contrats, résultats, acquisitions, avis d'analystes, marché de la construction). S'il n'y a vraiment rien de neuf, dis-le en une phrase et rappelle un enjeu de fond du groupe.
 6. L'info rigolote (environ 80 mots) : une ou deux anecdotes vraies, surprenantes et drôles.
-7. L'intelligence artificielle, l'actu (environ 220 mots) : les trois informations les plus importantes de ces derniers jours, avec TOUJOURS au moins une toute dernière innovation (nouveau modèle, nouvel outil, nouvelle fonctionnalité) expliquée concrètement, et pourquoi c'est important.
+7. La veille ia de pointe (environ 420 mots), CHAQUE JOUR, la rubrique la plus importante : Jean veut être EN AVANCE sur son entourage, pas répéter ce que dit le journal de 20 heures. Ton d'expert qui briefe un initié, précis et concret. Appuie-toi en priorité sur les sources spécialisées [IA - LABOS], [IA - MODÈLES CHINOIS], [IA - NOUVELLES FONCTIONS], [IA - HACKER NEWS], [IA - HUGGING FACE], [IA - RECHERCHE], [IA - THE DECODER] et [IA - SIMON WILLISON] ; la presse généraliste sert seulement de complément. Structure, en enchaînant naturellement :
+   a) Les nouveaux modèles : ce qui est sorti ou a été annoncé (laboratoires américains, Mistral, et TOUJOURS un œil sur la Chine : DeepSeek, Qwen, Kimi, GLM, MiniMax... s'il y a du neuf). Nomme le modèle exactement, dis qui le fait, ce qu'il fait mieux que les autres (raisonnement, code, vidéo, prix, taille, ouvert ou fermé) et où il se situe face à la concurrence.
+   b) Les nouvelles capacités : une fonction ou un outil que l'on peut utiliser dès maintenant, et ce que ça permet concrètement de faire.
+   c) Le signal faible : une chose que seuls les initiés regardent (un projet qui monte sur Hugging Face ou Hacker News, un papier de recherche, une tendance), et pourquoi ça compte.
+   d) À tester aujourd'hui : une action concrète que Jean peut faire lui-même avec l'ia (un outil, une manière de s'en servir), pour garder une longueur d'avance.
+   Priorité aux nouveautés de la veille ; si elles sont maigres, reprends une nouveauté un peu plus ancienne mais importante qui n'a pas encore été traitée. Précise toujours si c'est d'hier ou de quelques jours. Ne cite que des faits présents dans les données ; si une source est vide, n'en parle pas. Actus ia déjà traitées les jours précédents, à NE PAS répéter sauf vrai rebondissement : {' | '.join(past_ia_news) or 'aucune'}.
 8. L'IA expliquée (environ 180 mots), CHAQUE JOUR : explique simplement UNE notion d'IA, en variant chaque jour entre une entreprise (son histoire, son modèle), une théorie ou un concept (réseau de neurones, transformeur, apprentissage par renforcement, hallucination, test de Turing...), une définition de vocabulaire (token, prompt, agent, fine-tuning, RAG...) ou un usage concret au travail. Avec une image ou une analogie du quotidien. Notions déjà expliquées, à NE PAS reprendre : {' | '.join(past_ia) or 'aucune'}.
 {EXTRA}9. Économie mondiale et macroéconomie (environ 150 mots) : une ou deux informations, avec le mécanisme expliqué.
 10. Politique française et internationale (environ 200 mots).
@@ -562,6 +621,30 @@ Titres récents :
 [IA - innovations récentes]
 {data['ia_innov']}
 
+[IA - LABOS (annonces des grands laboratoires, anglais)]
+{data['ia_labos']}
+
+[IA - MODÈLES CHINOIS]
+{data['ia_chine']}
+
+[IA - NOUVELLES FONCTIONS (ChatGPT, Claude, Gemini, agents...)]
+{data['ia_outils']}
+
+[IA - HACKER NEWS (le plus voté chez les développeurs, dernières 36 h)]
+{data['ia_hn']}
+
+[IA - HUGGING FACE (modèles ouverts en tendance)]
+{data['ia_hf']}
+
+[IA - RECHERCHE (papiers du jour les plus votés)]
+{data['ia_papers']}
+
+[IA - THE DECODER (site spécialisé)]
+{data['ia_decoder']}
+
+[IA - SIMON WILLISON (blog de référence sur les LLM)]
+{data['ia_simon']}
+
 [BÂTIMENT - innovations]
 {data['batiment']}
 
@@ -570,7 +653,7 @@ Titres récents :
 Titres récents :
 {data['sgo_news']}
 
-Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jour), "definition" (sa définition courte), "sujet_titre" (titre court du sujet du jour), "ia_titre" (titre court de la notion d'IA expliquée)."""
+Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jour), "definition" (sa définition courte), "sujet_titre" (titre court du sujet du jour), "ia_titre" (titre court de la notion d'IA expliquée), "ia_actus" (liste de 3 à 5 titres très courts des actus ia citées dans la rubrique 7, par exemple « sortie de DeepSeek V4 »)."""
 
     out, model = write_script(prompt)
     script = re.sub(r"[*#_`]|\[[^\]]{0,40}\]", "", str(out["script"]))
@@ -592,8 +675,9 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
     hist["topics"].append({"date": TODAY, "title": out["sujet_titre"]})
     hist["actions"].append({"date": TODAY, "name": action})
     hist.setdefault("ia", []).append({"date": TODAY, "title": out.get("ia_titre", "")})
+    hist.setdefault("ia_news", []).extend({"date": TODAY, "title": str(t)} for t in (out.get("ia_actus") or [])[:6])
     hist["last"] = TODAY
-    for k in ("vocab", "topics", "actions", "ia"):
+    for k in ("vocab", "topics", "actions", "ia", "ia_news"):
         hist[k] = hist[k][-400:]
     with open(HISTORY, "w", encoding="utf-8") as f:
         json.dump(hist, f, ensure_ascii=False, indent=1)
