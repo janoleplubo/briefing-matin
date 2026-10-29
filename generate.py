@@ -493,6 +493,7 @@ RÈGLES D'ÉCRITURE (très important) :
 - Français parlé, chaleureux, vivant, phrases courtes. Tutoie Jean.
 - AUCUN markdown, aucune puce, aucun emoji, aucun astérisque, aucun titre, aucune indication de mise en scène entre crochets. Uniquement du texte à dire, en paragraphes séparés par une ligne vide.
 - Pour la voix : écris "pour cent" au lieu de %, "euros" et "dollars" en toutes lettres, pas d'abréviations obscures, pas d'URL.
+- Écris toujours "ia" en minuscules (jamais "IA" en majuscules), pour que la voix le prononce d'un seul mot.
 - BOURSE : AUCUN chiffre après la virgule, jamais. Arrondis tout à l'unité (cours et variations). Une variation qui s'arrondit à zéro se dit "stable".
 - Transitions naturelles et courtes entre les rubriques.
 - N'invente RIEN de factuel : actus, bourse, saint et anniversaires viennent uniquement des DONNÉES fournies. Pour la culture, n'affirme que ce dont tu es sûr.
