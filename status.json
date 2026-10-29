@@ -1,18 +1,21 @@
 {
- "date": "2026-10-28",
- "heure": "07:30",
- "modele_texte": "gemini-3.8-flash",
- "mots": 2529,
- "minutes": 13.2,
+ "date": "2026-10-29",
+ "heure": "04:49",
+ "modele_texte": "gemini-3.6-flash",
+ "mots": 1803,
+ "minutes": 9.6,
  "voix": [
-  "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts"
  ],
- "erreurs": [],
+ "erreurs": [
+  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are",
+  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are",
+  "gemini-3.6-flash: gemini-3.6-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are",
+  "gemini-3.8-flash-tts HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\\"
+ ],
  "donnees_manquantes": [],
- "musique": "Bass_Walker.mp3"
+ "musique": "Funky_Chunk.mp3"
 }
