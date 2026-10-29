@@ -1,0 +1,53 @@
+Le Gouffre de Padirac, partie 2 : fiscalité, comparaisons et questions à poser
+
+Salut Jean, et bienvenue dans la deuxième partie de notre enquête sur le Gouffre de Padirac. Dans la première, on a raconté l'histoire, lu les comptes, interprété les dividendes et estimé la valeur de ton action. Aujourd'hui, on va regarder trois choses qu'on avait laissées de côté. D'abord, ce que l'État prélève sur ce que l'action te rapporte. Ensuite, ce que Padirac nous apprend quand on le compare à d'autres sites touristiques. Et enfin, la liste précise des questions à poser à la société, pour transformer mes hypothèses en certitudes.
+
+Commençons par la fiscalité, avec un exemple concret.
+
+Supposons que mon estimation soit juste, et que tu aies reçu environ huit cent vingt euros de dividende brut par action en 2025. Que te reste-t-il ?
+
+Par défaut, un dividende reçu par un particulier est soumis au prélèvement forfaitaire unique, qu'on appelle aussi la flat tax. Pour les revenus de 2025, il était de trente pour cent : douze virgule huit pour cent d'impôt sur le revenu, et dix-sept virgule deux pour cent de prélèvements sociaux. Sur huit cent vingt euros, cela fait environ deux cent quarante-six euros d'impôts, et donc à peu près cinq cent soixante-quinze euros nets. En pratique, la société retient l'essentiel de cet impôt à la source, au moment du versement, et le reverse au fisc. C'est d'ailleurs, on l'a vu, ce qui expliquerait le bond des dettes fiscales dans son bilan fin 2025.
+
+Attention, une nouveauté. La loi de financement de la Sécurité sociale pour 2026 a augmenté la CSG sur une partie des revenus du capital. Pour les dividendes et les plus-values sur actions perçus à partir de 2026, les prélèvements sociaux passent à dix-huit virgule six pour cent, et la flat tax totale à trente et un virgule quatre pour cent. Un futur dividende de huit cent vingt euros te laisserait donc environ cinq cent soixante-deux euros nets.
+
+Il existe une alternative : l'option pour le barème progressif de l'impôt sur le revenu. Dans ce cas, le dividende bénéficie d'un abattement de quarante pour cent, c'est-à-dire que tu n'es imposé que sur soixante pour cent de son montant, à ton taux marginal. Les prélèvements sociaux, eux, restent dus sur la totalité, mais une partie de la CSG devient déductible l'année suivante. Faisons le calcul pour un taux marginal de trente pour cent, qui est le cas de beaucoup de cadres. Soixante pour cent de huit cent vingt euros, c'est quatre cent quatre-vingt-douze euros. Trente pour cent de cela, environ cent quarante-huit euros d'impôt sur le revenu. On ajoute environ cent quarante et un euros de prélèvements sociaux, on retire un petit avantage lié à la CSG déductible, et on arrive à environ deux cent soixante-dix euros. C'est plus que la flat tax. Conclusion : avec un taux marginal de trente pour cent ou plus, la flat tax est en général plus avantageuse. Le barème ne devient intéressant que pour les foyers peu imposés, typiquement à onze pour cent ou moins. Et retiens un piège : l'option pour le barème est globale. Elle s'applique à tous tes revenus du capital de l'année, pas seulement à Padirac.
+
+Passons maintenant à l'achat et à la revente.
+
+Quand tu achètes des actions d'une société non cotée de gré à gré, la cession doit être déclarée à l'administration fiscale, et des droits d'enregistrement de zéro virgule un pour cent du prix sont dus. Pour une action achetée trois mille euros, cela fait trois euros. C'est négligeable. Et le jour où tu revendras, la plus-value, c'est-à-dire la différence entre le prix de vente et le prix d'achat, sera taxée à la flat tax, soit trente et un virgule quatre pour cent selon les règles applicables depuis 2026.
+
+D'où l'intérêt de se demander si ces titres peuvent être logés dans une enveloppe fiscale. La société est une petite et moyenne entreprise : une quarantaine de salariés permanents, une dizaine de millions d'euros de chiffre d'affaires. Ses titres sont donc, en principe, éligibles au plan d'épargne en actions destiné aux PME, le PEA-PME, et même au PEA classique. Deux limites cependant. D'abord, très peu de banques acceptent des titres non cotés dans un PEA, et celles qui le font facturent souvent des frais de dossier. Ensuite, pour les titres non cotés, l'exonération des dividendes dans un PEA est plafonnée : chaque année, seule une part des dividendes équivalente à dix pour cent du montant investi est exonérée. Avec un dividende moyen élevé par rapport au prix d'achat, comme ce pourrait être le cas ici, le plafond serait vite atteint. C'est donc à étudier, mais avec ta banque, et chiffres à l'appui.
+
+Je précise que je ne suis pas conseiller fiscal. Ces règles sont les règles générales, et ta situation personnelle peut changer le résultat.
+
+Deuxième sujet : les comparaisons. Pourquoi Padirac est-il si rentable, alors que d'autres sites comparables ne le sont pas ?
+
+On a déjà parlé des Grottes de Han, en Belgique. Même taille, une douzaine de millions d'euros de chiffre d'affaires, mais un bénéfice proche de zéro et un endettement net. Trois différences expliquent l'écart.
+
+La première, c'est le modèle. À Han, la société exploite non seulement des grottes, mais aussi un grand parc animalier de deux cent cinquante hectares. Des animaux, cela se nourrit, se soigne et se loge toute l'année, même quand il n'y a pas de visiteurs. Les coûts fixes sont lourds. À Padirac, le produit est la grotte elle-même. Elle ne mange rien, ne tombe pas malade, et n'a pas besoin d'être renouvelée. Les coûts sont essentiellement les salaires des saisonniers et l'entretien des installations.
+
+La deuxième, c'est la densité. Padirac accueille plus d'un demi-million de visiteurs sur un parcours de deux kilomètres, avec des barques et des ascenseurs. Chaque visiteur supplémentaire coûte très peu. Les économistes appellent cela un levier opérationnel élevé : une fois les coûts fixes couverts, presque chaque euro de billet supplémentaire tombe en bénéfice.
+
+La troisième, c'est la rareté. Le site est classé, la rivière souterraine est unique en Europe à cette échelle, et aucun concurrent ne peut creuser une copie à côté. Les grands investisseurs parlent de fossé défensif. Warren Buffett aime les entreprises protégées par un tel fossé, car elles peuvent augmenter leurs prix sans perdre leurs clients. C'est exactement ce qu'on a observé à Padirac entre 2023 et 2025 : la fréquentation a stagné, mais le chiffre d'affaires a augmenté de dix pour cent.
+
+Une dernière comparaison, plus française. Beaucoup de grands sites touristiques du pays sont exploités par des structures publiques ou parapubliques, liées à des collectivités locales. Leur objectif n'est pas de maximiser le bénéfice, mais l'accès du public, l'emploi local ou l'entretien du patrimoine. Padirac fait figure d'exception : un site naturel majeur, détenu et exploité par une société privée, familiale, depuis plus d'un siècle. C'est à la fois sa force, puisqu'il peut décider vite et viser la rentabilité, et sa fragilité, puisque son sort dépend d'une seule famille et de ses relations avec les autorités locales. On l'a vu avec le conflit sur le plan local d'urbanisme.
+
+Troisième et dernier sujet : les questions à poser. Car une bonne partie de ce que je t'ai dit repose sur des déductions. Voici, dans l'ordre, ce que tu devrais demander à la société, par écrit ou lors de la prochaine assemblée générale.
+
+Première question : combien d'actions composent exactement le capital ? Si la réponse est douze mille deux cent une, toutes mes estimations par action tiennent. Sinon, il faudra les recalculer.
+
+Deuxième question : quel dividende a été voté au titre de l'exercice 2024, et a-t-il été prélevé en partie sur les réserves ? La loi impose de rappeler, lors de chaque assemblée, les dividendes des trois exercices précédents. Le procès-verbal te donnera donc le chiffre officiel.
+
+Troisième question : quelle est la politique de distribution pour l'avenir ? Faut-il s'attendre à un dividende annuel, ou à des distributions ponctuelles comme en 2025 ?
+
+Quatrième question : qui détient aujourd'hui les filiales qui exploitent le restaurant et la boutique, et quelles conventions les lient à la société ? Dans une société anonyme, les conventions entre la société et ses dirigeants ou des sociétés liées à eux doivent faire l'objet d'un rapport spécial du commissaire aux comptes. Ce rapport est présenté à l'assemblée. C'est le document à demander.
+
+Cinquième question : où en est le grand projet d'investissement, quel est son calendrier, et comment sera-t-il financé ?
+
+Sixième question : les statuts contiennent-ils une clause d'agrément ou de préemption, et la société, ou la famille, est-elle disposée à faciliter les échanges d'actions entre actionnaires ?
+
+Avec ces six réponses, tu sauras ce que vaut vraiment ton action, combien elle peut te rapporter, et si tu peux en acheter d'autres.
+
+Pour résumer cette deuxième partie : la fiscalité prend environ un tiers de ce que l'action te rapporte, et un peu plus depuis 2026. Padirac est exceptionnellement rentable parce que sa grotte est un actif rare, qui ne s'use pas et coûte peu à exploiter. Et la meilleure façon de passer des estimations aux certitudes, c'est de poser par écrit les bonnes questions à la société.
+
+Merci de m'avoir écouté, Jean. À bientôt pour un prochain cours.
