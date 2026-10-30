@@ -37,7 +37,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     outputs:
       done: ${{ steps.check.outputs.done }}
     steps:
@@ -68,7 +68,7 @@ jobs:
 
       - name: Génération du briefing
         if: steps.check.outputs.done == 'false'
-        timeout-minutes: 25
+        timeout-minutes: 45
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           VOICE: ${{ vars.VOICE }}

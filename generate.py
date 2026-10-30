@@ -277,7 +277,7 @@ def hf_papers():
 STATS = {"voix": [], "erreurs": []}
 
 
-def gemini_call(model, body, timeout=400):
+def gemini_call(model, body, timeout=180):
     req = urllib.request.Request(
         f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
         data=json.dumps(body).encode(), method="POST",
@@ -330,7 +330,13 @@ def write_script(prompt):
 TTS_STYLE = ""  # aucune consigne : le modèle de voix la lisait à voix haute
 
 
+START = time.time()
+DEADLINE = 32 * 60  # au-delà, voix de secours pour garantir un briefing à l'heure
+
+
 def tts_chunk(text):
+    if time.time() - START > DEADLINE:
+        raise RuntimeError("temps dépassé, voix de secours")
     err = None
     for model in TTS_MODELS:
         for attempt in range(3):
@@ -338,7 +344,7 @@ def tts_chunk(text):
                 body = gemini_call(model, {
                     "contents": [{"role": "user", "parts": [{"text": TTS_STYLE + text}]}],
                     "generationConfig": {"responseModalities": ["AUDIO"], "speechConfig": {
-                        "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": VOICE}}}}}, timeout=600)
+                        "voiceConfig": {"prebuiltVoiceConfig": {"voiceName": VOICE}}}}}, timeout=240)
                 cand = body["candidates"][0]
                 if "content" not in cand:
                     raise RuntimeError(f"pas d'audio ({cand.get('finishReason')})")
@@ -355,7 +361,9 @@ def tts_chunk(text):
                 STATS["erreurs"].append(str(e)[:200])
                 if "404" in str(e) or "not found" in str(e).lower():
                     break
-                time.sleep(65 if "429" in str(e) else 10)
+                if time.time() - START > DEADLINE:
+                    break
+                time.sleep(40 if "429" in str(e) else 8)
     raise RuntimeError(err)
 
 
