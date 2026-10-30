@@ -5,81 +5,7 @@ voix, morceau 1 (2656 caractères)
   échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
   échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
   échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-morceau 1 en échec (gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error), découpage en paragraphes
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-PARAGRAPHE IGNORÉ (morceau 1, paragraphe 1) : gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error :: Salut Jean, et bienvenue dans ce nouvel épisode des cours de Jean. Aujourd'hui, on prend un peu de hauteur. Pas de fisca
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.8-flash-lite-tts The read operation timed out
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-PARAGRAPHE IGNORÉ (morceau 1, paragraphe 2) : gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error :: On va alterner deux formats, comme tu l'as demandé. D'un côté, des cas éclair : une découverte, quelques phrases, et on 
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  voix OK (gemini-3.8-flash-lite-tts, 20 s)
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  voix OK (gemini-3.8-flash-lite-tts, 2 s)
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  voix OK (gemini-3.8-flash-lite-tts, 64 s)
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-PARAGRAPHE IGNORÉ (morceau 1, paragraphe 6) : gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error :: Et justement, parlons de science pure. Premier cas détaillé : le jour où une IA a battu Paul Erdős.
-voix, morceau 2 (2825 caractères)
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-  échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
-morceau 2 en échec (gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error), découpage en paragraphes
-  voix OK (gemini-3.8-flash-tts, 25 s)
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.8-flash-tts gemini-3.8-flash-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, hea
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
-  échec voix gemini-3.1-flash-tts-preview gemini-3.1-flash-tts-preview HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this er
+  échec voix gemini-3.1-flash-tts-preview pas d'audio (SAFETY)
   échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
   échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
   échec voix gemini-3.8-flash-lite-tts gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error
@@ -91,24 +17,14 @@ Traceback (most recent call last):
     raise RuntimeError(err)
 RuntimeError: gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 10,'
 
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/runner/work/briefing-matin/briefing-matin/tools/cours.py", line 51, in make_audio
-    pcm += g.tts_chunk(para) + silence
-           ~~~~~~~~~~~^^^^^^
-  File "/home/runner/work/briefing-matin/briefing-matin/generate.py", line 367, in tts_chunk
-    raise RuntimeError(err)
-RuntimeError: gemini-3.8-flash-lite-tts HTTP 429: b'{\n  "error": {\n    "code": 429,\n    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 10,'
-
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/home/runner/work/briefing-matin/briefing-matin/tools/cours.py", line 130, in <module>
+  File "/home/runner/work/briefing-matin/briefing-matin/tools/cours.py", line 132, in <module>
     main()
     ~~~~^^
-  File "/home/runner/work/briefing-matin/briefing-matin/tools/cours.py", line 120, in main
+  File "/home/runner/work/briefing-matin/briefing-matin/tools/cours.py", line 122, in main
     secs = make_audio(body, os.path.join(SITE, fname))
-  File "/home/runner/work/briefing-matin/briefing-matin/tools/cours.py", line 55, in make_audio
-    raise RuntimeError("trop de paragraphes en échec, épisode abandonné") from e2
-RuntimeError: trop de paragraphes en échec, épisode abandonné
+  File "/home/runner/work/briefing-matin/briefing-matin/tools/cours.py", line 47, in make_audio
+    raise RuntimeError("quota de voix Gemini épuisé, relancer après la remise à zéro (vers 9h, heure de Paris)") from e
+RuntimeError: quota de voix Gemini épuisé, relancer après la remise à zéro (vers 9h, heure de Paris)
