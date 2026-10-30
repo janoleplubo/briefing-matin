@@ -29,6 +29,11 @@
    "date": "2026-10-29",
    "word": "Incurie",
    "definition": "Manque total de soin, d'attention ou de conscience dans la gestion d'une affaire ou l'exécution d'une tâche."
+  },
+  {
+   "date": "2026-10-30",
+   "word": "Atermoiement",
+   "definition": "Action de différer, de remettre à plus tard par des délais concertés pour gagner du temps."
   }
  ],
  "topics": [
@@ -55,6 +60,10 @@
   {
    "date": "2026-10-29",
    "title": "Le Centre Pompidou et l'architecture High-Tech"
+  },
+  {
+   "date": "2026-10-30",
+   "title": "Dassault Systèmes et la révolution du jumeau numérique"
   }
  ],
  "actions": [
@@ -81,6 +90,10 @@
   {
    "date": "2026-10-29",
    "name": "Vinci"
+  },
+  {
+   "date": "2026-10-30",
+   "name": "Legrand"
   }
  ],
  "ia": [
@@ -91,7 +104,29 @@
   {
    "date": "2026-10-29",
    "title": "Le fine-tuning des modèles d'IA"
+  },
+  {
+   "date": "2026-10-30",
+   "title": "Le RAG ou génération augmentée par récupération"
   }
  ],
- "last": "2026-10-29"
+ "ia_news": [
+  {
+   "date": "2026-10-30",
+   "title": "Sortie de Gemini 4 Carbon par Google DeepMind"
+  },
+  {
+   "date": "2026-10-30",
+   "title": "Mistral libère les poids de Mistral Large 4 Le Chonk"
+  },
+  {
+   "date": "2026-10-30",
+   "title": "Édition directe de documents et PDF dans Gemini"
+  },
+  {
+   "date": "2026-10-30",
+   "title": "Étude d'Anthropic sur l'influence des avis de l'ia sur les experts"
+  }
+ ],
+ "last": "2026-10-30"
 }
