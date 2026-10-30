@@ -334,9 +334,15 @@ START = time.time()
 DEADLINE = 32 * 60  # au-delà, voix de secours pour garantir un briefing à l'heure
 
 
+QUOTA_DEAD = False  # True dès qu'un morceau entier a échoué sur quota : on passe direct à la voix de secours
+
+
 def tts_chunk(text):
+    global QUOTA_DEAD
     if time.time() - START > DEADLINE:
         raise RuntimeError("temps dépassé, voix de secours")
+    if QUOTA_DEAD:
+        raise RuntimeError("quota de voix Gemini épuisé, voix de secours")
     err = None
     for model in TTS_MODELS:
         for attempt in range(3):
@@ -364,6 +370,8 @@ def tts_chunk(text):
                 if time.time() - START > DEADLINE:
                     break
                 time.sleep(40 if "429" in str(e) else 8)
+    if err is not None and "429" in str(err) and "quota" in str(err).lower():
+        QUOTA_DEAD = True
     raise RuntimeError(err)
 
 
