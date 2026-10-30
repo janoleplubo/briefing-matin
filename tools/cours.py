@@ -43,6 +43,8 @@ def make_audio(text, dest):
         try:
             pcm += g.tts_chunk(c) + silence
         except Exception as e:
+            if "429" in str(e) or "quota" in str(e).lower():
+                raise RuntimeError("quota de voix Gemini épuisé, relancer après la remise à zéro (vers 9h, heure de Paris)") from e
             # Morceau refusé ou en échec : on réessaie paragraphe par paragraphe.
             g.log(f"morceau {i + 1} en échec ({str(e)[:200]}), découpage en paragraphes")
             for j, para in enumerate([p for p in c.split("\n\n") if p.strip()]):
