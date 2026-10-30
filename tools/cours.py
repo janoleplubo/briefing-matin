@@ -18,6 +18,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 import generate as g  # noqa: E402
 
+# Les cours sont longs : la limite de 32 min du briefing du matin ne s'applique pas ici.
+g.DEADLINE = 110 * 60
+
 TEXTES = os.path.join(ROOT, "cours", "textes")
 SITE = os.path.join(ROOT, "cours", "site")
 EPISODES = os.path.join(ROOT, "cours", "episodes.json")
