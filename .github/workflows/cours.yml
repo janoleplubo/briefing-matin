@@ -27,13 +27,23 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           VOICE: ${{ vars.VOICE }}
-        run: python3 tools/cours.py
+        run: |
+          set -o pipefail
+          python3 -u tools/cours.py 2>&1 | tee cours/derniere-execution.log
+      - name: Sauvegarde du journal en cas d'échec
+        if: failure()
+        run: |
+          git config user.name "briefing-bot"; git config user.email "briefing-bot@users.noreply.github.com"
+          git add -f cours/derniere-execution.log
+          git commit -m "Cours : journal d'échec" || exit 0
+          git pull --rebase -q || true
+          git push
       - name: Sauvegarde et republication du site
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "briefing-bot"; git config user.email "briefing-bot@users.noreply.github.com"
-          git add cours/site cours/episodes.json
+          git add cours/site cours/episodes.json; git add -f cours/derniere-execution.log || true
           git commit -m "Cours : nouvel épisode" || true
           git pull --rebase -q || true
           git push

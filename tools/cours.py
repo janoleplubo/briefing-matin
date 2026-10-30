@@ -37,9 +37,23 @@ def load():
 def make_audio(text, dest):
     silence = b"\x00\x00" * int(24000 * 0.6)
     pcm = b""
+    skipped = 0
     for i, c in enumerate(g.chunks(text)):
-        g.log(f"voix, morceau {i + 1}")
-        pcm += g.tts_chunk(c) + silence
+        g.log(f"voix, morceau {i + 1} ({len(c)} caractères)")
+        try:
+            pcm += g.tts_chunk(c) + silence
+        except Exception as e:
+            # Morceau refusé ou en échec : on réessaie paragraphe par paragraphe.
+            g.log(f"morceau {i + 1} en échec ({str(e)[:200]}), découpage en paragraphes")
+            for j, para in enumerate([p for p in c.split("\n\n") if p.strip()]):
+                time.sleep(10)
+                try:
+                    pcm += g.tts_chunk(para) + silence
+                except Exception as e2:
+                    skipped += 1
+                    if skipped > 3:
+                        raise RuntimeError("trop de paragraphes en échec, épisode abandonné") from e2
+                    g.log(f"PARAGRAPHE IGNORÉ (morceau {i + 1}, paragraphe {j + 1}) : {str(e2)[:200]} :: {para[:120]}")
         time.sleep(22)
     wav = dest + ".wav"
     with wave.open(wav, "wb") as w:
