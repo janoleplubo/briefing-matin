@@ -1,17 +1,24 @@
 {
- "date": "2026-10-30",
- "heure": "10:58",
+ "date": "2026-10-31",
+ "heure": "05:05",
  "modele_texte": "gemini-3.8-flash",
- "mots": 2072,
- "minutes": 11.2,
+ "mots": 2566,
+ "minutes": 14.2,
  "voix": [
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts"
+  "gemini-3.8-flash-lite-tts",
+  "gemini-3.8-flash-lite-tts",
+  "secours-pico"
  ],
- "erreurs": [],
+ "erreurs": [
+  "gemini-3.1-flash-tts-preview HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this er",
+  "gemini-3.1-flash-tts-preview HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this er",
+  "gemini-3.8-flash-lite-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error",
+  "gemini-3.8-flash-lite-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error",
+  "gemini-3.8-flash-lite-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error"
+ ],
  "donnees_manquantes": [],
- "musique": "Funkorama.mp3"
+ "musique": "Funky_Chunk.mp3"
 }

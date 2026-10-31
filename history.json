@@ -34,6 +34,11 @@
    "date": "2026-10-30",
    "word": "Atermoiement",
    "definition": "Action de différer, de remettre à plus tard par des délais concertés pour gagner du temps."
+  },
+  {
+   "date": "2026-10-31",
+   "word": "palinodie",
+   "definition": "Rétractation publique ou changement complet et délibéré d'opinion."
   }
  ],
  "topics": [
@@ -64,6 +69,10 @@
   {
    "date": "2026-10-30",
    "title": "Dassault Systèmes et la révolution du jumeau numérique"
+  },
+  {
+   "date": "2026-10-31",
+   "title": "Les bétons bas carbone sans clinker"
   }
  ],
  "actions": [
@@ -94,6 +103,10 @@
   {
    "date": "2026-10-30",
    "name": "Legrand"
+  },
+  {
+   "date": "2026-10-31",
+   "name": "Kering"
   }
  ],
  "ia": [
@@ -108,6 +121,10 @@
   {
    "date": "2026-10-30",
    "title": "Le RAG ou génération augmentée par récupération"
+  },
+  {
+   "date": "2026-10-31",
+   "title": "Les tokens dans les modèles de langage"
   }
  ],
  "ia_news": [
@@ -126,7 +143,23 @@
   {
    "date": "2026-10-30",
    "title": "Étude d'Anthropic sur l'influence des avis de l'ia sur les experts"
+  },
+  {
+   "date": "2026-10-31",
+   "title": "Sortie de GPT-6.1 Terra par OpenAI"
+  },
+  {
+   "date": "2026-10-31",
+   "title": "Prouesse offensive du modèle chinois GLM 5.3 sur Firefox"
+  },
+  {
+   "date": "2026-10-31",
+   "title": "Intégration des données Strava dans Gemini"
+  },
+  {
+   "date": "2026-10-31",
+   "title": "Extension malveillante Claude Code sur Cursor"
   }
  ],
- "last": "2026-10-30"
+ "last": "2026-10-31"
 }
