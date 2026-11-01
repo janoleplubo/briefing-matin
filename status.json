@@ -1,24 +1,24 @@
 {
- "date": "2026-10-31",
- "heure": "05:05",
+ "date": "2026-11-01",
+ "heure": "05:01",
  "modele_texte": "gemini-3.8-flash",
- "mots": 2566,
- "minutes": 14.2,
+ "mots": 2584,
+ "minutes": 14.4,
  "voix": [
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-lite-tts",
   "gemini-3.8-flash-lite-tts",
-  "secours-pico"
+  "gemini-3.8-flash-lite-tts"
  ],
  "erreurs": [
+  "gemini-3.8-flash-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, hea",
+  "gemini-3.8-flash-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, hea",
+  "gemini-3.1-flash-tts-preview HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again l",
   "gemini-3.1-flash-tts-preview HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this er",
-  "gemini-3.1-flash-tts-preview HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this er",
-  "gemini-3.8-flash-lite-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error",
-  "gemini-3.8-flash-lite-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error",
-  "gemini-3.8-flash-lite-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error"
+  "pas d'audio (SAFETY)"
  ],
  "donnees_manquantes": [],
- "musique": "Funky_Chunk.mp3"
+ "musique": "Bass_Vibes.mp3"
 }

@@ -39,6 +39,11 @@
    "date": "2026-10-31",
    "word": "palinodie",
    "definition": "Rétractation publique ou changement complet et délibéré d'opinion."
+  },
+  {
+   "date": "2026-11-01",
+   "word": "parangon",
+   "definition": "Modèle d'une perfection absolue, exemple qui sert de référence."
   }
  ],
  "topics": [
@@ -73,6 +78,10 @@
   {
    "date": "2026-10-31",
    "title": "Les bétons bas carbone sans clinker"
+  },
+  {
+   "date": "2026-11-01",
+   "title": "Eugène Freyssinet et l'invention du béton précontraint"
   }
  ],
  "actions": [
@@ -107,6 +116,10 @@
   {
    "date": "2026-10-31",
    "name": "Kering"
+  },
+  {
+   "date": "2026-11-01",
+   "name": "LVMH"
   }
  ],
  "ia": [
@@ -125,6 +138,10 @@
   {
    "date": "2026-10-31",
    "title": "Les tokens dans les modèles de langage"
+  },
+  {
+   "date": "2026-11-01",
+   "title": "Le mécanisme d'attention du Transformeur"
   }
  ],
  "ia_news": [
@@ -159,7 +176,23 @@
   {
    "date": "2026-10-31",
    "title": "Extension malveillante Claude Code sur Cursor"
+  },
+  {
+   "date": "2026-11-01",
+   "title": "Cluster collaboratif Qwen3.8 Memdoor"
+  },
+  {
+   "date": "2026-11-01",
+   "title": "Siri intègre Tongyi Qianwen en Chine"
+  },
+  {
+   "date": "2026-11-01",
+   "title": "Anthropic déploie Claude Duet"
+  },
+  {
+   "date": "2026-11-01",
+   "title": "Émulation NES sur Transformeur Nesformer"
   }
  ],
- "last": "2026-10-31"
+ "last": "2026-11-01"
 }
