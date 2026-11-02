@@ -44,6 +44,11 @@
    "date": "2026-11-01",
    "word": "parangon",
    "definition": "Modèle d'une perfection absolue, exemple qui sert de référence."
+  },
+  {
+   "date": "2026-11-02",
+   "word": "équanimité",
+   "definition": "Égalité d'humeur constante et sérénité face aux vicissitudes de l'existence."
   }
  ],
  "topics": [
@@ -82,6 +87,10 @@
   {
    "date": "2026-11-01",
    "title": "Eugène Freyssinet et l'invention du béton précontraint"
+  },
+  {
+   "date": "2026-11-02",
+   "title": "Le secret du béton romain auto-cicatrisant"
   }
  ],
  "actions": [
@@ -120,6 +129,10 @@
   {
    "date": "2026-11-01",
    "name": "LVMH"
+  },
+  {
+   "date": "2026-11-02",
+   "name": "AXA"
   }
  ],
  "ia": [
@@ -142,6 +155,10 @@
   {
    "date": "2026-11-01",
    "title": "Le mécanisme d'attention du Transformeur"
+  },
+  {
+   "date": "2026-11-02",
+   "title": "L'apprentissage par renforcement (Reinforcement Learning)"
   }
  ],
  "ia_news": [
@@ -192,7 +209,23 @@
   {
    "date": "2026-11-01",
    "title": "Émulation NES sur Transformeur Nesformer"
+  },
+  {
+   "date": "2026-11-02",
+   "title": "DeepSeek dévoile son super agent de code autonome"
+  },
+  {
+   "date": "2026-11-02",
+   "title": "Microsoft sort Mage-VL-Cowork pour le computer use"
+  },
+  {
+   "date": "2026-11-02",
+   "title": "Google Gemini génère des présentations Slides entières"
+  },
+  {
+   "date": "2026-11-02",
+   "title": "Fin du prompt illimité et quotas unifiés chez OpenAI"
   }
  ],
- "last": "2026-11-01"
+ "last": "2026-11-02"
 }
