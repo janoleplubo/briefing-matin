@@ -293,8 +293,9 @@ def write_script(prompt):
     schema = {"type": "OBJECT", "properties": {"script": {"type": "STRING"}, "mot": {"type": "STRING"},
               "definition": {"type": "STRING"}, "sujet_titre": {"type": "STRING"},
               "ia_titre": {"type": "STRING"},
-              "ia_actus": {"type": "ARRAY", "items": {"type": "STRING"}}},
-              "required": ["script", "mot", "definition", "sujet_titre", "ia_titre", "ia_actus"]}
+              "ia_actus": {"type": "ARRAY", "items": {"type": "STRING"}},
+              "actus": {"type": "ARRAY", "items": {"type": "STRING"}}},
+              "required": ["script", "mot", "definition", "sujet_titre", "ia_titre", "ia_actus", "actus"]}
     err, best = None, None
     for model in TEXT_MODELS:
         for attempt in range(2):
@@ -485,7 +486,7 @@ def main():
         return republish()
     if not KEY:
         sys.exit("GEMINI_API_KEY manquante")
-    hist = {"vocab": [], "topics": [], "actions": [], "ia": [], "ia_news": []}
+    hist = {"vocab": [], "topics": [], "actions": [], "ia": [], "ia_news": [], "actus": []}
     if os.path.exists(HISTORY):
         with open(HISTORY, encoding="utf-8") as f:
             hist.update(json.load(f))
@@ -539,6 +540,15 @@ def main():
     past_topics = [t["title"] for t in hist["topics"][-60:]]
     past_ia = [t["title"] for t in hist.get("ia", [])[-80:]]
     past_ia_news = [t["title"] for t in hist.get("ia_news", [])[-60:]]
+    jours_recents = sorted({a["date"] for a in hist.get("actus", []) if a.get("date", "") < TODAY})[-3:]
+    past_actus = [f"{a['date']} : {a['title']}" for a in hist.get("actus", []) if a.get("date") in jours_recents]
+    try:  # texte du dernier briefing publié (celui d'hier, encore en ligne au moment de la génération)
+        veille_txt = get(BASE_URL + "briefing.txt", timeout=30)[:14000]
+    except Exception as e:
+        log("briefing de la veille indisponible", e)
+        veille_txt = ""
+    if hist.get("last") == TODAY:  # régénération le même jour : le texte en ligne est celui d'aujourd'hui, inutile
+        veille_txt = ""
     extra = ""
     if NOW.weekday() in (1, 4):  # mardi et vendredi
         extra += ("8 bis. Innovation bâtiment (environ 120 mots) : une innovation récente du bâtiment ou de la construction tirée "
@@ -560,6 +570,7 @@ def main():
 Nous sommes le {DATE_LONGUE}. Le texte sera LU À VOIX HAUTE par une voix de synthèse d'animateur radio, juste après une chanson de réveil.
 
 RÈGLES D'ÉCRITURE (très important) :
+- NE RÉPÈTE PAS ce qui a déjà été dit les jours précédents (voir [DÉJÀ DIT LES JOURS PRÉCÉDENTS] et [BRIEFING D'HIER] en fin de données). Ça vaut pour toutes les rubriques : actus, Saint-Gobain, info rigolote, économie, politique, ia. Une info déjà racontée ne revient que s'il y a un vrai fait nouveau, et alors en une phrase de rappel (« on en parlait hier ») avant la nouveauté. Les flux d'actualité contiennent souvent des infos de la veille : choisis en priorité celles qui n'ont pas encore été dites, quitte à prendre des infos un peu moins importantes.
 - Français parlé, chaleureux, vivant, phrases courtes. Tutoie Jean.
 - AUCUN markdown, aucune puce, aucun emoji, aucun astérisque, aucun titre, aucune indication de mise en scène entre crochets. Uniquement du texte à dire, en paragraphes séparés par une ligne vide.
 - Pour la voix : écris "pour cent" au lieu de %, "euros" et "dollars" en toutes lettres, pas d'abréviations obscures, pas d'URL.
@@ -575,7 +586,7 @@ ORDRE ET DURÉE DES RUBRIQUES :
 2. Les actus de la veille (environ 260 mots) : les 4 à 6 faits les plus importants.
 3. Saint du jour et anniversaires (environ 60 mots, TRÈS rapide) : le saint, puis 2 ou 3 personnalités vraiment connues du grand public nées ce jour.
 4. La bourse (environ 45 mots, COURT et factuel) : toujours le CAC 40, le MSCI World (dis simplement "le MSCI World", l'indice des actions mondiales) et le Bitcoin. Les autres indices marqués "SEULEMENT SI ÇA BOUGE FORT" ne sont cités que si leur variation sur la séance atteint 2 pour cent ou plus ; sinon, résume la tendance mondiale en quelques mots. Ne cite JAMAIS le S&P 500 par son nom sauf mouvement d'au moins 2 pour cent.
-5. Saint-Gobain (environ 120 mots), CHAQUE JOUR : le cours et sa variation (arrondis à l'unité), puis les actualités récentes de l'entreprise tirées des titres fournis (contrats, résultats, acquisitions, avis d'analystes, marché de la construction). S'il n'y a vraiment rien de neuf, dis-le en une phrase et rappelle un enjeu de fond du groupe.
+5. Saint-Gobain (environ 120 mots), CHAQUE JOUR : le cours et sa variation (arrondis à l'unité), puis les actualités récentes de l'entreprise tirées des titres fournis (contrats, résultats, acquisitions, avis d'analystes, marché de la construction). S'il n'y a rien de neuf par rapport à ce qui a été dit les jours précédents, dis-le en une phrase et rappelle un enjeu de fond du groupe différent de celui d'hier.
 6. L'info rigolote (environ 80 mots) : une ou deux anecdotes vraies, surprenantes et drôles.
 7. La veille ia de pointe (environ 420 mots), CHAQUE JOUR, la rubrique la plus importante : Jean veut être EN AVANCE sur son entourage, pas répéter ce que dit le journal de 20 heures. Ton d'expert qui briefe un initié, précis et concret. Appuie-toi en priorité sur les sources spécialisées [IA - LABOS], [IA - MODÈLES CHINOIS], [IA - NOUVELLES FONCTIONS], [IA - HACKER NEWS], [IA - HUGGING FACE], [IA - RECHERCHE], [IA - THE DECODER] et [IA - SIMON WILLISON] ; la presse généraliste sert seulement de complément. Structure, en enchaînant naturellement :
    a) Les nouveaux modèles : ce qui est sorti ou a été annoncé (laboratoires américains, Mistral, et TOUJOURS un œil sur la Chine : DeepSeek, Qwen, Kimi, GLM, MiniMax... s'il y a du neuf). Nomme le modèle exactement, dis qui le fait, ce qu'il fait mieux que les autres (raisonnement, code, vidéo, prix, taille, ouvert ou fermé) et où il se situe face à la concurrence.
@@ -669,7 +680,13 @@ Titres récents :
 Titres récents :
 {data['sgo_news']}
 
-Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jour), "definition" (sa définition courte), "sujet_titre" (titre court du sujet du jour), "ia_titre" (titre court de la notion d'IA expliquée), "ia_actus" (liste de 3 à 5 titres très courts des actus ia citées dans la rubrique 7, par exemple « sortie de DeepSeek V4 »)."""
+[DÉJÀ DIT LES JOURS PRÉCÉDENTS, à ne pas répéter]
+{chr(10).join(past_actus) or '(pas encore de liste)'}
+
+[BRIEFING D'HIER (texte déjà entendu par Jean, à ne pas répéter)]
+{veille_txt or '(indisponible)'}
+
+Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jour), "definition" (sa définition courte), "sujet_titre" (titre court du sujet du jour), "ia_titre" (titre court de la notion d'IA expliquée), "ia_actus" (liste de 3 à 5 titres très courts des actus ia citées dans la rubrique 7, par exemple « sortie de DeepSeek V4 »), "actus" (liste de 8 à 16 titres courts mais précis de TOUTES les autres infos factuelles données aujourd'hui : actus, Saint-Gobain, info rigolote, économie, politique, innovation bâtiment ; par exemple « Saint-Gobain rachète un fabricant canadien de plaques de plâtre »)."""
 
     out, model = write_script(prompt)
     script = re.sub(r"[*#_`]|\[[^\]]{0,40}\]", "", str(out["script"]))
@@ -692,9 +709,12 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
     hist["actions"].append({"date": TODAY, "name": action})
     hist.setdefault("ia", []).append({"date": TODAY, "title": out.get("ia_titre", "")})
     hist.setdefault("ia_news", []).extend({"date": TODAY, "title": str(t)} for t in (out.get("ia_actus") or [])[:6])
+    hist["actus"] = [a for a in hist.get("actus", []) if a.get("date") != TODAY]
+    hist["actus"].extend({"date": TODAY, "title": str(t)} for t in (out.get("actus") or [])[:20])
     hist["last"] = TODAY
     for k in ("vocab", "topics", "actions", "ia", "ia_news"):
         hist[k] = hist[k][-400:]
+    hist["actus"] = hist["actus"][-120:]
     with open(HISTORY, "w", encoding="utf-8") as f:
         json.dump(hist, f, ensure_ascii=False, indent=1)
     status = {"date": TODAY, "heure": dt.datetime.now(PARIS).strftime("%H:%M"), "modele_texte": model,
@@ -733,8 +753,45 @@ def write_feed(secs, out):
     _feed(secs, out, "briefing-voix.m4a", "feed-voix.xml", "Le Réveil de Jean (voix seule)", 0)
 
 
+KEEP_PREVIOUS = 2  # épisodes précédents gardés en ligne (si Podcasts n'a pas encore actualisé, son épisode en cache reste lisible)
+
+
+def previous_items(feed_name, today_guid_prefix):
+    """Reprend les derniers épisodes du flux en ligne et retélécharge leur audio dans le site publié,
+    car chaque déploiement GitHub Pages remplace tout le site."""
+    try:
+        xml = get(BASE_URL + feed_name, timeout=30)
+    except Exception as e:
+        log("flux précédent indisponible", feed_name, e)
+        return []
+    kept = []
+    for it in re.findall(r"<item>.*?</item>", xml, flags=re.S):
+        guid = (re.search(r"<guid[^>]*>(.*?)</guid>", it, re.S) or [None, ""])[1]
+        m = re.search(r'<enclosure url="([^"]+)"', it)
+        if not m or guid.startswith(today_guid_prefix):  # pas d'audio, ou ancienne version du jour même
+            continue
+        url = m.group(1)
+        name = url.rsplit("/", 1)[-1]
+        if not url.startswith(BASE_URL) or "/" in name or not name.endswith(".m4a"):
+            continue
+        dest = os.path.join(OUT, name)
+        try:
+            if not os.path.exists(dest):
+                req = urllib.request.Request(url, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=120) as r, open(dest + ".part", "wb") as o:
+                    shutil.copyfileobj(r, o)
+                os.replace(dest + ".part", dest)
+        except Exception as e:
+            log("ancien épisode non récupéré", name, e)
+            continue
+        kept.append(it)
+        if len(kept) >= KEEP_PREVIOUS:
+            break
+    return kept
+
+
 def _feed(secs, out, src, feed_name, show, extra_min):
-    """Flux podcast privé : un seul épisode, celui du jour (pour Apple Podcasts)."""
+    """Flux podcast privé : l'épisode du jour en tête, plus les 2 précédents (pour Apple Podcasts)."""
     import email.utils
     ep = src.replace(".m4a", f"-{TODAY}-{int(time.time())}.m4a")  # nom unique : Apple Podcasts ne garde pas l'ancien en cache
     shutil.copy(os.path.join(OUT, src), os.path.join(OUT, ep))
@@ -766,6 +823,7 @@ def _feed(secs, out, src, feed_name, show, extra_min):
 <pubDate>{pub}</pubDate>
 <itunes:duration>{dur}</itunes:duration>
 </item>
+{chr(10).join(previous_items(feed_name, f"{feed_name}-{TODAY}-"))}
 </channel>
 </rss>
 """
