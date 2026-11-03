@@ -1,11 +1,10 @@
 {
- "date": "2026-11-02",
- "heure": "04:50",
+ "date": "2026-11-03",
+ "heure": "04:53",
  "modele_texte": "gemini-3.8-flash",
- "mots": 3117,
- "minutes": 16.8,
+ "mots": 2542,
+ "minutes": 13.7,
  "voix": [
-  "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
@@ -13,7 +12,9 @@
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts"
  ],
- "erreurs": [],
+ "erreurs": [
+  "gemini-3.8-flash: The read operation timed out"
+ ],
  "donnees_manquantes": [],
  "musique": "Funkorama.mp3"
 }

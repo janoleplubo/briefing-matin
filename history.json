@@ -49,6 +49,11 @@
    "date": "2026-11-02",
    "word": "équanimité",
    "definition": "Égalité d'humeur constante et sérénité face aux vicissitudes de l'existence."
+  },
+  {
+   "date": "2026-11-03",
+   "word": "amphigourique",
+   "definition": "qualifie un propos ou un écrit obscur, confus et alambiqué au point d'en devenir incompréhensible"
   }
  ],
  "topics": [
@@ -91,6 +96,10 @@
   {
    "date": "2026-11-02",
    "title": "Le secret du béton romain auto-cicatrisant"
+  },
+  {
+   "date": "2026-11-03",
+   "title": "L'impression 3D béton structurelle sur chantier"
   }
  ],
  "actions": [
@@ -133,6 +142,10 @@
   {
    "date": "2026-11-02",
    "name": "AXA"
+  },
+  {
+   "date": "2026-11-03",
+   "name": "Société Générale"
   }
  ],
  "ia": [
@@ -159,6 +172,10 @@
   {
    "date": "2026-11-02",
    "title": "L'apprentissage par renforcement (Reinforcement Learning)"
+  },
+  {
+   "date": "2026-11-03",
+   "title": "L'architecture Mixture of Experts (MoE)"
   }
  ],
  "ia_news": [
@@ -225,7 +242,23 @@
   {
    "date": "2026-11-02",
    "title": "Fin du prompt illimité et quotas unifiés chez OpenAI"
+  },
+  {
+   "date": "2026-11-03",
+   "title": "Anthropic lance Message Threads Beta pour fiabiliser les agents longs"
+  },
+  {
+   "date": "2026-11-03",
+   "title": "Alibaba Cloud déploie Memory pour la mémoire persistante des agents"
+  },
+  {
+   "date": "2026-11-03",
+   "title": "ChatGPT introduit le verrouillage des conversations par code PIN"
+  },
+  {
+   "date": "2026-11-03",
+   "title": "Goldman Sachs retire les outils de code IA à ses banquiers et traders"
   }
  ],
- "last": "2026-11-02"
+ "last": "2026-11-03"
 }
