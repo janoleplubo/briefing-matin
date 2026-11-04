@@ -112,8 +112,7 @@ def velib(code="15105"):
             t = {k: v for d in x.get("num_bikes_available_types", []) for k, v in d.items()}
             heure = dt.datetime.fromtimestamp(x.get("last_reported", 0), PARIS).strftime("%Hh%M")
             return (f"Station {info.get(x['station_id'], {}).get('name', code)} ({code}), relevé à {heure} : "
-                    f"{t.get('mechanical', 0)} Vélib verts (mécaniques), {t.get('ebike', 0)} Vélib bleus (électriques), "
-                    f"{x.get('numDocksAvailable', 0)} places libres.")
+                    f"{t.get('mechanical', 0)} Vélib verts (mécaniques), {t.get('ebike', 0)} Vélib bleus (électriques).")
     return "(station introuvable)"
 
 
@@ -596,7 +595,7 @@ RÈGLES D'ÉCRITURE (très important) :
 
 ORDRE ET DURÉE DES RUBRIQUES :
 1. Bonjour rapide + météo à Paris (environ 70 mots). Jean va au travail À VÉLO : donne la température à 8h et à 17h, puis dis clairement s'il va pleuvoir ou non sur le trajet du matin (vers 8h) et du soir (vers 17h-18h). Uniquement ces faits : AUCUN conseil vestimentaire ou d'équipement (pas de gants, veste, cape, etc.). Ne parle PAS du vent, ni du lever ou du coucher du soleil.
-1 bis. Vélib (une ou deux phrases) : juste après la météo, le nombre de Vélib verts (mécaniques) et bleus (électriques) disponibles à la station Fédération-Suffren, et le nombre de places libres, en précisant l'heure du relevé (c'est la situation au moment où le briefing a été préparé). Si la donnée est indisponible, n'en parle pas.
+1 bis. Vélib (une phrase) : juste après la météo, le nombre de Vélib verts et de Vélib bleus disponibles à la station Fédération Suffren (écris exactement « Fédération Suffren »), avec l'heure du relevé. Ne parle PAS des places libres. Dis toujours « Vélib » ou « petit Vélib », JAMAIS « vélo en libre-service ». Si la donnée est indisponible, n'en parle pas.
 2. Les actus de la veille (environ 260 mots) : les 4 à 6 faits les plus importants.
 3. Saint du jour et anniversaires (environ 60 mots, TRÈS rapide) : le saint, puis 2 ou 3 personnalités vraiment connues du grand public nées ce jour.
 4. La bourse (environ 45 mots, COURT et factuel) : toujours le CAC 40, le MSCI World (dis simplement "le MSCI World", l'indice des actions mondiales) et le Bitcoin. Les autres indices marqués "SEULEMENT SI ÇA BOUGE FORT" ne sont cités que si leur variation sur la séance atteint 2 pour cent ou plus ; sinon, résume la tendance mondiale en quelques mots. Ne cite JAMAIS le S&P 500 par son nom sauf mouvement d'au moins 2 pour cent.
