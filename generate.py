@@ -297,7 +297,9 @@ def write_script(prompt):
               "actus": {"type": "ARRAY", "items": {"type": "STRING"}}},
               "required": ["script", "mot", "definition", "sujet_titre", "ia_titre", "ia_actus", "actus"]}
     err, best = None, None
-    for model in TEXT_MODELS:
+    for model in TEXT_MODELS * 2:  # deux tours complets (Gemini sature souvent vers 4-5h)
+        if best is not None and best[2] >= 1000:
+            break
         for attempt in range(2):
             try:
                 body = gemini_call(model, {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
@@ -322,10 +324,22 @@ def write_script(prompt):
                 log("échec texte", model, e)
                 if "404" in str(e):
                     break
-                time.sleep(20 if "429" in str(e) else 3)
+                time.sleep(30 if ("429" in str(e) or "503" in str(e)) else 5)
     if best:
         return best[0], best[1]
     raise RuntimeError(err)
+
+
+def fallback_script(data, action):
+    """Briefing minimal sans ia de rédaction, si Gemini texte est indisponible."""
+    def titres(k, n):
+        return ". ".join(l.lstrip("- ").split(" — ")[0] for l in str(data.get(k, "")).splitlines()[:n] if l.strip())
+    txt = (f"Bonjour Jean. Petit souci technique ce matin : l'ia n'a pas pu rédiger ton briefing complet, "
+           f"alors voici l'essentiel.\n\n{data.get('meteo', '')}\n\n{data.get('velib', '')}\n\n"
+           f"Les titres de l'actualité. {titres('fi', 8)}.\n\nLa bourse. "
+           + str(data.get('marches', '')).replace('[À CITER] ', '').replace('[SEULEMENT SI ÇA BOUGE FORT] ', '')
+           + f"\n\nCôté ia. {titres('ia_fr', 4)}.\n\nBonne journée !")
+    return {"script": txt, "mot": "", "definition": "", "sujet_titre": "", "ia_titre": "", "ia_actus": [], "actus": []}
 
 
 TTS_STYLE = ""  # aucune consigne : le modèle de voix la lisait à voix haute
@@ -688,7 +702,12 @@ Titres récents :
 
 Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jour), "definition" (sa définition courte), "sujet_titre" (titre court du sujet du jour), "ia_titre" (titre court de la notion d'IA expliquée), "ia_actus" (liste de 3 à 5 titres très courts des actus ia citées dans la rubrique 7, par exemple « sortie de DeepSeek V4 »), "actus" (liste de 8 à 16 titres courts mais précis de TOUTES les autres infos factuelles données aujourd'hui : actus, Saint-Gobain, info rigolote, économie, politique, innovation bâtiment ; par exemple « Saint-Gobain rachète un fabricant canadien de plaques de plâtre »)."""
 
-    out, model = write_script(prompt)
+    try:
+        out, model = write_script(prompt)
+    except Exception as e:
+        log("texte ia indisponible, briefing minimal :", e)
+        STATS["erreurs"].append(f"texte: {str(e)[:150]}")
+        out, model = fallback_script(data, action), "secours"
     script = re.sub(r"[*#_`]|\[[^\]]{0,40}\]", "", str(out["script"]))
     script = re.sub(r"\n{3,}", "\n\n", script).strip()
     os.makedirs(OUT, exist_ok=True)
@@ -704,8 +723,10 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
     secs = to_audio(script)
     log(f"audio : {secs / 60:.1f} minutes")
 
-    hist["vocab"].append({"date": TODAY, "word": out["mot"], "definition": out["definition"]})
-    hist["topics"].append({"date": TODAY, "title": out["sujet_titre"]})
+    if out.get("mot"):
+        hist["vocab"].append({"date": TODAY, "word": out["mot"], "definition": out["definition"]})
+    if out.get("sujet_titre"):
+        hist["topics"].append({"date": TODAY, "title": out["sujet_titre"]})
     hist["actions"].append({"date": TODAY, "name": action})
     hist.setdefault("ia", []).append({"date": TODAY, "title": out.get("ia_titre", "")})
     hist.setdefault("ia_news", []).extend({"date": TODAY, "title": str(t)} for t in (out.get("ia_actus") or [])[:6])

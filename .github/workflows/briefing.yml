@@ -75,7 +75,17 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           REPUBLISH: ${{ github.event.inputs.republish }}
           PREVIEW: ${{ github.event.inputs.preview }}
-        run: python3 generate.py
+        run: |
+          set -o pipefail
+          python3 generate.py 2>&1 | tee run.log
+
+      - name: Journal en cas d'échec
+        if: failure()
+        run: |
+          git config user.name "briefing-bot"; git config user.email "briefing-bot@users.noreply.github.com"
+          tail -c 20000 run.log > last-failure.log 2>/dev/null || echo "pas de journal" > last-failure.log
+          git add last-failure.log; git commit -m "Journal d'échec" || exit 0
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 10; done
 
       - name: Sauvegarde de l'historique (mots, sujets)
         if: steps.check.outputs.done == 'false'
@@ -84,8 +94,7 @@ jobs:
           git config user.email "briefing-bot@users.noreply.github.com"
           for f in history.json status.json preview.txt; do [ -f "$f" ] && git add "$f"; done; true
           git commit -m "Historique du $(TZ=Europe/Paris date +%F)" || exit 0
-          git pull --rebase -q || true
-          git push
+          for i in 1 2 3 4 5; do git pull --rebase -q -X theirs && git push && break; sleep 15; done
 
       - uses: actions/upload-pages-artifact@v3
         if: steps.check.outputs.done == 'false' && github.event.inputs.preview != '1'
