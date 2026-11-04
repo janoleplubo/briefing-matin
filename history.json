@@ -54,6 +54,11 @@
    "date": "2026-11-03",
    "word": "amphigourique",
    "definition": "qualifie un propos ou un écrit obscur, confus et alambiqué au point d'en devenir incompréhensible"
+  },
+  {
+   "date": "2026-11-04",
+   "word": "inique",
+   "definition": "Qui est manifestement injuste et contraire à l'équité."
   }
  ],
  "topics": [
@@ -100,6 +105,10 @@
   {
    "date": "2026-11-03",
    "title": "L'impression 3D béton structurelle sur chantier"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "La réussite industrielle et financière de Safran"
   }
  ],
  "actions": [
@@ -146,6 +155,10 @@
   {
    "date": "2026-11-03",
    "name": "Société Générale"
+  },
+  {
+   "date": "2026-11-04",
+   "name": "Thales"
   }
  ],
  "ia": [
@@ -176,6 +189,10 @@
   {
    "date": "2026-11-03",
    "title": "L'architecture Mixture of Experts (MoE)"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "L'apprentissage par renforcement en intelligence artificielle"
   }
  ],
  "ia_news": [
@@ -258,7 +275,57 @@
   {
    "date": "2026-11-03",
    "title": "Goldman Sachs retire les outils de code IA à ses banquiers et traders"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Anthropic lance FlashProve"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Alibaba Cloud lance Memory"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "OpenAI augmente ses primes de bugs"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Qwen 3.8 sur ordinateur portable"
   }
  ],
- "last": "2026-11-03"
+ "actus": [
+  {
+   "date": "2026-11-04",
+   "title": "Victoire démocrate aux midterms aux États-Unis"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Le marché des créateurs de contenus en France"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Piratage informatique du Crédit Mutuel Arkéa"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Chavirage d'Armel Le Cléac'h sur la Route du Rhum"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Saint-Gobain nomme Nicolas Godet DG France"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Rapport du Mécanisme européen de stabilité"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Négociations sur l'emploi des jeunes en France"
+  },
+  {
+   "date": "2026-11-04",
+   "title": "Proposition de primaire à droite par Bruno Retailleau"
+  }
+ ],
+ "last": "2026-11-04"
 }
