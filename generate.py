@@ -594,7 +594,7 @@ RÈGLES D'ÉCRITURE (très important) :
 - Longueur totale visée : entre 1900 et 2150 mots (environ 14 minutes), pas plus de 2150.
 
 ORDRE ET DURÉE DES RUBRIQUES :
-1. Bonjour rapide + météo à Paris (environ 70 mots). Jean va au travail À VÉLO : donne la température à 8h et à 17h, puis dis clairement s'il va pleuvoir ou non sur le trajet du matin (vers 8h) et du soir (vers 17h-18h). Uniquement ces faits : AUCUN conseil vestimentaire ou d'équipement (pas de gants, veste, cape, etc.). Ne parle PAS du vent, ni du lever ou du coucher du soleil.
+1. Bonjour rapide en annonçant TOUJOURS le jour de la semaine et la date (par exemple « Bonjour Jean, nous sommes jeudi 6 novembre »), puis météo à Paris (environ 70 mots). Jean va au travail À VÉLO : donne la température à 8h et à 17h, puis dis clairement s'il va pleuvoir ou non sur le trajet du matin (vers 8h) et du soir (vers 17h-18h). Uniquement ces faits : AUCUN conseil vestimentaire ou d'équipement (pas de gants, veste, cape, etc.). Ne parle PAS du vent, ni du lever ou du coucher du soleil.
 1 bis. Vélib (une phrase) : juste après la météo, le nombre de Vélib verts et de Vélib bleus disponibles à la station Fédération Suffren (écris exactement « Fédération Suffren »), avec l'heure du relevé. Ne parle PAS des places libres. Dis toujours « Vélib » ou « petit Vélib », JAMAIS « vélo en libre-service ». Si la donnée est indisponible, n'en parle pas.
 2. Les actus de la veille (environ 260 mots) : les 4 à 6 faits les plus importants.
 3. Saint du jour et anniversaires (environ 60 mots, TRÈS rapide) : le saint, puis 2 ou 3 personnalités vraiment connues du grand public nées ce jour.
@@ -709,6 +709,9 @@ Réponds en JSON avec : "script" (le texte complet à dire), "mot" (le mot du jo
         out, model = fallback_script(data, action), "secours"
     script = re.sub(r"[*#_`]|\[[^\]]{0,40}\]", "", str(out["script"]))
     script = re.sub(r"\n{3,}", "\n\n", script).strip()
+    # Prononciation : « Suffren » se dit « Suffrenne » (la voix disait « Suffran »)
+    script = re.sub(r"F[ée]d[ée]ration[\s\-–]*Suffren", "Fédération Suffrenne", script)
+    script = re.sub(r"\bSuffren\b", "Suffrenne", script)
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "briefing.txt"), "w", encoding="utf-8") as f:
         f.write(script)
