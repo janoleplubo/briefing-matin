@@ -59,6 +59,11 @@
    "date": "2026-11-04",
    "word": "inique",
    "definition": "Qui est manifestement injuste et contraire à l'équité."
+  },
+  {
+   "date": "2026-11-05",
+   "word": "corroborer",
+   "definition": "Appuyer, confirmer ou fortifier une idée, une preuve ou une hypothèse au moyen de nouveaux faits."
   }
  ],
  "topics": [
@@ -109,6 +114,10 @@
   {
    "date": "2026-11-04",
    "title": "La réussite industrielle et financière de Safran"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Le défi d'ingénierie des gratte-ciels de plus de 1000 mètres"
   }
  ],
  "actions": [
@@ -159,6 +168,10 @@
   {
    "date": "2026-11-04",
    "name": "Thales"
+  },
+  {
+   "date": "2026-11-05",
+   "name": "Crédit Agricole"
   }
  ],
  "ia": [
@@ -193,6 +206,10 @@
   {
    "date": "2026-11-04",
    "title": "L'apprentissage par renforcement en intelligence artificielle"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "La fenêtre de contexte dans les modèles de langage"
   }
  ],
  "ia_news": [
@@ -291,6 +308,26 @@
   {
    "date": "2026-11-04",
    "title": "Qwen 3.8 sur ordinateur portable"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "OpenAI lance Images 2.6 avec génération de GIF"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "OpenAI rachète Pierre Computer Company pour renforcer Codex"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Découverte du MIT sur la modification des poids par GPT-6 Astra"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Google conditionne l'accès au moteur de recherche à l'IA dans les écoles"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Benchmark CloudOpsBench sur le raisonnement des agents cloud"
   }
  ],
  "actus": [
@@ -325,7 +362,71 @@
   {
    "date": "2026-11-04",
    "title": "Proposition de primaire à droite par Bruno Retailleau"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Grève du 5 novembre et déploiement de 70 000 policiers"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Élection du démocrate James Talarico au Sénat du Texas"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Discours de Donald Trump axé sur sa salle de bal"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Décoration attribuée par Zelensky à Melania Trump"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Soupçons d'ingérences évoqués par Nétanyahou"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Défaite du RC Lens 1-9 face à Côme"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Enquête sur des bonbons d'Halloween piégés en Europe"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Cession par Saint-Gobain de sa distribution scandinave pour 1,5 milliard"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Suppression de subventions en Haute-Savoie pour utilisation d'IA"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Projet de relèvement du plafond du Livret A"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Suspension du fonds chaleur par le gouvernement"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Rejet unanime du projet de budget 2027 à l'Assemblée"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Annulation de 3,8 milliards d'euros de crédits budgétaires"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Tirs de missiles de défense en Corée du Nord"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Mort d'Hubert Aiwanger dans sa chambre d'hôtel à Berlin"
+  },
+  {
+   "date": "2026-11-05",
+   "title": "Bénéfice net du Crédit Agricole en hausse de 18% au T3"
   }
  ],
- "last": "2026-11-04"
+ "last": "2026-11-05"
 }

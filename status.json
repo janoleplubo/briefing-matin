@@ -1,12 +1,11 @@
 {
- "date": "2026-11-04",
- "heure": "13:16",
- "modele_texte": "gemini-flash-lite-latest",
- "mots": 1958,
- "minutes": 10.9,
+ "date": "2026-11-05",
+ "heure": "04:53",
+ "modele_texte": "gemini-3.5-flash",
+ "mots": 1935,
+ "minutes": 10.5,
  "voix": [
   "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-lite-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-lite-tts"
@@ -16,7 +15,7 @@
   "gemini-3.8-flash-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, hea",
   "pas d'audio (SAFETY)",
   "pas d'audio (SAFETY)",
-  "pas d'audio (SAFETY)"
+  "gemini-3.1-flash-tts-preview HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this er"
  ],
  "donnees_manquantes": [],
  "musique": "Electro_Cabello.mp3"
