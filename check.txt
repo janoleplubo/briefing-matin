@@ -33,3 +33,9 @@ HTTP/2 200  content-type: audio/mp4 content-length: 11601395  https://janolep
 HTTP/2 200  content-type: audio/mp4 content-length: 13221900  https://janoleplubo.github.io/briefing-matin/cours-2026-10-29-gp-stakes.m4a
 HTTP/2 200  content-type: audio/mp4 content-length: 6013567  https://janoleplubo.github.io/briefing-matin/cours-2026-10-28-pocadmin.m4a
 HTTP/2 200  content-type: image/png content-length: 33330  https://janoleplubo.github.io/briefing-matin/cover.png
+stream|codec_name=aac|sample_rate=44100|channels=1
+format|format_name=mov,mp4,m4a,3gp,3g2,mj2|duration=673.469002
+stream|codec_name=aac|sample_rate=44100|channels=1
+format|format_name=mov,mp4,m4a,3gp,3g2,mj2|duration=699.157007
+stream|codec_name=aac|sample_rate=44100|channels=1
+format|format_name=mov,mp4,m4a,3gp,3g2,mj2|duration=869.843991
