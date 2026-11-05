@@ -777,6 +777,7 @@ KEEP_PREVIOUS = 2  # épisodes précédents gardés en ligne (si Podcasts n'a pa
 
 
 def previous_items(feed_name, today_guid_prefix):
+    return ""  # un seul épisode : l'action iOS « Lire le podcast » échoue avec plusieurs épisodes
     """Reprend les derniers épisodes du flux en ligne et retélécharge leur audio dans le site publié,
     car chaque déploiement GitHub Pages remplace tout le site."""
     try:
