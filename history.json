@@ -64,6 +64,11 @@
    "date": "2026-11-05",
    "word": "corroborer",
    "definition": "Appuyer, confirmer ou fortifier une idée, une preuve ou une hypothèse au moyen de nouveaux faits."
+  },
+  {
+   "date": "2026-11-06",
+   "word": "pusillanime",
+   "definition": "Qui manque d'audace, craint le risque et hésite devant les décisions à prendre."
   }
  ],
  "topics": [
@@ -118,6 +123,10 @@
   {
    "date": "2026-11-05",
    "title": "Le défi d'ingénierie des gratte-ciels de plus de 1000 mètres"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "L'ingénierie du Viaduc de Millau et le lançage de tablier"
   }
  ],
  "actions": [
@@ -172,6 +181,10 @@
   {
    "date": "2026-11-05",
    "name": "Crédit Agricole"
+  },
+  {
+   "date": "2026-11-06",
+   "name": "Orange"
   }
  ],
  "ia": [
@@ -210,6 +223,10 @@
   {
    "date": "2026-11-05",
    "title": "La fenêtre de contexte dans les modèles de langage"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "La quantification des réseaux de neurones"
   }
  ],
  "ia_news": [
@@ -328,6 +345,26 @@
   {
    "date": "2026-11-05",
    "title": "Benchmark CloudOpsBench sur le raisonnement des agents cloud"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "OpenAI lance GPT-6 Cyber pour la cybersécurité"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Google dévoile Gemini Omni 1.2 Flash vidéo"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Baidu publie ERNIE 5.5 Flash Base en poids ouverts"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Anthropic lance Personal Finance dans Claude"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "ChatGPT intègre la génération de GIF"
   }
  ],
  "actus": [
@@ -426,7 +463,71 @@
   {
    "date": "2026-11-05",
    "title": "Bénéfice net du Crédit Agricole en hausse de 18% au T3"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Alerte à la bombe sur vingt vols commerciaux en Europe"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Attaque et incendie d'un lycée à Tournefeuille"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Entre 575 000 et 1,6 million de manifestants le 5 novembre"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Donald Trump dénonce des élections truquées après les midterms"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Première victoire de l'OM en Ligue Europa à Leverkusen"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Luca Van Assche en quart de finale du Masters 1000 de Paris"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Saint-Gobain modernise le centre de rééducation de l'Aisne"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Hong Kong veut devenir la Monaco asiatique du yachting"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Immersion au restaurant routier L'Escale près de Châteauroux"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Béton de chanvre mécanisé par l'entreprise Moreau-Lathus"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Mise en service du nouveau TGV SNCF entre Paris et Marseille"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Les députés veulent supprimer les emprunts d'État indexés"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Gadi Eisenkot bien placé pour succéder à Nétanyahou"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Pourparlers entre la Russie et l'Ukraine prévus à Abou Dhabi"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Gavin Newsom commue 548 peines de mort en Californie"
+  },
+  {
+   "date": "2026-11-06",
+   "title": "Action Orange : hausse du titre après de bons résultats T3"
   }
  ],
- "last": "2026-11-05"
+ "last": "2026-11-06"
 }
