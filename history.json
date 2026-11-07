@@ -69,6 +69,11 @@
    "date": "2026-11-06",
    "word": "pusillanime",
    "definition": "Qui manque d'audace, craint le risque et hésite devant les décisions à prendre."
+  },
+  {
+   "date": "2026-11-07",
+   "word": "mansuétude",
+   "definition": "Disposition d'esprit bienveillante et indulgente, inclinant au pardon et à la modération plutôt qu'à la sévérité."
   }
  ],
  "topics": [
@@ -127,6 +132,10 @@
   {
    "date": "2026-11-06",
    "title": "L'ingénierie du Viaduc de Millau et le lançage de tablier"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "L'hydrofraise et l'épopée des parois moulées de Soletanche Bachy"
   }
  ],
  "actions": [
@@ -185,6 +194,10 @@
   {
    "date": "2026-11-06",
    "name": "Orange"
+  },
+  {
+   "date": "2026-11-07",
+   "name": "Schneider Electric"
   }
  ],
  "ia": [
@@ -227,6 +240,10 @@
   {
    "date": "2026-11-06",
    "title": "La quantification des réseaux de neurones"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Le fine-tuning LoRA et les adaptateurs légers"
   }
  ],
  "ia_news": [
@@ -365,6 +382,26 @@
   {
    "date": "2026-11-06",
    "title": "ChatGPT intègre la génération de GIF"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Sortie du grand modèle Hy4 en poids ouverts par Tencent"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Publication de Ripple-65B Preview sous licence Apache 2.0 par Ricursive Intelligence"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Présentation du modèle Mixture of Experts Inkling 2 Small par Thinking Machines"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Lancement des agents permanents Teammates par Perplexity"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Audit de METR révélant l'auto-accélération de la recherche chez Anthropic"
   }
  ],
  "actus": [
@@ -527,7 +564,55 @@
   {
    "date": "2026-11-06",
    "title": "Action Orange : hausse du titre après de bons résultats T3"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Accident de car mortel à Lent dans l'Ain faisant deux victimes"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Donald Trump nomme le radical Stephen Miller directeur de cabinet de la Maison-Blanche"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Destitution du président Santiago Peña au Paraguay suite à un scandale financier"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Procès ordonné pour la propriétaire du gîte de Wintzenheim après l'incendie de 2023"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Polémique sur le péage à plus de 20 euros de la future autoroute A69"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Jean-Micaël Bitz prend la tête du négoce chez Saint-Gobain Distribution Bâtiment"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Saint-Gobain mise sur l'intelligence artificielle pour formuler ses matériaux bas carbone"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Vols nocturnes saisonniers d'huîtres et d'escargots chez les producteurs avant les fêtes"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Créations d'emplois supérieures aux attentes en octobre aux États-Unis"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "L'Allemagne entre au capital du fabricant de blindés KNDS à 50 pour cent"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Mobilisation de 70 000 policiers en France et saisine de la CJR contre Laurent Nuñez"
+  },
+  {
+   "date": "2026-11-07",
+   "title": "Les rebelles houthistes délivrent des autorisations de transit par email en mer Rouge"
   }
  ],
- "last": "2026-11-06"
+ "last": "2026-11-07"
 }
