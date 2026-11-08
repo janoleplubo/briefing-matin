@@ -74,6 +74,11 @@
    "date": "2026-11-07",
    "word": "mansuétude",
    "definition": "Disposition d'esprit bienveillante et indulgente, inclinant au pardon et à la modération plutôt qu'à la sévérité."
+  },
+  {
+   "date": "2026-11-08",
+   "word": "dithyrambique",
+   "definition": "très élogieux, d'un enthousiasme excessif et passionné"
   }
  ],
  "topics": [
@@ -136,6 +141,10 @@
   {
    "date": "2026-11-07",
    "title": "L'hydrofraise et l'épopée des parois moulées de Soletanche Bachy"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Les robots de forage autonomes Jaibot sur chantier"
   }
  ],
  "actions": [
@@ -198,6 +207,10 @@
   {
    "date": "2026-11-07",
    "name": "Schneider Electric"
+  },
+  {
+   "date": "2026-11-08",
+   "name": "Publicis"
   }
  ],
  "ia": [
@@ -244,6 +257,10 @@
   {
    "date": "2026-11-07",
    "title": "Le fine-tuning LoRA et les adaptateurs légers"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Les plongements lexicaux ou embeddings"
   }
  ],
  "ia_news": [
@@ -402,6 +419,22 @@
   {
    "date": "2026-11-07",
    "title": "Audit de METR révélant l'auto-accélération de la recherche chez Anthropic"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "OpenAI lance GPT-6 Cyber classé critique"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Baidu publie le grand modèle ERNIE 5.5 Flash Base"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Nous Research purge la propagande de Qwen avec Arete-27B"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Anthropic lance l'analyse bancaire Personal Finance dans Claude"
   }
  ],
  "actus": [
@@ -612,7 +645,51 @@
   {
    "date": "2026-11-07",
    "title": "Les rebelles houthistes délivrent des autorisations de transit par email en mer Rouge"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Attaque terroriste et fusillade meurtrière à Cracovie en Pologne"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Gadi Eisenkot désigné pour tenter de former un gouvernement en Israël"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Mobilisation sociale contre la vie chère en net recul en France"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Victoire du XV de France 54-17 face aux Fidji et blessure de Romain Ntamack"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Tom Laperche remporte la Route du Rhum en Ultim avec un record historique"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Donald Trump propose à Dana White le poste de porte-parole de la Maison-Blanche"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Vol insolite de 500 kilomètres de câbles de cuivre dans un parc solaire"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "EDF annonce la stabilité des tarifs réglementés d'électricité jusqu'en février"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Jean-Luc Mélenchon lance sa campagne présidentielle 2027 au Bourget"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Mathieu Lefèvre nommé porte-parole du gouvernement par intérim"
+  },
+  {
+   "date": "2026-11-08",
+   "title": "Saint-Gobain mise sur les fours électriques hybrides et le calcin recyclé"
   }
  ],
- "last": "2026-11-07"
+ "last": "2026-11-08"
 }
