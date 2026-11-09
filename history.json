@@ -79,6 +79,11 @@
    "date": "2026-11-08",
    "word": "dithyrambique",
    "definition": "très élogieux, d'un enthousiasme excessif et passionné"
+  },
+  {
+   "date": "2026-11-09",
+   "word": "acrimonie",
+   "definition": "Mauvaise humeur qui se traduit par des paroles aigres, amères ou agressives."
   }
  ],
  "topics": [
@@ -145,6 +150,10 @@
   {
    "date": "2026-11-08",
    "title": "Les robots de forage autonomes Jaibot sur chantier"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "La théorie de la Stratégie Océan Bleu"
   }
  ],
  "actions": [
@@ -211,6 +220,10 @@
   {
    "date": "2026-11-08",
    "name": "Publicis"
+  },
+  {
+   "date": "2026-11-09",
+   "name": "L'Oréal"
   }
  ],
  "ia": [
@@ -261,6 +274,10 @@
   {
    "date": "2026-11-08",
    "title": "Les plongements lexicaux ou embeddings"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "La température dans les modèles de langage"
   }
  ],
  "ia_news": [
@@ -435,6 +452,26 @@
   {
    "date": "2026-11-08",
    "title": "Anthropic lance l'analyse bancaire Personal Finance dans Claude"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Sortie d'un nouveau modèle Mistral en France"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Lancement du modèle Empero Manta à 100 millions de tokens"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Exécution de DeepSeek 284B sur 64 Go de RAM via Llama-modchip"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Curation vidéo automatisée par Andrej Karpathy avec Claude Opus 5.5"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Fuite de secrets sur GitHub via l'extension Claude Code"
   }
  ],
  "actus": [
@@ -689,7 +726,47 @@
   {
    "date": "2026-11-08",
    "title": "Saint-Gobain mise sur les fours électriques hybrides et le calcin recyclé"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Enquête interne chez Nvidia visant Jensen Huang"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "La pétition contre CNews dépasse le million de signatures"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Procès aux assises dans l'affaire Michel Zecler"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Mise en examen du chauffeur de car dans l'Ain"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Trois corps supplémentaires retrouvés chez le tireur de Cracovie"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Naufrage tragique d'une pirogue au large du Sénégal"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Pluies torrentielles et 70 000 tentes inondées à Gaza"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Victoire de Lando Norris au Grand Prix du Brésil sous la pluie"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Saint-Gobain utilise l'IA pour la R et D de nouveaux matériaux"
+  },
+  {
+   "date": "2026-11-09",
+   "title": "Un cerf sauvé de la chasse à courre par des riverains dans l'Oise"
   }
  ],
- "last": "2026-11-08"
+ "last": "2026-11-09"
 }
