@@ -84,6 +84,11 @@
    "date": "2026-11-09",
    "word": "acrimonie",
    "definition": "Mauvaise humeur qui se traduit par des paroles aigres, amères ou agressives."
+  },
+  {
+   "date": "2026-11-10",
+   "word": "superétatoire",
+   "definition": "Qui s'ajoute inutilement à ce qui est déjà suffisant."
   }
  ],
  "topics": [
@@ -154,6 +159,10 @@
   {
    "date": "2026-11-09",
    "title": "La théorie de la Stratégie Océan Bleu"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "La success story de Ledger et Éric Larchevêque"
   }
  ],
  "actions": [
@@ -224,6 +233,10 @@
   {
    "date": "2026-11-09",
    "name": "L'Oréal"
+  },
+  {
+   "date": "2026-11-10",
+   "name": "Bureau Veritas"
   }
  ],
  "ia": [
@@ -278,6 +291,10 @@
   {
    "date": "2026-11-09",
    "title": "La température dans les modèles de langage"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "La distillation de modèles"
   }
  ],
  "ia_news": [
@@ -472,6 +489,26 @@
   {
    "date": "2026-11-09",
    "title": "Fuite de secrets sur GitHub via l'extension Claude Code"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Annonce des modèles Fable 5.2 et Mythos 5.2 par Anthropic"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Sortie du modèle compact Muse Ember par Meta"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Publication d'ERNIE 5.5 Flash Base en poids ouverts par Baidu"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Analyse des comptes bancaires déployée dans Claude"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Présentation du modèle d'édition Seedream 5.5 par Bytedance"
   }
  ],
  "actus": [
@@ -766,7 +803,71 @@
   {
    "date": "2026-11-09",
    "title": "Un cerf sauvé de la chasse à courre par des riverains dans l'Oise"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Cyberattaque iranienne contre les frigos de 700 supermarchés français"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Candidature de Teddy Riner à l'élection présidentielle de 2027"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Revalorisation du Smic de 1,6 pour cent au premier décembre"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Alerte de l'Ofast sur le doublement des overdoses en dix ans"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Procédure de destitution engagée aux États-Unis contre Pete Hegseth"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Attribution du Booker Prize 2026 à M. John Harrison"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Saint-Gobain généralise l'Analyse du Cycle de Vie sur ses matériaux"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Sauvetage de plus de 800 chiens par la SPA dans l'Indre"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Airbnb interdit aux propriétaires d'exiger le ménage aux voyageurs"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Acieo accélère le développement de la construction hors site"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Inauguration d'une imprimante 3D béton au lycée Jean Hinglo"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Réforme des heures creuses d'électricité par Enedis"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Proposition de la Cour des comptes de geler les avancements des fonctionnaires"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Départ des syndicats lycéens de la réunion Matignon sur Parcoursup"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Reprise des négociations diplomatiques russo-ukrainiennes à Abou Dhabi"
+  },
+  {
+   "date": "2026-11-10",
+   "title": "Analyse boursière et perspectives de Bureau Veritas"
   }
  ],
- "last": "2026-11-09"
+ "last": "2026-11-10"
 }
