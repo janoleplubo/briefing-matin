@@ -89,6 +89,11 @@
    "date": "2026-11-10",
    "word": "superétatoire",
    "definition": "Qui s'ajoute inutilement à ce qui est déjà suffisant."
+  },
+  {
+   "date": "2026-11-11",
+   "word": "obséquieux",
+   "definition": "Qui fait preuve d'une politesse exagérée, servile et rampante, souvent par intérêt ou hypocrisie."
   }
  ],
  "topics": [
@@ -163,6 +168,10 @@
   {
    "date": "2026-11-10",
    "title": "La success story de Ledger et Éric Larchevêque"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Francis Bouygues et l'invention du BTP moderne"
   }
  ],
  "actions": [
@@ -237,6 +246,10 @@
   {
    "date": "2026-11-10",
    "name": "Bureau Veritas"
+  },
+  {
+   "date": "2026-11-11",
+   "name": "ArcelorMittal"
   }
  ],
  "ia": [
@@ -295,6 +308,10 @@
   {
    "date": "2026-11-10",
    "title": "La distillation de modèles"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "La descente de gradient"
   }
  ],
  "ia_news": [
@@ -509,6 +526,22 @@
   {
    "date": "2026-11-10",
    "title": "Présentation du modèle d'édition Seedream 5.5 par Bytedance"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Google DeepMind déploie Gemini Robotics 2.5 chez Mercedes-Benz"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Nvidia présente le modèle robotique GR00T 2"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Baidu dévoile le système autonome ERNIE Evolve"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Gemini convertit les notes manuscrites en PDF professionnels"
   }
  ],
  "actus": [
@@ -867,7 +900,55 @@
   {
    "date": "2026-11-10",
    "title": "Analyse boursière et perspectives de Bureau Veritas"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Témoignage de Michel Zecler au procès des policiers"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Élue aspergée d'essence devant un lycée bloqué à Chelles"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Négociations russo-ukrainiennes et échange de prisonniers à Abou Dhabi"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Daniel Kretinsky prend le contrôle de Fnac Darty à 69 pour cent"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Mise en examen de Michel Houellebecq pour propos de 2022"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Plainte de la famille Kennedy contre l'arc de triomphe de Trump"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Partenariat de recherche entre Saint-Gobain et Microsoft"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Chute de Nvidia de 6 pour cent après un scandale d'espionnage"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Nouvelle hausse de près de 6 pour cent des tarifs du gaz en France"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Candidature officielle d'Eric Zemmour à la présidentielle 2027"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Rejet de la pétition anti-CNews à l'Assemblée nationale"
+  },
+  {
+   "date": "2026-11-11",
+   "title": "Alerte rouge au Portugal face à la tempête Charles"
   }
  ],
- "last": "2026-11-10"
+ "last": "2026-11-11"
 }
