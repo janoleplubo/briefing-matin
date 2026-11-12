@@ -94,6 +94,11 @@
    "date": "2026-11-11",
    "word": "obséquieux",
    "definition": "Qui fait preuve d'une politesse exagérée, servile et rampante, souvent par intérêt ou hypocrisie."
+  },
+  {
+   "date": "2026-11-12",
+   "word": "captieux",
+   "definition": "Qui cherche à tromper ou à induire en erreur sous des apparences de vérité ou de rigueur."
   }
  ],
  "topics": [
@@ -172,6 +177,10 @@
   {
    "date": "2026-11-11",
    "title": "Francis Bouygues et l'invention du BTP moderne"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Le dilemme de l'innovateur de Clayton Christensen"
   }
  ],
  "actions": [
@@ -250,6 +259,10 @@
   {
    "date": "2026-11-11",
    "name": "ArcelorMittal"
+  },
+  {
+   "date": "2026-11-12",
+   "name": "Dassault Systèmes"
   }
  ],
  "ia": [
@@ -312,6 +325,10 @@
   {
    "date": "2026-11-11",
    "title": "La descente de gradient"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "L'apprentissage par transfert (Transfer Learning)"
   }
  ],
  "ia_news": [
@@ -542,6 +559,26 @@
   {
    "date": "2026-11-11",
    "title": "Gemini convertit les notes manuscrites en PDF professionnels"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Lancement de Claude Fable 5.2 et Mythos 5.2 par Anthropic"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Sortie de Gemini 4 Carbon et Gemini Decision 1 par Google DeepMind"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Publication du modèle ultra-compact Muse Ember par Meta"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Intégration de Gemini Live dans Apple CarPlay"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Lancement de Cursor Projects en mode multi-joueurs"
   }
  ],
  "actus": [
@@ -948,7 +985,71 @@
   {
    "date": "2026-11-11",
    "title": "Alerte rouge au Portugal face à la tempête Charles"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Grand oral des candidats à la présidentielle 2027 sur les services publics"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Élection de Scott Colom au Sénat américain dans le Mississippi"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Effondrement d'un immeuble à Brooklyn faisant deux morts et dix-sept blessés"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Scandale Nvidia : le conseil d'administration étudierait la révocation de Jensen Huang"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "La tempête Charles se dirige vers le sud de la France"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Plan de recrutement de 100 000 personnes dans le nucléaire français"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Saint-Gobain utilise la chaleur fatale de ses usines pour chauffer des logements"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Investissement de 13 millions d'euros dans l'outil médical du centre de rééducation Saint-Gobain"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Nouvelles canalisations bas carbone chez Saint-Gobain PAM"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Fausse alerte incendie au datacenter new-yorkais de Jane Street"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Alerte des experts économiques allemands sur l'envolée de la dette publique"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Chute de 24% des réservations de logements neufs selon la FPI"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Bruno Le Maire présente 50 propositions pour l'élection présidentielle"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Examen du projet de budget 2027 au Sénat"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Rencontre des émissaires américains avec Vladimir Poutine à Moscou"
+  },
+  {
+   "date": "2026-11-12",
+   "title": "Analyse boursière et perspectives de Dassault Systèmes"
   }
  ],
- "last": "2026-11-11"
+ "last": "2026-11-12"
 }
