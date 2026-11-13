@@ -99,6 +99,11 @@
    "date": "2026-11-12",
    "word": "captieux",
    "definition": "Qui cherche à tromper ou à induire en erreur sous des apparences de vérité ou de rigueur."
+  },
+  {
+   "date": "2026-11-13",
+   "word": "Irénique",
+   "definition": "Qui vise à la paix, à l'apaisement et à la conciliation des différents points de vue."
   }
  ],
  "topics": [
@@ -181,6 +186,10 @@
   {
    "date": "2026-11-12",
    "title": "Le dilemme de l'innovateur de Clayton Christensen"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "La théorie du Principe de Pareto et la règle des 80/20"
   }
  ],
  "actions": [
@@ -263,6 +272,10 @@
   {
    "date": "2026-11-12",
    "name": "Dassault Systèmes"
+  },
+  {
+   "date": "2026-11-13",
+   "name": "Sanofi"
   }
  ],
  "ia": [
@@ -329,6 +342,10 @@
   {
    "date": "2026-11-12",
    "title": "L'apprentissage par transfert (Transfer Learning)"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "L'inférence en intelligence artificielle"
   }
  ],
  "ia_news": [
@@ -579,57 +596,29 @@
   {
    "date": "2026-11-12",
    "title": "Lancement de Cursor Projects en mode multi-joueurs"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Lancement de Gemini 4 Hydrogen par Google"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Déploiement de Claude Meetings par Anthropic dans Google Meet"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Introduction de ChatGPT Business Profiles par OpenAI"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Publication de l'API Gemini Decisions pour les requêtes massives"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Sortie du modèle de transcription Scribe v3 Live par ElevenLabs"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-04",
-   "title": "Victoire démocrate aux midterms aux États-Unis"
-  },
-  {
-   "date": "2026-11-04",
-   "title": "Le marché des créateurs de contenus en France"
-  },
-  {
-   "date": "2026-11-04",
-   "title": "Piratage informatique du Crédit Mutuel Arkéa"
-  },
-  {
-   "date": "2026-11-04",
-   "title": "Chavirage d'Armel Le Cléac'h sur la Route du Rhum"
-  },
-  {
-   "date": "2026-11-04",
-   "title": "Saint-Gobain nomme Nicolas Godet DG France"
-  },
-  {
-   "date": "2026-11-04",
-   "title": "Rapport du Mécanisme européen de stabilité"
-  },
-  {
-   "date": "2026-11-04",
-   "title": "Négociations sur l'emploi des jeunes en France"
-  },
-  {
-   "date": "2026-11-04",
-   "title": "Proposition de primaire à droite par Bruno Retailleau"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Grève du 5 novembre et déploiement de 70 000 policiers"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Élection du démocrate James Talarico au Sénat du Texas"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Discours de Donald Trump axé sur sa salle de bal"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Décoration attribuée par Zelensky à Melania Trump"
-  },
   {
    "date": "2026-11-05",
    "title": "Soupçons d'ingérences évoqués par Nétanyahou"
@@ -1049,7 +1038,67 @@
   {
    "date": "2026-11-12",
    "title": "Analyse boursière et perspectives de Dassault Systèmes"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Jean-Luc Mélenchon et Mathilde Panot interdits de territoire en Israël"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Annonce de la présence européenne aux futures négociations de paix à Dublin"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Signature d'une charte de sécurité continentale par 39 pays européens"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Inquiétudes sur les heures de cours perdues et leur impact sur Parcoursup"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Gérald Darmanin saisit le CSM contre une magistrate du parquet d'Auch"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Première défaite des Bleus sous Zinédine Zidane face à l'Italie (1-3)"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Saint-Gobain : rachat de Thermipièce par DSC pour renforcer l'enseigne Dispart"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Des entreprises envisagent d'accorder un jour de congé pour la sortie de GTA VI"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Prix mondial de déconstruction attribué à Cardem pour le démontage d'une grue portuaire"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Chute brutale des échanges commerciaux bilatéraux entre la France et l'Algérie"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Présentation du plan de relance agricole de 725 millions d'euros sur dix ans"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Surenchère des suppressions de postes de fonctionnaires au grand oral de 2027"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Sénat : report à avril de la baisse des allègements de cotisations patronales"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Byron Donalds devient le premier gouverneur noir de l'État de Floride"
+  },
+  {
+   "date": "2026-11-13",
+   "title": "Visite du pape Léon XIV au Pérou dédiée à la justice et à la mémoire"
   }
  ],
- "last": "2026-11-12"
+ "last": "2026-11-13"
 }
