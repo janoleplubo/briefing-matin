@@ -104,6 +104,11 @@
    "date": "2026-11-13",
    "word": "Irénique",
    "definition": "Qui vise à la paix, à l'apaisement et à la conciliation des différents points de vue."
+  },
+  {
+   "date": "2026-11-14",
+   "word": "subreptice",
+   "definition": "Accompli de manière furtive, dérobée ou obtenue par ruse en dissimulant la vérité."
   }
  ],
  "topics": [
@@ -190,6 +195,10 @@
   {
    "date": "2026-11-13",
    "title": "La théorie du Principe de Pareto et la règle des 80/20"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "L'épopée du Tunnel sous la Manche et le défi des tunneliers géants"
   }
  ],
  "actions": [
@@ -276,6 +285,10 @@
   {
    "date": "2026-11-13",
    "name": "Sanofi"
+  },
+  {
+   "date": "2026-11-14",
+   "name": "Teleperformance"
   }
  ],
  "ia": [
@@ -346,6 +359,10 @@
   {
    "date": "2026-11-13",
    "title": "L'inférence en intelligence artificielle"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "La rétropropagation (Backpropagation) : l'ajustement des neurones par l'erreur"
   }
  ],
  "ia_news": [
@@ -616,69 +633,29 @@
   {
    "date": "2026-11-13",
    "title": "Sortie du modèle de transcription Scribe v3 Live par ElevenLabs"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Lancement de Gemini 4 Hydrogen par Google"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Sortie du modèle ultra-compact Muse Ember par Meta"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Publication de ERNIE 5.5 Flash Preview par Baidu"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Lancement de ChatGPT Wallet avec paiement autonome par agent"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Révélation sur l'utilisation des puces Nvidia Blackwell par des labos chinois"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-05",
-   "title": "Soupçons d'ingérences évoqués par Nétanyahou"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Défaite du RC Lens 1-9 face à Côme"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Enquête sur des bonbons d'Halloween piégés en Europe"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Cession par Saint-Gobain de sa distribution scandinave pour 1,5 milliard"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Suppression de subventions en Haute-Savoie pour utilisation d'IA"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Projet de relèvement du plafond du Livret A"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Suspension du fonds chaleur par le gouvernement"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Rejet unanime du projet de budget 2027 à l'Assemblée"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Annulation de 3,8 milliards d'euros de crédits budgétaires"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Tirs de missiles de défense en Corée du Nord"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Mort d'Hubert Aiwanger dans sa chambre d'hôtel à Berlin"
-  },
-  {
-   "date": "2026-11-05",
-   "title": "Bénéfice net du Crédit Agricole en hausse de 18% au T3"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Alerte à la bombe sur vingt vols commerciaux en Europe"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Attaque et incendie d'un lycée à Tournefeuille"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Entre 575 000 et 1,6 million de manifestants le 5 novembre"
-  },
   {
    "date": "2026-11-06",
    "title": "Donald Trump dénonce des élections truquées après les midterms"
@@ -1098,7 +1075,67 @@
   {
    "date": "2026-11-13",
    "title": "Visite du pape Léon XIV au Pérou dédiée à la justice et à la mémoire"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Victoire du XV de France 21-19 face à l'Afrique du Sud au Stade de France"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Interruption de tous les vols aux États-Unis par la FAA suite à une panne de communication"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Collision entre un navire-citerne et un bateau de croisière à La Nouvelle-Orléans"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Intervention militaire américaine au-dessus d'une base britannique face à des drones suspects"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Manifestations à Paris et dispositif policier pour la journée contre la vie chère"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Clôture de la cagnotte pour Sonia héroïne du 13-Novembre au-dessus des 500 000 euros"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Hausse de 1% du cours de Saint-Gobain à 76 euros et recommandation d'achat réitérée par Jefferies"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Invention de briques de bois massif emboîtables et démontables comme des Lego"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Prévision d'un marché mondial du pétrole excédentaire au 4e trimestre par l'AIE"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Revalorisation du Smic mensuel net à 1502 euros à partir du 1er décembre"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Revalorisation de la prime de risque des policiers proposée par Laurent Nuñez et jugée insuffisante"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Directives du gouvernement pour sanctionner systématiquement les blocages de lycées"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Sommet européen de Dublin consacré à l'investissement et la souveraineté dans l'IA"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Désignation de cinq pays européens pour représenter le continent aux pourparlers sur l'Ukraine"
+  },
+  {
+   "date": "2026-11-14",
+   "title": "Stabilité de Teleperformance à 70,90 EUR face à la transformation IA de ses services"
   }
  ],
- "last": "2026-11-13"
+ "last": "2026-11-14"
 }

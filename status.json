@@ -1,24 +1,20 @@
 {
- "date": "2026-11-13",
- "heure": "02:51",
+ "date": "2026-11-14",
+ "heure": "02:48",
  "modele_texte": "gemini-3.6-flash",
- "mots": 2451,
- "minutes": 13.4,
+ "mots": 2078,
+ "minutes": 11.8,
  "voix": [
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
-  "gemini-3.1-flash-tts-preview"
+  "gemini-3.8-flash-tts"
  ],
  "erreurs": [
   "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are",
-  "gemini-3.8-flash-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, hea",
-  "gemini-3.8-flash-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, hea",
-  "gemini-3.8-flash-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, hea",
-  "gemini-3.8-flash-tts HTTP 429: b'{\\n  \"error\": {\\n    \"code\": 429,\\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, hea"
+  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are"
  ],
  "donnees_manquantes": [],
- "musique": "Electro_Cabello.mp3"
+ "musique": "Dirt_Rhodes.mp3"
 }
