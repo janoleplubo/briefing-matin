@@ -520,6 +520,7 @@ def main():
         "action": lambda: quote(ticker, "1y"),
         "action_news": lambda: gnews(f"{action} bourse when:14d", 8),
         "sgo": lambda: quote("SGO.PA", "1mo"),
+        "rms": lambda: quote("RMS.PA", "5d"),
         "sgo_news": lambda: gnews("Saint-Gobain when:3d", 12),
         "ia_innov": lambda: gnews("nouveau modèle IA lancement innovation when:3d", 12),
         "ia_labos": lambda: gnews("(OpenAI OR Anthropic OR \"Google DeepMind\" OR Gemini OR Meta OR xAI OR Mistral) "
@@ -575,6 +576,11 @@ def main():
     g = data["sgo"]
     sgo_data = (f"Cours {round(g['last'])} euros, {pct(g['day'])} sur la dernière séance, {pct(g['range'])} sur un mois."
                 if isinstance(g, dict) else "(cours indisponible)")
+    h = data.get("rms")
+    HERMES_CIBLE = 1280
+    rms_data = (f"Cours {int(round(h['last'] / 10) * 10)} euros (arrondi à la dizaine), cible d'achat de Jean : {HERMES_CIBLE} euros, "
+                f"écart : {int(round((h['last'] - HERMES_CIBLE) / 10) * 10)} euros."
+                if isinstance(h, dict) else "(cours indisponible)")
 
     revision_txt = (f"\n   Puis une petite RÉVISION : demande à Jean s'il se souvient du sens de ces mots déjà vus : "
                     f"{', '.join(revise)}. Laisse un court suspense, puis redonne la définition de chacun.") if revise else ""
@@ -599,6 +605,7 @@ ORDRE ET DURÉE DES RUBRIQUES :
 2. Les actus de la veille (environ 260 mots) : les 4 à 6 faits les plus importants.
 3. Saint du jour et anniversaires (environ 60 mots, TRÈS rapide) : le saint, puis 2 ou 3 personnalités vraiment connues du grand public nées ce jour.
 4. La bourse (environ 45 mots, COURT et factuel) : toujours le CAC 40, le MSCI World (dis simplement "le MSCI World", l'indice des actions mondiales) et le Bitcoin. Les autres indices marqués "SEULEMENT SI ÇA BOUGE FORT" ne sont cités que si leur variation sur la séance atteint 2 pour cent ou plus ; sinon, résume la tendance mondiale en quelques mots. Ne cite JAMAIS le S&P 500 par son nom sauf mouvement d'au moins 2 pour cent.
+4 bis. Hermès (une ou deux phrases), CHAQUE JOUR, juste après la bourse : donne le cours d'Hermès arrondi à la dizaine d'euros (tel que fourni dans [HERMÈS]) et rappelle à Jean qu'il souhaite acheter l'action à 1280 euros, en disant l'écart. Si le cours est à 1280 euros ou en dessous, dis-le clairement : la cible est atteinte. Pas de conseil d'achat.
 5. Saint-Gobain (environ 120 mots), CHAQUE JOUR : le cours et sa variation (arrondis à l'unité), puis les actualités récentes de l'entreprise tirées des titres fournis (contrats, résultats, acquisitions, avis d'analystes, marché de la construction). S'il n'y a rien de neuf par rapport à ce qui a été dit les jours précédents, dis-le en une phrase et rappelle un enjeu de fond du groupe différent de celui d'hier.
 6. L'info rigolote (environ 80 mots) : une ou deux anecdotes vraies, surprenantes et drôles.
 7. La veille ia de pointe (environ 420 mots), CHAQUE JOUR, la rubrique la plus importante : Jean veut être EN AVANCE sur son entourage, pas répéter ce que dit le journal de 20 heures. Ton d'expert qui briefe un initié, précis et concret. Appuie-toi en priorité sur les sources spécialisées [IA - LABOS], [IA - MODÈLES CHINOIS], [IA - NOUVELLES FONCTIONS], [IA - HACKER NEWS], [IA - HUGGING FACE], [IA - RECHERCHE], [IA - THE DECODER] et [IA - SIMON WILLISON] ; la presse généraliste sert seulement de complément. Structure, en enchaînant naturellement :
@@ -688,7 +695,10 @@ Titres récents :
 [BÂTIMENT - innovations]
 {data['batiment']}
 
-{GITHUB_DATA}[SAINT-GOBAIN]
+{GITHUB_DATA}[HERMÈS]
+{rms_data}
+
+[SAINT-GOBAIN]
 {sgo_data}
 Titres récents :
 {data['sgo_news']}
