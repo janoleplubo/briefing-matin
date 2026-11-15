@@ -1,14 +1,10 @@
 {
- "date": "2026-11-14",
- "heure": "02:48",
+ "date": "2026-11-15",
+ "heure": "02:45",
  "modele_texte": "gemini-3.6-flash",
- "mots": 2078,
- "minutes": 11.8,
+ "mots": 2136,
+ "minutes": 11.3,
  "voix": [
-  "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts"
  ],
  "erreurs": [
@@ -16,5 +12,5 @@
   "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are"
  ],
  "donnees_manquantes": [],
- "musique": "Dirt_Rhodes.mp3"
+ "musique": "Funky_Chunk.mp3"
 }

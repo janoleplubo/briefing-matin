@@ -109,6 +109,11 @@
    "date": "2026-11-14",
    "word": "subreptice",
    "definition": "Accompli de manière furtive, dérobée ou obtenue par ruse en dissimulant la vérité."
+  },
+  {
+   "date": "2026-11-15",
+   "word": "proclivité",
+   "definition": "Penchant naturel, inclination forte ou disposition habituelle vers une attitude ou un comportement."
   }
  ],
  "topics": [
@@ -199,6 +204,10 @@
   {
    "date": "2026-11-14",
    "title": "L'épopée du Tunnel sous la Manche et le défi des tunneliers géants"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "ASML et le monopole mondial des machines de lithographie EUV"
   }
  ],
  "actions": [
@@ -289,6 +298,10 @@
   {
    "date": "2026-11-14",
    "name": "Teleperformance"
+  },
+  {
+   "date": "2026-11-15",
+   "name": "Michelin"
   }
  ],
  "ia": [
@@ -363,6 +376,10 @@
   {
    "date": "2026-11-14",
    "title": "La rétropropagation (Backpropagation) : l'ajustement des neurones par l'erreur"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Le prompt Few-Shot ou l'apprentissage par l'exemple"
   }
  ],
  "ia_news": [
@@ -653,61 +670,29 @@
   {
    "date": "2026-11-14",
    "title": "Révélation sur l'utilisation des puces Nvidia Blackwell par des labos chinois"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Sortie du modèle robotique Praxis 1 en poids ouverts par Runway"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Lancement de Claude for Manufacturing par Anthropic"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Exécution d'agents parallèles dans Claude Code Projects"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Décryptage des carnets secrets de Gödel par l'IA"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Dissolution de l'équipe robotique dédiée d'OpenAI"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-06",
-   "title": "Donald Trump dénonce des élections truquées après les midterms"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Première victoire de l'OM en Ligue Europa à Leverkusen"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Luca Van Assche en quart de finale du Masters 1000 de Paris"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Saint-Gobain modernise le centre de rééducation de l'Aisne"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Hong Kong veut devenir la Monaco asiatique du yachting"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Immersion au restaurant routier L'Escale près de Châteauroux"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Béton de chanvre mécanisé par l'entreprise Moreau-Lathus"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Mise en service du nouveau TGV SNCF entre Paris et Marseille"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Les députés veulent supprimer les emprunts d'État indexés"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Gadi Eisenkot bien placé pour succéder à Nétanyahou"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Pourparlers entre la Russie et l'Ukraine prévus à Abou Dhabi"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Gavin Newsom commue 548 peines de mort en Californie"
-  },
-  {
-   "date": "2026-11-06",
-   "title": "Action Orange : hausse du titre après de bons résultats T3"
-  },
   {
    "date": "2026-11-07",
    "title": "Accident de car mortel à Lent dans l'Ain faisant deux victimes"
@@ -1135,7 +1120,59 @@
   {
    "date": "2026-11-14",
    "title": "Stabilité de Teleperformance à 70,90 EUR face à la transformation IA de ses services"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Vol de données chez Maileva touchant 22 millions de personnes"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Propositions territoriales américaines à l'Ukraine révélées par Zelensky"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Cinquième samedi de manifestation contre la vie chère en France"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Résolution lente de la panne aérienne historique aux États-Unis"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Victoire historique du Pays de Galles contre les All Blacks 35-28"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Récupération réussie de l'étage supérieur de Starship par SpaceX"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Saint-Gobain replie à 75 euros mais progresse de 15% sur un mois"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Carmelle remporte la première édition de l'Eurovision d'Asie pour les Philippines"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Huawei mobilise 114 000 chercheurs pour l'autosuffisance en puces IA"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Gérard Larcher propose une méthode de départage pour la droite en 2027"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Teddy Riner rejette toute étiquette macroniste"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Emmanuel Macron dénonce les pressions pour une paix injuste en Ukraine"
+  },
+  {
+   "date": "2026-11-15",
+   "title": "Michelin stable à 33.71 euros avec une hausse de 16% sur un an"
   }
  ],
- "last": "2026-11-14"
+ "last": "2026-11-15"
 }
