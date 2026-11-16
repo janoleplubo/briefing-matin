@@ -114,6 +114,11 @@
    "date": "2026-11-15",
    "word": "proclivité",
    "definition": "Penchant naturel, inclination forte ou disposition habituelle vers une attitude ou un comportement."
+  },
+  {
+   "date": "2026-11-16",
+   "word": "turpitude",
+   "definition": "Bassesse extrême, action ignominieuse ou laideur morale."
   }
  ],
  "topics": [
@@ -208,6 +213,10 @@
   {
    "date": "2026-11-15",
    "title": "ASML et le monopole mondial des machines de lithographie EUV"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Poésie : Le Pont Mirabeau de Guillaume Apollinaire"
   }
  ],
  "actions": [
@@ -302,6 +311,10 @@
   {
    "date": "2026-11-15",
    "name": "Michelin"
+  },
+  {
+   "date": "2026-11-16",
+   "name": "Bouygues"
   }
  ],
  "ia": [
@@ -380,6 +393,10 @@
   {
    "date": "2026-11-15",
    "title": "Le prompt Few-Shot ou l'apprentissage par l'exemple"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Le RLHF ou l'apprentissage par renforcement avec retour humain"
   }
  ],
  "ia_news": [
@@ -690,53 +707,29 @@
   {
    "date": "2026-11-15",
    "title": "Dissolution de l'équipe robotique dédiée d'OpenAI"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Sortie du modèle LongCat-2.5 de 1,6 billion de paramètres par Meituan sur hardware chinois"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Gemini 4 Carbon prend la tête du benchmark MathArena"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Baidu publie ERNIE 5.5 Flash Preview avec raisonnement permanent sur OpenRouter"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Claude Fable 5.2 peint des images par génération de code Python"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Connexion de Gemini à Google Wallet pour l'analyse des dépenses personnelles"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-07",
-   "title": "Accident de car mortel à Lent dans l'Ain faisant deux victimes"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "Donald Trump nomme le radical Stephen Miller directeur de cabinet de la Maison-Blanche"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "Destitution du président Santiago Peña au Paraguay suite à un scandale financier"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "Procès ordonné pour la propriétaire du gîte de Wintzenheim après l'incendie de 2023"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "Polémique sur le péage à plus de 20 euros de la future autoroute A69"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "Jean-Micaël Bitz prend la tête du négoce chez Saint-Gobain Distribution Bâtiment"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "Saint-Gobain mise sur l'intelligence artificielle pour formuler ses matériaux bas carbone"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "Vols nocturnes saisonniers d'huîtres et d'escargots chez les producteurs avant les fêtes"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "Créations d'emplois supérieures aux attentes en octobre aux États-Unis"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "L'Allemagne entre au capital du fabricant de blindés KNDS à 50 pour cent"
-  },
-  {
-   "date": "2026-11-07",
-   "title": "Mobilisation de 70 000 policiers en France et saisine de la CJR contre Laurent Nuñez"
-  },
   {
    "date": "2026-11-07",
    "title": "Les rebelles houthistes délivrent des autorisations de transit par email en mer Rouge"
@@ -1172,7 +1165,51 @@
   {
    "date": "2026-11-15",
    "title": "Michelin stable à 33.71 euros avec une hausse de 16% sur un an"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Victoire de la France face à la Turquie (2-1) en Ligue des nations"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Fermeture de la frontière estonienne avec la Russie après un sabotage déjoué"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Inondations meurtrières dans l'Hérault près de Montpellier"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Mise en examen dans les Yvelines après un crypto-rapt de 900 000 euros"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Fermeture de l'autoroute A13 pour huit mois de travaux de consolidation de tunnel"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Ralliement de la CFDT à la mobilisation syndicale du 17 novembre"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Publication de l'enquête Fractures françaises révélant le désenchantement électoral"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Gadi Eisenkot réclame la démission immédiate de Benyamin Nétanyahou"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Saint-Gobain regroupe Clim+ et Cedeo à Bourg-en-Bresse"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Un phoque squatte le pont d'un yacht à Sydney pendant 36 heures"
+  },
+  {
+   "date": "2026-11-16",
+   "title": "Bouygues relève ses prévisions 2026 grâce à la rentabilité d'Equans"
   }
  ],
- "last": "2026-11-15"
+ "last": "2026-11-16"
 }
