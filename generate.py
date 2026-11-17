@@ -608,7 +608,7 @@ def main():
         extra += ("4 ter. Alerte iPhone (une ou deux phrases, SEULEMENT si pertinent), juste après Hermès : Jean veut acheter un "
                   f"iPhone 15 reconditionné à MOINS de {IPHONE_SEUIL} euros. Si les titres [ALERTE IPHONE 15 RECONDITIONNÉ] "
                   f"contiennent une offre d'iPhone 15 (pas 14, pas 13, pas 16) reconditionné à un prix explicitement inférieur à {IPHONE_SEUIL} "
-                  "euros, annonce-la : le marchand, le prix arrondi à l'euro et le modèle ou la capacité si connus. Si aucune offre ne passe "
+                  "euros, annonce-la : le vrai VENDEUR (Back Market, CertiDeal, Cdiscount, Fnac, Amazon...), le prix arrondi à l'euro et la capacité si connue. Le site qui publie l'article (Futura, Ariase, Dealabs, Les Mobiles...) n'est PAS le vendeur : ne le présente jamais comme tel ; si le vendeur n'est pas clairement indiqué, dis « repéré par » suivi du site. Si aucune offre ne passe "
                   "sous le seuil avec un prix clairement écrit, n'en parle PAS du tout. N'invente jamais de prix.\n")
         EXTRA = extra
     h = data.get("rms")
