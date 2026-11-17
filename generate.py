@@ -272,6 +272,30 @@ def hf_papers():
     return "\n".join(f"- {x['paper']['title']} — {clean(x['paper'].get('summary', ''))[:200]}" for x in j)
 
 
+IPHONE_ALERTE_FIN = "2026-12-17"  # alerte demandée le 17/11/2026, pour un mois
+IPHONE_SEUIL = 400
+
+
+def iphone_deals():
+    """Titres de bons plans iPhone 15 reconditionné (presse bons plans + Dealabs), pour l'alerte < 400 €."""
+    out = []
+    for q in ("iPhone 15 reconditionné prix when:3d", "iPhone 15 reconditionné Black Friday when:3d",
+              "iPhone 15 reconditionné Back Market when:3d"):
+        try:
+            out.append(gnews(q, 10))
+        except Exception as e:
+            log("iphone gnews", e)
+    try:
+        out.append(rss("https://www.dealabs.com/rss/search?q=" + urllib.parse.quote("iphone 15 reconditionné"), 15))
+    except Exception as e:
+        log("iphone dealabs", e)
+    lines = []
+    for l in "\n".join(out).splitlines():
+        if l.strip() and l not in lines:
+            lines.append(l)
+    return "\n".join(lines[:35]) or "(rien trouvé)"
+
+
 # ---------------------------------------------------------------- Gemini
 STATS = {"voix": [], "erreurs": []}
 
@@ -536,6 +560,8 @@ def main():
     }
     if NOW.weekday() == 0 or os.environ.get("PREVIEW") == "1":
         jobs["github"] = github_week
+    if TODAY <= IPHONE_ALERTE_FIN:
+        jobs["iphone"] = iphone_deals
     data = {}
     with ThreadPoolExecutor(12) as ex:
         futs = {k: ex.submit(f) for k, f in jobs.items()}
@@ -576,6 +602,15 @@ def main():
     g = data["sgo"]
     sgo_data = (f"Cours {round(g['last'])} euros, {pct(g['day'])} sur la dernière séance, {pct(g['range'])} sur un mois."
                 if isinstance(g, dict) else "(cours indisponible)")
+    IPHONE_DATA = (f"[ALERTE IPHONE 15 RECONDITIONNÉ, seuil {IPHONE_SEUIL} euros]\n{data['iphone']}\n\n"
+                   if "iphone" in data else "")
+    if "iphone" in data:
+        extra += ("4 ter. Alerte iPhone (une ou deux phrases, SEULEMENT si pertinent), juste après Hermès : Jean veut acheter un "
+                  f"iPhone 15 reconditionné à MOINS de {IPHONE_SEUIL} euros. Si les titres [ALERTE IPHONE 15 RECONDITIONNÉ] "
+                  f"contiennent une offre d'iPhone 15 (pas 14, pas 13, pas 16) reconditionné à un prix explicitement inférieur à {IPHONE_SEUIL} "
+                  "euros, annonce-la : le marchand, le prix arrondi à l'euro et le modèle ou la capacité si connus. Si aucune offre ne passe "
+                  "sous le seuil avec un prix clairement écrit, n'en parle PAS du tout. N'invente jamais de prix.\n")
+        EXTRA = extra
     h = data.get("rms")
     HERMES_CIBLE = 1280
     rms_data = (f"Cours {int(round(h['last'] / 10) * 10)} euros (arrondi à la dizaine), cible d'achat de Jean : {HERMES_CIBLE} euros, "
@@ -695,7 +730,7 @@ Titres récents :
 [BÂTIMENT - innovations]
 {data['batiment']}
 
-{GITHUB_DATA}[HERMÈS]
+{IPHONE_DATA}{GITHUB_DATA}[HERMÈS]
 {rms_data}
 
 [SAINT-GOBAIN]
