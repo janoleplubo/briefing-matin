@@ -119,6 +119,11 @@
    "date": "2026-11-16",
    "word": "turpitude",
    "definition": "Bassesse extrême, action ignominieuse ou laideur morale."
+  },
+  {
+   "date": "2026-11-17",
+   "word": "sérendipité",
+   "definition": "Capacité à faire une découverte inattendue et féconde par hasard, lors de recherches sur un autre sujet."
   }
  ],
  "topics": [
@@ -217,6 +222,10 @@
   {
    "date": "2026-11-16",
    "title": "Poésie : Le Pont Mirabeau de Guillaume Apollinaire"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "La théorie du Cygne Noir de Nassim Nicholas Taleb"
   }
  ],
  "actions": [
@@ -315,6 +324,10 @@
   {
    "date": "2026-11-16",
    "name": "Bouygues"
+  },
+  {
+   "date": "2026-11-17",
+   "name": "Carrefour"
   }
  ],
  "ia": [
@@ -397,6 +410,10 @@
   {
    "date": "2026-11-16",
    "title": "Le RLHF ou l'apprentissage par renforcement avec retour humain"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Le System Prompt ou consigne système"
   }
  ],
  "ia_news": [
@@ -727,73 +744,29 @@
   {
    "date": "2026-11-16",
    "title": "Connexion de Gemini à Google Wallet pour l'analyse des dépenses personnelles"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Alibaba lance le modèle phare Qwen4-Max"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Tencent dévoile Hy4 Flash à bas coût"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "OpenAI résout un problème du Modèle Standard avec GPT-6 Astra"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Étude d'Anthropic sur la sélection de la mémoire des agents"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Google alerte sur des cyberattaques IA autonomes"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-07",
-   "title": "Les rebelles houthistes délivrent des autorisations de transit par email en mer Rouge"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Attaque terroriste et fusillade meurtrière à Cracovie en Pologne"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Gadi Eisenkot désigné pour tenter de former un gouvernement en Israël"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Mobilisation sociale contre la vie chère en net recul en France"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Victoire du XV de France 54-17 face aux Fidji et blessure de Romain Ntamack"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Tom Laperche remporte la Route du Rhum en Ultim avec un record historique"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Donald Trump propose à Dana White le poste de porte-parole de la Maison-Blanche"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Vol insolite de 500 kilomètres de câbles de cuivre dans un parc solaire"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "EDF annonce la stabilité des tarifs réglementés d'électricité jusqu'en février"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Jean-Luc Mélenchon lance sa campagne présidentielle 2027 au Bourget"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Mathieu Lefèvre nommé porte-parole du gouvernement par intérim"
-  },
-  {
-   "date": "2026-11-08",
-   "title": "Saint-Gobain mise sur les fours électriques hybrides et le calcin recyclé"
-  },
-  {
-   "date": "2026-11-09",
-   "title": "Enquête interne chez Nvidia visant Jensen Huang"
-  },
-  {
-   "date": "2026-11-09",
-   "title": "La pétition contre CNews dépasse le million de signatures"
-  },
-  {
-   "date": "2026-11-09",
-   "title": "Procès aux assises dans l'affaire Michel Zecler"
-  },
-  {
-   "date": "2026-11-09",
-   "title": "Mise en examen du chauffeur de car dans l'Ain"
-  },
   {
    "date": "2026-11-09",
    "title": "Trois corps supplémentaires retrouvés chez le tireur de Cracovie"
@@ -1209,7 +1182,71 @@
   {
    "date": "2026-11-16",
    "title": "Bouygues relève ses prévisions 2026 grâce à la rentabilité d'Equans"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Grève et manifestations dans la fonction publique et les transports le 17 novembre"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Gérard Depardieu renonce à son appel et voit sa peine confirmée"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Deux ans de prison requis contre Pierre Ménès"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Adoption par l'Assemblée du texte sur l'épargne salariale"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Frappes russes sur deux ponts majeurs à Kiev"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Robert Pattinson incarnateur du prochain James Bond"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Hermès cote à 1340 euros avec une cible à 1280 euros"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Saint-Gobain replie à 75 euros et poursuit sa décarbonation"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Mystère autour de la chute du fondateur de Mango"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Le casque Milwaukee Bolt 200 classé numéro 1 anti-traumatismes"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Bruxelles valide le rachat de Commerzbank par UniCredit"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Assimil placé en redressement judiciaire"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Grand débat de la présidentielle 2027 entre cinq candidats"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Projet de centre d'expulsion au Rwanda par cinq pays européens"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Arrivée du porte-avions américain Theodore Roosevelt au Moyen-Orient"
+  },
+  {
+   "date": "2026-11-17",
+   "title": "Carrefour progresse à 14.22 euros en Bourse"
   }
  ],
- "last": "2026-11-16"
+ "last": "2026-11-17"
 }
