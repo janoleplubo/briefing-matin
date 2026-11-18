@@ -124,6 +124,11 @@
    "date": "2026-11-17",
    "word": "sérendipité",
    "definition": "Capacité à faire une découverte inattendue et féconde par hasard, lors de recherches sur un autre sujet."
+  },
+  {
+   "date": "2026-11-18",
+   "word": "pléthorique",
+   "definition": "Surabondant, qui dépasse la mesure au point de saturer."
   }
  ],
  "topics": [
@@ -226,6 +231,10 @@
   {
    "date": "2026-11-17",
    "title": "La théorie du Cygne Noir de Nassim Nicholas Taleb"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Le Dilemme de l'innovateur de Clayton Christensen"
   }
  ],
  "actions": [
@@ -328,6 +337,10 @@
   {
    "date": "2026-11-17",
    "name": "Carrefour"
+  },
+  {
+   "date": "2026-11-18",
+   "name": "Danone"
   }
  ],
  "ia": [
@@ -414,6 +427,10 @@
   {
    "date": "2026-11-17",
    "title": "Le System Prompt ou consigne système"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "La température dans les modèles de langage"
   }
  ],
  "ia_news": [
@@ -764,57 +781,25 @@
   {
    "date": "2026-11-17",
    "title": "Google alerte sur des cyberattaques IA autonomes"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "OpenAI lance GPT-6.2 Astra et Sol"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Google dote Gemini d'agents d'achat"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Google détecte une cyberattaque d'ia autonome"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Moonshot AI réoriente Kimi vers la science"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-09",
-   "title": "Trois corps supplémentaires retrouvés chez le tireur de Cracovie"
-  },
-  {
-   "date": "2026-11-09",
-   "title": "Naufrage tragique d'une pirogue au large du Sénégal"
-  },
-  {
-   "date": "2026-11-09",
-   "title": "Pluies torrentielles et 70 000 tentes inondées à Gaza"
-  },
-  {
-   "date": "2026-11-09",
-   "title": "Victoire de Lando Norris au Grand Prix du Brésil sous la pluie"
-  },
-  {
-   "date": "2026-11-09",
-   "title": "Saint-Gobain utilise l'IA pour la R et D de nouveaux matériaux"
-  },
-  {
-   "date": "2026-11-09",
-   "title": "Un cerf sauvé de la chasse à courre par des riverains dans l'Oise"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Cyberattaque iranienne contre les frigos de 700 supermarchés français"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Candidature de Teddy Riner à l'élection présidentielle de 2027"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Revalorisation du Smic de 1,6 pour cent au premier décembre"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Alerte de l'Ofast sur le doublement des overdoses en dix ans"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Procédure de destitution engagée aux États-Unis contre Pete Hegseth"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Attribution du Booker Prize 2026 à M. John Harrison"
-  },
   {
    "date": "2026-11-10",
    "title": "Saint-Gobain généralise l'Analyse du Cycle de Vie sur ses matériaux"
@@ -1246,7 +1231,55 @@
   {
    "date": "2026-11-17",
    "title": "Carrefour progresse à 14.22 euros en Bourse"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Condamnation des parents de la petite martyre de l'A10"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Essoufflement de la mobilisation sociale du 17 novembre"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Modalités de la primaire de la droite et du centre"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Élection de Matan Kahana à la tête de la Knesset"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Pannes sur les services iCloud d'Apple"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Suspension de Teddy Riner par l'Unicef"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Perturbations sur le réseau interne de la NSA"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Tensions diplomatiques sur la présence militaire en Ukraine"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Cession de l'activité de canalisation de Saint-Gobain en Amérique latine"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Hausse des inégalités de genre dans la direction des grandes entreprises"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Suppression des interdictions de location liées au DPE"
+  },
+  {
+   "date": "2026-11-18",
+   "title": "Projet d'expulsion de migrants vers le Rwanda par cinq pays européens"
   }
  ],
- "last": "2026-11-17"
+ "last": "2026-11-18"
 }
