@@ -129,6 +129,11 @@
    "date": "2026-11-18",
    "word": "pléthorique",
    "definition": "Surabondant, qui dépasse la mesure au point de saturer."
+  },
+  {
+   "date": "2026-11-19",
+   "word": "velléité",
+   "definition": "Intention ou désir vague qui ne se concrétise pas par des actes."
   }
  ],
  "topics": [
@@ -235,6 +240,10 @@
   {
    "date": "2026-11-18",
    "title": "Le Dilemme de l'innovateur de Clayton Christensen"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Demain, dès l'aube de Victor Hugo"
   }
  ],
  "actions": [
@@ -341,6 +350,10 @@
   {
    "date": "2026-11-18",
    "name": "Danone"
+  },
+  {
+   "date": "2026-11-19",
+   "name": "Unibail-Rodamco-Westfield"
   }
  ],
  "ia": [
@@ -431,6 +444,10 @@
   {
    "date": "2026-11-18",
    "title": "La température dans les modèles de langage"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Les modèles ouverts en intelligence artificielle"
   }
  ],
  "ia_news": [
@@ -797,57 +814,25 @@
   {
    "date": "2026-11-18",
    "title": "Moonshot AI réoriente Kimi vers la science"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Sortie de Gemini 4 Neon par Google"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Lancement des modèles GPT-6.2 Astra et Sol"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Arrivée du modèle Hy4 Flash par Tencent"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Lancement de la version gratuite de l'agent Tasks"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-10",
-   "title": "Saint-Gobain généralise l'Analyse du Cycle de Vie sur ses matériaux"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Sauvetage de plus de 800 chiens par la SPA dans l'Indre"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Airbnb interdit aux propriétaires d'exiger le ménage aux voyageurs"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Acieo accélère le développement de la construction hors site"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Inauguration d'une imprimante 3D béton au lycée Jean Hinglo"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Réforme des heures creuses d'électricité par Enedis"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Proposition de la Cour des comptes de geler les avancements des fonctionnaires"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Départ des syndicats lycéens de la réunion Matignon sur Parcoursup"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Reprise des négociations diplomatiques russo-ukrainiennes à Abou Dhabi"
-  },
-  {
-   "date": "2026-11-10",
-   "title": "Analyse boursière et perspectives de Bureau Veritas"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Témoignage de Michel Zecler au procès des policiers"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Élue aspergée d'essence devant un lycée bloqué à Chelles"
-  },
   {
    "date": "2026-11-11",
    "title": "Négociations russo-ukrainiennes et échange de prisonniers à Abou Dhabi"
@@ -1279,7 +1264,55 @@
   {
    "date": "2026-11-18",
    "title": "Projet d'expulsion de migrants vers le Rwanda par cinq pays européens"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Sortie mondiale du jeu vidéo Grand Theft Auto VI"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Vente record du tableau Châtaigniers en fleurs de Van Gogh"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Marine Tondelier ouverte à une coalition derrière Jean-Luc Mélenchon"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Condamnation de trois revenantes françaises de l'État islamique"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Nouveau sabotage et interruption du trafic sur le pont de Crimée"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Adoption en première lecture du budget de la Sécurité sociale"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Rapport de la Cour des comptes sur l'héritage des Jeux olympiques"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "La sonde Voyager 1 franchit le seuil d'un jour-lumière de la Terre"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Cession de l'activité de canalisation de Saint-Gobain en Amérique latine"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Liquidation de stocks de smartphones à prix cassés"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Projet d'emprunt européen pour financer l'aide à l'Ukraine"
+  },
+  {
+   "date": "2026-11-19",
+   "title": "Déclarations polémiques de la première ministre danoise sur l'immigration"
   }
  ],
- "last": "2026-11-18"
+ "last": "2026-11-19"
 }
