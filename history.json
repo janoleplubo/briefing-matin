@@ -134,6 +134,11 @@
    "date": "2026-11-19",
    "word": "velléité",
    "definition": "Intention ou désir vague qui ne se concrétise pas par des actes."
+  },
+  {
+   "date": "2026-11-20",
+   "word": "déliquescence",
+   "definition": "Dégradation extrême, état de décomposition morale, sociale ou matérielle d'une organisation."
   }
  ],
  "topics": [
@@ -244,6 +249,10 @@
   {
    "date": "2026-11-19",
    "title": "Demain, dès l'aube de Victor Hugo"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Le coup de maître de Bernard Arnault sur le groupe Boussac"
   }
  ],
  "actions": [
@@ -354,6 +363,10 @@
   {
    "date": "2026-11-19",
    "name": "Unibail-Rodamco-Westfield"
+  },
+  {
+   "date": "2026-11-20",
+   "name": "Veolia"
   }
  ],
  "ia": [
@@ -448,6 +461,10 @@
   {
    "date": "2026-11-19",
    "title": "Les modèles ouverts en intelligence artificielle"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Le surapprentissage (overfitting)"
   }
  ],
  "ia_news": [
@@ -830,57 +847,29 @@
   {
    "date": "2026-11-19",
    "title": "Lancement de la version gratuite de l'agent Tasks"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Introduction en Bourse record d'Anthropic pour 81 milliards de dollars"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Microsoft dévoile sept modèles légers MAI pour le code et la sécurité"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Google dote Gemini de l'automatisation directe des applications Mac"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Sortie de Genie 4 par Google DeepMind pour les mondes 3D interactifs"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Succès du modèle ouvert de traitement de la voix Haru-4B sur Hugging Face"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-11",
-   "title": "Négociations russo-ukrainiennes et échange de prisonniers à Abou Dhabi"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Daniel Kretinsky prend le contrôle de Fnac Darty à 69 pour cent"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Mise en examen de Michel Houellebecq pour propos de 2022"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Plainte de la famille Kennedy contre l'arc de triomphe de Trump"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Partenariat de recherche entre Saint-Gobain et Microsoft"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Chute de Nvidia de 6 pour cent après un scandale d'espionnage"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Nouvelle hausse de près de 6 pour cent des tarifs du gaz en France"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Candidature officielle d'Eric Zemmour à la présidentielle 2027"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Rejet de la pétition anti-CNews à l'Assemblée nationale"
-  },
-  {
-   "date": "2026-11-11",
-   "title": "Alerte rouge au Portugal face à la tempête Charles"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Grand oral des candidats à la présidentielle 2027 sur les services publics"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Élection de Scott Colom au Sénat américain dans le Mississippi"
-  },
   {
    "date": "2026-11-12",
    "title": "Effondrement d'un immeuble à Brooklyn faisant deux morts et dix-sept blessés"
@@ -1312,7 +1301,55 @@
   {
    "date": "2026-11-19",
    "title": "Déclarations polémiques de la première ministre danoise sur l'immigration"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Perquisition au siège du RN pour violation du secret de l'enquête"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "La Birmanie condamnée pour génocide des Rohingya par la Cour internationale de justice"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Yannick Jadot et Jérémie Iordanoff quittent les Écologistes"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "589 millions d'enfants vivent en zone de conflit selon Save The Children"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Alerte du gouvernement et de l'Anssi sur la flambée des cyberattaques"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Cdiscount propose un iPhone 15 reconditionné à 389 euros"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Saint-Gobain accélère sur le recyclage en boucle fermée des pare-brises"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Dérive d'un agent OpenAI transformé en espion d'emails"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Inauguration par Nexity à Lyon du premier immeuble sans chauffage ni clim"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Révélations de l'enquête Inside Deutsche Bank sur les fonds Al-Assad"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "Gérard Larcher réclame d'avancer la date de l'élection présidentielle 2027"
+  },
+  {
+   "date": "2026-11-20",
+   "title": "L'Arcom impose le pluralisme politique aux podcasts et créateurs web"
   }
  ],
- "last": "2026-11-19"
+ "last": "2026-11-20"
 }
