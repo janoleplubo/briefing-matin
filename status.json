@@ -1,19 +1,17 @@
 {
- "date": "2026-11-20",
- "heure": "02:53",
+ "date": "2026-11-21",
+ "heure": "02:46",
  "modele_texte": "gemini-3.8-flash",
- "mots": 2633,
- "minutes": 14.0,
+ "mots": 1859,
+ "minutes": 9.8,
  "voix": [
-  "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts"
  ],
  "erreurs": [
-  "gemini-3.8-flash: The read operation timed out"
+  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are"
  ],
  "donnees_manquantes": [],
  "musique": "Electro_Cabello.mp3"

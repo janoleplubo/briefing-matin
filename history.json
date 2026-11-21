@@ -139,6 +139,11 @@
    "date": "2026-11-20",
    "word": "déliquescence",
    "definition": "Dégradation extrême, état de décomposition morale, sociale ou matérielle d'une organisation."
+  },
+  {
+   "date": "2026-11-21",
+   "word": "roboratif",
+   "definition": "Qui redonne des forces, qui fortifie ou revigore le corps ou l'esprit."
   }
  ],
  "topics": [
@@ -253,6 +258,10 @@
   {
    "date": "2026-11-20",
    "title": "Le coup de maître de Bernard Arnault sur le groupe Boussac"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "L'Acteur et le Système de Crozier et Friedberg"
   }
  ],
  "actions": [
@@ -367,6 +376,10 @@
   {
    "date": "2026-11-20",
    "name": "Veolia"
+  },
+  {
+   "date": "2026-11-21",
+   "name": "Renault"
   }
  ],
  "ia": [
@@ -465,6 +478,10 @@
   {
    "date": "2026-11-20",
    "title": "Le surapprentissage (overfitting)"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Le raisonnement par chaîne de pensée (Chain of Thought)"
   }
  ],
  "ia_news": [
@@ -867,57 +884,29 @@
   {
    "date": "2026-11-20",
    "title": "Succès du modèle ouvert de traitement de la voix Haru-4B sur Hugging Face"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Résolution revendiquée de l'hypothèse de Riemann avec Claude"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "OpenAI aide AMD à concevoir ses prochaines puces GPU"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Alibaba entraîne ses modèles Qwen sur ses propres puces"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Hermes Agent partage les compétences au sein de Microsoft Teams"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Signal bloque les captures d'écran contre les agents IA"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-12",
-   "title": "Effondrement d'un immeuble à Brooklyn faisant deux morts et dix-sept blessés"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Scandale Nvidia : le conseil d'administration étudierait la révocation de Jensen Huang"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "La tempête Charles se dirige vers le sud de la France"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Plan de recrutement de 100 000 personnes dans le nucléaire français"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Saint-Gobain utilise la chaleur fatale de ses usines pour chauffer des logements"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Investissement de 13 millions d'euros dans l'outil médical du centre de rééducation Saint-Gobain"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Nouvelles canalisations bas carbone chez Saint-Gobain PAM"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Fausse alerte incendie au datacenter new-yorkais de Jane Street"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Alerte des experts économiques allemands sur l'envolée de la dette publique"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Chute de 24% des réservations de logements neufs selon la FPI"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Bruno Le Maire présente 50 propositions pour l'élection présidentielle"
-  },
-  {
-   "date": "2026-11-12",
-   "title": "Examen du projet de budget 2027 au Sénat"
-  },
   {
    "date": "2026-11-12",
    "title": "Rencontre des émissaires américains avec Vladimir Poutine à Moscou"
@@ -1349,7 +1338,55 @@
   {
    "date": "2026-11-20",
    "title": "L'Arcom impose le pluralisme politique aux podcasts et créateurs web"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Trois policiers condamnés pour l'agression raciste de Michel Zecler"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Adoption définitive de la présomption d'usage des armes par les forces de l'ordre"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Missiles russes tombés en Pologne et tensions accrues dénoncées par l'Europe"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Lancement record de GTA VI avec 3,79 milliards de dollars le premier jour"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Accord parlementaire sur le projet de loi de fin de gestion pour 2026"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Écoles Saint-Gobain : ajout des métiers d'électricien, carreleur et étancheur"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Burger King intègre la prise de commande vocale par IA sur WhatsApp"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Wall Street chute lourdement face aux doutes sur le retour sur investissement de l'IA"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Accord américain pour l'exploitation des terres rares de Mrima Hill au Kenya"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Dominique de Villepin officialise sa candidature à l'élection présidentielle 2027"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Près d'un maire sur deux refuse de parrainer un candidat pour 2027"
+  },
+  {
+   "date": "2026-11-21",
+   "title": "Création d'un square Zyed et Bouna place de la Nation votée à Paris"
   }
  ],
- "last": "2026-11-20"
+ "last": "2026-11-21"
 }
