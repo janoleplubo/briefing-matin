@@ -149,6 +149,11 @@
    "date": "2026-11-22",
    "word": "antinomie",
    "definition": "Contradiction réelle ou apparente entre deux principes, deux lois ou deux idées."
+  },
+  {
+   "date": "2026-11-23",
+   "word": "hégémonie",
+   "definition": "Domination souveraine ou suprématie incontestée exercée par une puissance, un groupe ou une entreprise dans un domaine donné."
   }
  ],
  "topics": [
@@ -271,6 +276,10 @@
   {
    "date": "2026-11-22",
    "title": "Poésie : Le Dormeur du val d'Arthur Rimbaud"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "François Hennebique et l'invention du système de béton armé"
   }
  ],
  "actions": [
@@ -393,6 +402,10 @@
   {
    "date": "2026-11-22",
    "name": "Airbus"
+  },
+  {
+   "date": "2026-11-23",
+   "name": "STMicroelectronics"
   }
  ],
  "ia": [
@@ -499,6 +512,10 @@
   {
    "date": "2026-11-22",
    "title": "La multimodalité en intelligence artificielle"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Le MCP (Model Context Protocol)"
   }
  ],
  "ia_news": [
@@ -941,65 +958,29 @@
   {
    "date": "2026-11-22",
    "title": "Étude de Nvidia contestant l'efficacité des fenêtres de contexte géantes"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Lancement du modèle Hy4 Flash par Tencent"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Publication de FastFrames-L par Apple"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Nouveau comportement direct des modèles GPT-6.2 Astra et Sol"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Lancement de l'API Monitor par Perplexity pour la veille continue"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Étude de Dragos sur la vulnérabilité des fournisseurs d'inférence bas coût"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-14",
-   "title": "Victoire du XV de France 21-19 face à l'Afrique du Sud au Stade de France"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Interruption de tous les vols aux États-Unis par la FAA suite à une panne de communication"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Collision entre un navire-citerne et un bateau de croisière à La Nouvelle-Orléans"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Intervention militaire américaine au-dessus d'une base britannique face à des drones suspects"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Manifestations à Paris et dispositif policier pour la journée contre la vie chère"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Clôture de la cagnotte pour Sonia héroïne du 13-Novembre au-dessus des 500 000 euros"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Hausse de 1% du cours de Saint-Gobain à 76 euros et recommandation d'achat réitérée par Jefferies"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Invention de briques de bois massif emboîtables et démontables comme des Lego"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Prévision d'un marché mondial du pétrole excédentaire au 4e trimestre par l'AIE"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Revalorisation du Smic mensuel net à 1502 euros à partir du 1er décembre"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Revalorisation de la prime de risque des policiers proposée par Laurent Nuñez et jugée insuffisante"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Directives du gouvernement pour sanctionner systématiquement les blocages de lycées"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Sommet européen de Dublin consacré à l'investissement et la souveraineté dans l'IA"
-  },
-  {
-   "date": "2026-11-14",
-   "title": "Désignation de cinq pays européens pour représenter le continent aux pourparlers sur l'Ukraine"
-  },
   {
    "date": "2026-11-14",
    "title": "Stabilité de Teleperformance à 70,90 EUR face à la transformation IA de ses services"
@@ -1423,7 +1404,63 @@
   {
    "date": "2026-11-22",
    "title": "Présentation du profil boursier et industriel d'Airbus"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Échec de la COP31 à Antalya sans accord final sur le climat"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Tensions militaires entre la Finlande, l'Otan et la Russie"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Attaques de drones contre des navires au large de Benghazi"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Ouverture du sommet Choose France dédié aux entreprises tricolores"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Plan blanc déclenché au CHU de Guadeloupe après une cyberattaque"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Victoire de Carlos Alcaraz et du duo Olivetti-Arribagé au Masters de Turin"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Victoire de Le Mans face à Marseille en Ligue 1"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Saint-Gobain : focus sur la décarbonation des procédés industriels"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "L'adaptation biologique unique du poisson dipneuste africain"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Relance du linge de maison fabriqué en France par Vanderschooten"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Hausse des coûts d'indemnisation des accidents de la route en France"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Macron envisage de convoquer le Congrès à Versailles pour une règle d'or"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Manifestations massives à Istanbul pour la liberté de la presse"
+  },
+  {
+   "date": "2026-11-23",
+   "title": "Présentation de l'action du jour STMicroelectronics"
   }
  ],
- "last": "2026-11-22"
+ "last": "2026-11-23"
 }
