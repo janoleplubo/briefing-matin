@@ -56,14 +56,24 @@ jobs:
 
       - name: Outils audio
         if: steps.check.outputs.done == 'false'
-        timeout-minutes: 8
+        timeout-minutes: 12
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
           echo 'set man-db/auto-update false' | sudo debconf-communicate >/dev/null 2>&1 || true
           sudo rm -f /var/lib/man-db/auto-update
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg
+          ok=0
+          for i in 1 2 3; do
+            if sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg; then ok=1; break; fi
+            echo "apt a échoué (tentative $i), nouvel essai dans 20 s"; sleep 20
+          done
+          if [ "$ok" != 1 ]; then
+            echo "apt indisponible : ffmpeg via pip"
+            pip install -q imageio-ffmpeg
+            F=$(python3 -c "import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())")
+            sudo ln -sf "$F" /usr/local/bin/ffmpeg
+          fi
+          ffmpeg -version | head -1
           sudo apt-get install -y -qq libttspico-utils || echo "voix de secours indisponible"
 
       - name: Génération du briefing
