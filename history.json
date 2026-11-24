@@ -154,6 +154,11 @@
    "date": "2026-11-23",
    "word": "hégémonie",
    "definition": "Domination souveraine ou suprématie incontestée exercée par une puissance, un groupe ou une entreprise dans un domaine donné."
+  },
+  {
+   "date": "2026-11-24",
+   "word": "impéritie",
+   "definition": "Manque d'expérience, d'habileté ou de compétence dans l'exercice de sa fonction ou de sa profession."
   }
  ],
  "topics": [
@@ -280,6 +285,10 @@
   {
    "date": "2026-11-23",
    "title": "François Hennebique et l'invention du système de béton armé"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "L'invention du frein de parachute d'ascenseur par Elisha Otis"
   }
  ],
  "actions": [
@@ -406,6 +415,10 @@
   {
    "date": "2026-11-23",
    "name": "STMicroelectronics"
+  },
+  {
+   "date": "2026-11-24",
+   "name": "Edenred"
   }
  ],
  "ia": [
@@ -516,6 +529,10 @@
   {
    "date": "2026-11-23",
    "title": "Le MCP (Model Context Protocol)"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "L'hallucination en intelligence artificielle"
   }
  ],
  "ia_news": [
@@ -978,69 +995,25 @@
   {
    "date": "2026-11-23",
    "title": "Étude de Dragos sur la vulnérabilité des fournisseurs d'inférence bas coût"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Sortie du modèle GLM-5.4 par Z.ai"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Déploiement de GPT-6.2 Sol par OpenAI"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Lancement de Claude Ship par Anthropic"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Arrivée de Gemini Computer Use sur Mac"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-14",
-   "title": "Stabilité de Teleperformance à 70,90 EUR face à la transformation IA de ses services"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Vol de données chez Maileva touchant 22 millions de personnes"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Propositions territoriales américaines à l'Ukraine révélées par Zelensky"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Cinquième samedi de manifestation contre la vie chère en France"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Résolution lente de la panne aérienne historique aux États-Unis"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Victoire historique du Pays de Galles contre les All Blacks 35-28"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Récupération réussie de l'étage supérieur de Starship par SpaceX"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Saint-Gobain replie à 75 euros mais progresse de 15% sur un mois"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Carmelle remporte la première édition de l'Eurovision d'Asie pour les Philippines"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Huawei mobilise 114 000 chercheurs pour l'autosuffisance en puces IA"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Gérard Larcher propose une méthode de départage pour la droite en 2027"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Teddy Riner rejette toute étiquette macroniste"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Emmanuel Macron dénonce les pressions pour une paix injuste en Ukraine"
-  },
-  {
-   "date": "2026-11-15",
-   "title": "Michelin stable à 33.71 euros avec une hausse de 16% sur un an"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Victoire de la France face à la Turquie (2-1) en Ligue des nations"
-  },
   {
    "date": "2026-11-16",
    "title": "Fermeture de la frontière estonienne avec la Russie après un sabotage déjoué"
@@ -1460,7 +1433,67 @@
   {
    "date": "2026-11-23",
    "title": "Présentation de l'action du jour STMicroelectronics"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Réintégration de Jensen Huang à la tête de Nvidia"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Décollecte record de 10 milliards d'euros sur le Livret A"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Retard d'automatisation sur la ligne 18 du Grand Paris Express"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Opération de déséchouage du cargo dans les Landes"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Déraillement d'un TER en Normandie et 4 interpellations"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Disparition du chef Michel Dumas à 72 ans"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Asturienne renforce son offre solaire pour la toiture"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "La Banque de France peine à renouveler les billets de 5 euros"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Inauguration par Nexity du 1er immeuble sans chauffage ni clim à Lyon"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Hausse de 5 pour cent des ventes de voitures neuves dans l'UE"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Création de stocks stratégiques de terres rares pilotée par la Caisse des dépôts"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Ouverture du Congrès des maires de France sur fond de présidentielle 2027"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Lettre de Sébastien Lecornu aux parlementaires sur le budget"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Avions russes dans la zone de défense sud-coréenne"
+  },
+  {
+   "date": "2026-11-24",
+   "title": "Donald Trump réclame la peine de mort fédérale pour les tueurs d'enfants"
   }
  ],
- "last": "2026-11-23"
+ "last": "2026-11-24"
 }
