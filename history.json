@@ -159,6 +159,11 @@
    "date": "2026-11-24",
    "word": "impéritie",
    "definition": "Manque d'expérience, d'habileté ou de compétence dans l'exercice de sa fonction ou de sa profession."
+  },
+  {
+   "date": "2026-11-25",
+   "word": "vaticiner",
+   "definition": "Prédire l'avenir avec emphase, solennité ou prétention."
   }
  ],
  "topics": [
@@ -289,6 +294,10 @@
   {
    "date": "2026-11-24",
    "title": "L'invention du frein de parachute d'ascenseur par Elisha Otis"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Poésie : L'Albatros de Charles Baudelaire"
   }
  ],
  "actions": [
@@ -419,6 +428,10 @@
   {
    "date": "2026-11-24",
    "name": "Edenred"
+  },
+  {
+   "date": "2026-11-25",
+   "name": "Engie"
   }
  ],
  "ia": [
@@ -533,6 +546,10 @@
   {
    "date": "2026-11-24",
    "title": "L'hallucination en intelligence artificielle"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "L'inférence spéculative en IA"
   }
  ],
  "ia_news": [
@@ -1011,65 +1028,29 @@
   {
    "date": "2026-11-24",
    "title": "Arrivée de Gemini Computer Use sur Mac"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Lancement du Beam Model 501B"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Compression NariQ pour Qwen3.8"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Claude Artifacts en applications de bureau"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Expansion du protocole MCP"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Publication de l'étude sur l'introspection latente"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-16",
-   "title": "Fermeture de la frontière estonienne avec la Russie après un sabotage déjoué"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Inondations meurtrières dans l'Hérault près de Montpellier"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Mise en examen dans les Yvelines après un crypto-rapt de 900 000 euros"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Fermeture de l'autoroute A13 pour huit mois de travaux de consolidation de tunnel"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Ralliement de la CFDT à la mobilisation syndicale du 17 novembre"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Publication de l'enquête Fractures françaises révélant le désenchantement électoral"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Gadi Eisenkot réclame la démission immédiate de Benyamin Nétanyahou"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Saint-Gobain regroupe Clim+ et Cedeo à Bourg-en-Bresse"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Un phoque squatte le pont d'un yacht à Sydney pendant 36 heures"
-  },
-  {
-   "date": "2026-11-16",
-   "title": "Bouygues relève ses prévisions 2026 grâce à la rentabilité d'Equans"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Grève et manifestations dans la fonction publique et les transports le 17 novembre"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Gérard Depardieu renonce à son appel et voit sa peine confirmée"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Deux ans de prison requis contre Pierre Ménès"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Adoption par l'Assemblée du texte sur l'épargne salariale"
-  },
   {
    "date": "2026-11-17",
    "title": "Frappes russes sur deux ponts majeurs à Kiev"
@@ -1493,7 +1474,63 @@
   {
    "date": "2026-11-24",
    "title": "Donald Trump réclame la peine de mort fédérale pour les tueurs d'enfants"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Renvoi de Nicolas Sarkozy en correctionnelle dans l'affaire Takieddine"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Procès aux assises pour le policier auteur du tir sur Nahel"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Négociations de BYD pour le rachat de l'usine d'Hambach"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Saisie de 3,3 tonnes de méthamphétamine par la Marine"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Hack du registre officiel russe révélant 500 000 morts"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Crash d'un hélicoptère militaire en Turquie"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Progression de Saint-Gobain à 73 euros"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Étude médicale sur les risques cérébraux des montagnes russes"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Tentative d'adaptation de GTA VI sur PC par des hackeurs IA"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Condamnation de Huawei aux États-Unis pour vol de secrets"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Rachat de la biotech Insmed par Sanofi pour 38 milliards d'euros"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Vote au Sénat de l'abaissement du plafond fiscal des retraités"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Tensions politiques pour la primaire à droite entre Attal et Philippe"
+  },
+  {
+   "date": "2026-11-25",
+   "title": "Rapprochement diplomatique entre la Hongrie et l'Ukraine"
   }
  ],
- "last": "2026-11-24"
+ "last": "2026-11-25"
 }
