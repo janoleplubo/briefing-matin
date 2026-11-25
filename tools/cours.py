@@ -69,6 +69,40 @@ def make_audio(text, dest):
     return len(pcm) / 48000
 
 
+def make_audio_edge(text, dest, voice="fr-FR-HenriNeural", rate="-8%"):
+    """Voix gratuite Microsoft Edge (edge-tts) : ne consomme pas le quota Gemini."""
+    tmp = dest + ".edge"
+    os.makedirs(tmp, exist_ok=True)
+    parts = []
+    for i, c in enumerate(g.chunks(text, 2500)):
+        out = os.path.join(tmp, f"{i:03d}.mp3")
+        for attempt in range(4):
+            try:
+                subprocess.run([sys.executable, "-m", "edge_tts", "--voice", voice, f"--rate={rate}",
+                                "--text", c, "--write-media", out], check=True, timeout=300)
+                break
+            except Exception as e:
+                g.log(f"edge-tts morceau {i + 1} échec ({e}), nouvel essai")
+                time.sleep(10 * (attempt + 1))
+        else:
+            raise RuntimeError(f"edge-tts : morceau {i + 1} impossible")
+        parts.append(out)
+        g.log(f"voix edge, morceau {i + 1} ok")
+    lst = os.path.join(tmp, "list.txt")
+    with open(lst, "w") as f:
+        for p_ in parts:
+            f.write(f"file '{p_}'\nfile '{os.path.join(tmp, 'sil.mp3')}'\n")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", "0.7",
+                    "-c:a", "libmp3lame", os.path.join(tmp, "sil.mp3")], check=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", lst,
+                    "-af", "loudnorm=I=-16:TP=-1.5", "-ar", "44100", "-ac", "1", "-c:a", "aac", "-b:a", "64k",
+                    "-movflags", "+faststart", dest], check=True)
+    secs = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", dest],
+                                capture_output=True, text=True).stdout.strip() or 0)
+    subprocess.run(["rm", "-rf", tmp])
+    return secs
+
+
 def feed(eps):
     items = ""
     for e in sorted(eps, key=lambda x: x["pub"], reverse=True):
@@ -117,9 +151,17 @@ def main():
             raw = f.read().strip()
         title, _, body = raw.partition("\n")
         body = body.strip()
+        engine = "gemini"
+        if body.startswith("#voix="):
+            first, _, body = body.partition("\n")
+            engine = first.split("=", 1)[1].strip()
+            body = body.strip()
         fname = f"cours-{slug}.m4a"
-        g.log("épisode :", title, len(body.split()), "mots")
-        secs = make_audio(body, os.path.join(SITE, fname))
+        g.log("épisode :", title, len(body.split()), "mots, voix", engine)
+        if engine == "edge":
+            secs = make_audio_edge(body, os.path.join(SITE, fname))
+        else:
+            secs = make_audio(body, os.path.join(SITE, fname))
         eps.append({"slug": slug, "title": title.strip(), "file": fname, "secs": round(secs),
                     "size": os.path.getsize(os.path.join(SITE, fname)), "pub": int(time.time())})
         with open(EPISODES, "w", encoding="utf-8") as f:

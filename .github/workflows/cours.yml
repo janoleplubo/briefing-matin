@@ -22,7 +22,8 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo rm -f /var/lib/man-db/auto-update
-          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          for i in 1 2 3; do sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && break; sleep 20; done
+          pip install -q edge-tts
       - name: Épisodes audio
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
