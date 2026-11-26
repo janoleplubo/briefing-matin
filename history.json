@@ -164,6 +164,11 @@
    "date": "2026-11-25",
    "word": "vaticiner",
    "definition": "Prédire l'avenir avec emphase, solennité ou prétention."
+  },
+  {
+   "date": "2026-11-26",
+   "word": "pléthorique",
+   "definition": "Qui abonde au-delà du nécessaire, surabondant ou excessif."
   }
  ],
  "topics": [
@@ -298,6 +303,10 @@
   {
    "date": "2026-11-25",
    "title": "Poésie : L'Albatros de Charles Baudelaire"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "L'épopée de Xavier Niel et la réussite de Free"
   }
  ],
  "actions": [
@@ -432,6 +441,10 @@
   {
    "date": "2026-11-25",
    "name": "Engie"
+  },
+  {
+   "date": "2026-11-26",
+   "name": "Capgemini"
   }
  ],
  "ia": [
@@ -550,6 +563,10 @@
   {
    "date": "2026-11-25",
    "title": "L'inférence spéculative en IA"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "L'architecture Mixture of Experts"
   }
  ],
  "ia_news": [
@@ -1048,69 +1065,25 @@
   {
    "date": "2026-11-25",
    "title": "Publication de l'étude sur l'introspection latente"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Sortie du modèle compressé Ternary Bonsai 2.5"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Déploiement du modèle de codage GLM-5.4 par Z.ai"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Transformation des Claude Artifacts en applications de bureau"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Intégration de Gemini dans les véhicules General Motors"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-17",
-   "title": "Frappes russes sur deux ponts majeurs à Kiev"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Robert Pattinson incarnateur du prochain James Bond"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Hermès cote à 1340 euros avec une cible à 1280 euros"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Saint-Gobain replie à 75 euros et poursuit sa décarbonation"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Mystère autour de la chute du fondateur de Mango"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Le casque Milwaukee Bolt 200 classé numéro 1 anti-traumatismes"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Bruxelles valide le rachat de Commerzbank par UniCredit"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Assimil placé en redressement judiciaire"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Grand débat de la présidentielle 2027 entre cinq candidats"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Projet de centre d'expulsion au Rwanda par cinq pays européens"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Arrivée du porte-avions américain Theodore Roosevelt au Moyen-Orient"
-  },
-  {
-   "date": "2026-11-17",
-   "title": "Carrefour progresse à 14.22 euros en Bourse"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Condamnation des parents de la petite martyre de l'A10"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Essoufflement de la mobilisation sociale du 17 novembre"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Modalités de la primaire de la droite et du centre"
-  },
   {
    "date": "2026-11-18",
    "title": "Élection de Matan Kahana à la tête de la Knesset"
@@ -1530,7 +1503,67 @@
   {
    "date": "2026-11-25",
    "title": "Rapprochement diplomatique entre la Hongrie et l'Ukraine"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Mobilisation de l'enseignement supérieur"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "David Lisnard réélu à la tête de l'AMF"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Victoire du Losc face au Bayern Munich"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Mise en garde de l'Agence du médicament sur l'IA"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Décès d'un adolescent à Mayotte"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Bilan de la guerre en Ukraine"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Décès du musicien Andy Taylor"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Nouveaux droits de douane américains"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Hausse de Saint-Gobain et focus sur les écoles de la construction"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Surveillance par IA dans la restauration rapide"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Étude du MIT sur l'IA et le climat"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Validation de l'effort des entreprises au Sénat"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Amende européenne contre des fabricants de parfum"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Remplacement du préfet Hugues Moutouh"
+  },
+  {
+   "date": "2026-11-26",
+   "title": "Déclarations de Teddy Riner sur l'Ukraine"
   }
  ],
- "last": "2026-11-25"
+ "last": "2026-11-26"
 }

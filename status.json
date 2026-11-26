@@ -1,30 +1,19 @@
 {
- "date": "2026-11-25",
- "heure": "02:49",
- "modele_texte": "gemini-3.6-flash",
- "mots": 2127,
- "minutes": 11.5,
+ "date": "2026-11-26",
+ "heure": "02:53",
+ "modele_texte": "gemini-flash-lite-latest",
+ "mots": 1628,
+ "minutes": 8.9,
  "voix": [
-  "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
-  "gemini-3.8-flash-tts",
   "gemini-3.8-flash-tts"
  ],
  "erreurs": [
-  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are",
-  "gemini-3.8-flash: gemini-3.8-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are"
+  "gemini-3.6-flash: The read operation timed out",
+  "gemini-3.5-flash: gemini-3.5-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are",
+  "gemini-3.5-flash: gemini-3.5-flash HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are",
+  "gemini-flash-latest: gemini-flash-latest HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand ",
+  "gemini-flash-latest: gemini-flash-latest HTTP 503: b'{\\n  \"error\": {\\n    \"code\": 503,\\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand "
  ],
- "donnees_manquantes": [
-  "ia_fr",
-  "ia_en",
-  "action_news",
-  "sgo_news",
-  "ia_innov",
-  "ia_labos",
-  "ia_chine",
-  "ia_outils",
-  "batiment"
- ],
- "musique": "Disco_con_Tutti.mp3"
+ "donnees_manquantes": [],
+ "musique": "Funky_Chunk.mp3"
 }
