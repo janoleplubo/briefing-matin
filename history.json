@@ -169,6 +169,11 @@
    "date": "2026-11-26",
    "word": "pléthorique",
    "definition": "Qui abonde au-delà du nécessaire, surabondant ou excessif."
+  },
+  {
+   "date": "2026-11-27",
+   "word": "expédient",
+   "definition": "Moyen ingénieux, rapide et provisoire employé pour se tirer d'embarras ou surmonter une difficulté immédiate."
   }
  ],
  "topics": [
@@ -307,6 +312,10 @@
   {
    "date": "2026-11-26",
    "title": "L'épopée de Xavier Niel et la réussite de Free"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "L'épopée de la construction de l'Empire State Building en quatorze mois"
   }
  ],
  "actions": [
@@ -445,6 +454,10 @@
   {
    "date": "2026-11-26",
    "name": "Capgemini"
+  },
+  {
+   "date": "2026-11-27",
+   "name": "Eurofins Scientific"
   }
  ],
  "ia": [
@@ -567,6 +580,10 @@
   {
    "date": "2026-11-26",
    "title": "L'architecture Mixture of Experts"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "L'élagage des réseaux de neurones (pruning)"
   }
  ],
  "ia_news": [
@@ -1081,69 +1098,25 @@
   {
    "date": "2026-11-26",
    "title": "Intégration de Gemini dans les véhicules General Motors"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Publication du modèle ERNIE 5.5 Flash Preview par Baidu"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Lancement du modèle compact Namazu Small par Sakana AI"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Tâches en arrière-plan et partage de compétences via MCP dans Claude"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Découverte d'une communication clandestine entre agents IA via les erreurs d'arrondi des GPU"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-18",
-   "title": "Élection de Matan Kahana à la tête de la Knesset"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Pannes sur les services iCloud d'Apple"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Suspension de Teddy Riner par l'Unicef"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Perturbations sur le réseau interne de la NSA"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Tensions diplomatiques sur la présence militaire en Ukraine"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Cession de l'activité de canalisation de Saint-Gobain en Amérique latine"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Hausse des inégalités de genre dans la direction des grandes entreprises"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Suppression des interdictions de location liées au DPE"
-  },
-  {
-   "date": "2026-11-18",
-   "title": "Projet d'expulsion de migrants vers le Rwanda par cinq pays européens"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Sortie mondiale du jeu vidéo Grand Theft Auto VI"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Vente record du tableau Châtaigniers en fleurs de Van Gogh"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Marine Tondelier ouverte à une coalition derrière Jean-Luc Mélenchon"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Condamnation de trois revenantes françaises de l'État islamique"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Nouveau sabotage et interruption du trafic sur le pont de Crimée"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Adoption en première lecture du budget de la Sécurité sociale"
-  },
   {
    "date": "2026-11-19",
    "title": "Rapport de la Cour des comptes sur l'héritage des Jeux olympiques"
@@ -1563,7 +1536,67 @@
   {
    "date": "2026-11-26",
    "title": "Déclarations de Teddy Riner sur l'Ukraine"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Recadrage d'Emmanuel Macron envers Marine Le Pen depuis Bruxelles"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Annonce de la dernière campagne présidentielle d'Éric Zemmour"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Révélations de Mediapart et Le Monde sur des messages antisémites attribués à Jordan Bardella"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Enquête de Complément d'enquête sur les failles d'Interpol"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Procès d'Émilie König aux assises spéciales de Paris"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Découverte d'une gare de marchandises de 91 millions d'euros inutilisée à Paris"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Affrontements entre supporters en marge du match OM - Levski Sofia"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Rachat potentiel du diamantaire De Beers par un consortium d'États producteurs"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Nomination de Pablo Hernandez de Cos à la présidence de la BCE"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Manifestations de syndicats de police pour la revalorisation de la prime de risque"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Tensions diplomatiques entre la France et l'Algérie autour d'un agent consulaire"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Déclaration de l'Ukraine réfutant toute velléité d'extension de la guerre en Libye"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Rapprochement officiel entre le maréchal Haftar et Recep Tayyip Erdogan"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Analyse de la valeur des solutions multiproduits chez Saint-Gobain par DZ Bank"
+  },
+  {
+   "date": "2026-11-27",
+   "title": "Déploiement de la robotique d'isolation de chantier par la jeune pousse Builder Assist"
   }
  ],
- "last": "2026-11-26"
+ "last": "2026-11-27"
 }
