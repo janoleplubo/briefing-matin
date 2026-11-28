@@ -174,6 +174,11 @@
    "date": "2026-11-27",
    "word": "expédient",
    "definition": "Moyen ingénieux, rapide et provisoire employé pour se tirer d'embarras ou surmonter une difficulté immédiate."
+  },
+  {
+   "date": "2026-11-28",
+   "word": "acmé",
+   "definition": "Le point le plus élevé, le sommet ou l'apogée d'un processus, d'une carrière ou d'un phénomène."
   }
  ],
  "topics": [
@@ -316,6 +321,10 @@
   {
    "date": "2026-11-27",
    "title": "L'épopée de la construction de l'Empire State Building en quatorze mois"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Le défi d'ingénierie du pompage de béton de la tour Burj Khalifa"
   }
  ],
  "actions": [
@@ -458,6 +467,10 @@
   {
    "date": "2026-11-27",
    "name": "Eurofins Scientific"
+  },
+  {
+   "date": "2026-11-28",
+   "name": "Hermès"
   }
  ],
  "ia": [
@@ -584,6 +597,10 @@
   {
    "date": "2026-11-27",
    "title": "L'élagage des réseaux de neurones (pruning)"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Les bases de données vectorielles (Vector Databases)"
   }
  ],
  "ia_news": [
@@ -1114,61 +1131,25 @@
   {
    "date": "2026-11-27",
    "title": "Découverte d'une communication clandestine entre agents IA via les erreurs d'arrondi des GPU"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Plainte d'OpenAI contre Apple pour vol de secrets"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Études de Meta et AMI Labs sur les modèles JEPA"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Plateforme Athena d'OpenAI pour les agents d'entreprise"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Rétro-ingénierie de GTA 6 accélérée par Claude Code"
   }
  ],
  "actus": [
-  {
-   "date": "2026-11-19",
-   "title": "Rapport de la Cour des comptes sur l'héritage des Jeux olympiques"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "La sonde Voyager 1 franchit le seuil d'un jour-lumière de la Terre"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Cession de l'activité de canalisation de Saint-Gobain en Amérique latine"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Liquidation de stocks de smartphones à prix cassés"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Projet d'emprunt européen pour financer l'aide à l'Ukraine"
-  },
-  {
-   "date": "2026-11-19",
-   "title": "Déclarations polémiques de la première ministre danoise sur l'immigration"
-  },
-  {
-   "date": "2026-11-20",
-   "title": "Perquisition au siège du RN pour violation du secret de l'enquête"
-  },
-  {
-   "date": "2026-11-20",
-   "title": "La Birmanie condamnée pour génocide des Rohingya par la Cour internationale de justice"
-  },
-  {
-   "date": "2026-11-20",
-   "title": "Yannick Jadot et Jérémie Iordanoff quittent les Écologistes"
-  },
-  {
-   "date": "2026-11-20",
-   "title": "589 millions d'enfants vivent en zone de conflit selon Save The Children"
-  },
-  {
-   "date": "2026-11-20",
-   "title": "Alerte du gouvernement et de l'Anssi sur la flambée des cyberattaques"
-  },
-  {
-   "date": "2026-11-20",
-   "title": "Cdiscount propose un iPhone 15 reconditionné à 389 euros"
-  },
-  {
-   "date": "2026-11-20",
-   "title": "Saint-Gobain accélère sur le recyclage en boucle fermée des pare-brises"
-  },
   {
    "date": "2026-11-20",
    "title": "Dérive d'un agent OpenAI transformé en espion d'emails"
@@ -1596,7 +1577,59 @@
   {
    "date": "2026-11-27",
    "title": "Déploiement de la robotique d'isolation de chantier par la jeune pousse Builder Assist"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Entrée officielle de la France en récession selon l'Insee"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Standard et Poor's menace de dégrader la note de la France"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Hommage national le 4 décembre aux Invalides pour les victimes de Trappes"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Critique de Zelensky sur les négociations américaines avec la Russie"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Réouverture du BHV Marais validée par la commission de sécurité"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Victoire de Brest sur le Paris FC et mise à pied de Franck Haise à Rennes"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Stabilité de Saint-Gobain et enjeux de la chimie du plâtre bas carbone"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Mariage extravagant avec 400 000 invités en Inde"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Rachat de l'usine d'Hambach par le chinois BYD"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Action en justice des distributeurs indépendants de SFR"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Annonce de Marine Le Pen sur le gel des discussions institutionnelles en outre-mer"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Perquisitions de l'IGPN visant le responsable du programme du RN"
+  },
+  {
+   "date": "2026-11-28",
+   "title": "Soutien du Parti du centre suédois au gouvernement conservateur"
   }
  ],
- "last": "2026-11-27"
+ "last": "2026-11-28"
 }
